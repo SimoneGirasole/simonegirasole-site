@@ -1,12 +1,6 @@
 {
-  "functions": {
-    "api/search.js": {
-      "memory": 128,
-      "maxDuration": 10
-    }
-  },
-  "routes": [
-    { "src": "/api/search", "dest": "/api/search.js" },
-    { "src": "/(.*)", "dest": "/public/$1" }
+  "rewrites": [
+    { "source": "/api/search", "destination": "/api/search.js" },
+    { "source": "/(.*)", "destination": "/public/$1" }
   ]
 }
