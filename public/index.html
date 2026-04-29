@@ -423,30 +423,45 @@ footer p{font-size:.7rem;color:var(--gray);font-family:'Space Mono',monospace;}
 const IS_LOCAL = location.hostname==='localhost'||location.hostname==='127.0.0.1'||location.protocol==='file:';
 
 function itunesSearch(q, cb) {
-  if (IS_LOCAL) {
-    // JSONP — funziona da file:// e localhost senza CORS
-    const fn = '_itcb' + Date.now() + Math.random().toString(36).slice(2);
-    window[fn] = function(d) {
-      delete window[fn];
-      const r = (d.results||[]).filter(t=>t.previewUrl).map(t=>({
-        trackName:t.trackName, artistName:t.artistName,
-        previewUrl:t.previewUrl,
-        artworkUrl:t.artworkUrl100?t.artworkUrl100.replace('100x100bb','600x600bb'):null,
-        artworkUrlSmall:t.artworkUrl100?t.artworkUrl100.replace('100x100bb','200x200bb'):null,
-      }));
-      cb(r.length?r:null);
-    };
-    const s=document.createElement('script');
-    s.src='https://itunes.apple.com/search?callback='+fn+'&term='+encodeURIComponent(q)+'&media=music&limit=5&country=IT';
-    s.onerror=()=>{delete window[fn];cb(null);};
-    document.head.appendChild(s);
-  } else {
-    // Fetch verso proxy Vercel — nessun problema CORS
-    fetch('/api/search?q='+encodeURIComponent(q)+'&limit=5')
-      .then(r=>r.json())
-      .then(d=>cb(d.results&&d.results.length?d.results:null))
-      .catch(()=>cb(null));
+  // Prova prima IT, poi US come fallback (catalogo più completo per dance/electronic)
+  function trySearch(query, country, onDone) {
+    if (IS_LOCAL) {
+      const fn = '_itcb' + Date.now() + Math.random().toString(36).slice(2);
+      window[fn] = function(d) {
+        delete window[fn];
+        const r = (d.results||[]).filter(t=>t.previewUrl).map(t=>({
+          trackName:t.trackName, artistName:t.artistName,
+          previewUrl:t.previewUrl,
+          artworkUrl:t.artworkUrl100?t.artworkUrl100.replace('100x100bb','600x600bb'):null,
+          artworkUrlSmall:t.artworkUrl100?t.artworkUrl100.replace('100x100bb','200x200bb'):null,
+        }));
+        onDone(r.length?r:null);
+      };
+      const s=document.createElement('script');
+      s.src='https://itunes.apple.com/search?callback='+fn+'&term='+encodeURIComponent(query)+'&media=music&limit=5&country='+country;
+      s.onerror=()=>{delete window[fn];onDone(null);};
+      document.head.appendChild(s);
+    } else {
+      fetch('/api/search?q='+encodeURIComponent(query)+'&limit=5&country='+country)
+        .then(r=>r.json())
+        .then(d=>onDone(d.results&&d.results.length?d.results:null))
+        .catch(()=>onDone(null));
+    }
   }
+
+  // 1. Cerca in IT
+  trySearch(q, 'IT', function(results) {
+    if(results) { cb(results); return; }
+    // 2. Fallback: cerca in US
+    trySearch(q, 'US', function(results2) {
+      if(results2) { cb(results2); return; }
+      // 3. Fallback: query semplificata (solo prima parola artista + titolo) in US
+      const simple = q.split(' ').slice(0,3).join(' ');
+      trySearch(simple, 'US', function(results3) {
+        cb(results3);
+      });
+    });
+  });
 }
 
 // ── CANVAS ────────────────────────────────────────────────────────
@@ -567,23 +582,28 @@ function buildChart(containerId, audioId, data){
       </div>
       <audio id="${prefix}-a-${i}" preload="none" crossorigin="anonymous"></audio>
     </div>`;
-    // Load art + preview
+    // Load art + preview con fallback foto Simone
     setTimeout(()=>{
-      itunesSearch(t.q,function(results){
-        if(!results||!results.length)return;
-        const tr=results[0];
-        if(tr.artworkUrlSmall){const img=document.getElementById(prefix+'-img-'+i);if(img)img.src=tr.artworkUrlSmall.replace('600x600bb','200x200bb');}
-        if(tr.previewUrl){
-          const a=document.getElementById(prefix+'-a-'+i);if(!a)return;
-          a.src=tr.previewUrl;
-          if(prefix==='d')danceAud[i]=true; else mainAud[i]=true;
+      itunesSearch(t.q, function(results){
+        const imgEl = document.getElementById(prefix+'-img-'+i);
+        // Copertina: usa artwork iTunes oppure foto Simone come placeholder
+        if(results && results.length && results[0].artworkUrlSmall){
+          if(imgEl) imgEl.src = results[0].artworkUrlSmall.replace('600x600bb','200x200bb');
+        } else {
+          if(imgEl) imgEl.src = '/simone-girasole.jpg';
+        }
+        // Preview audio
+        if(results && results.length && results[0].previewUrl){
+          const a = document.getElementById(prefix+'-a-'+i); if(!a) return;
+          a.src = results[0].previewUrl;
+          if(prefix==='d') danceAud[i]=true; else mainAud[i]=true;
           a.addEventListener('timeupdate',()=>{
-            if(!a.duration)return;
-            const p=a.currentTime/a.duration;
-            document.getElementById(prefix+'-pr-'+i).style.strokeDashoffset=CRC-(CRC*p);
-            document.getElementById(prefix+'-mb-'+i).style.width=(p*100)+'%';
-            document.getElementById(prefix+'-mc-'+i).textContent='0:'+String(Math.floor(a.currentTime)).padStart(2,'0');
-            if(a.duration)document.getElementById(prefix+'-md-'+i).textContent='0:'+String(Math.round(a.duration)).padStart(2,'0');
+            if(!a.duration) return;
+            const p = a.currentTime/a.duration;
+            document.getElementById(prefix+'-pr-'+i).style.strokeDashoffset = CRC-(CRC*p);
+            document.getElementById(prefix+'-mb-'+i).style.width = (p*100)+'%';
+            document.getElementById(prefix+'-mc-'+i).textContent = '0:'+String(Math.floor(a.currentTime)).padStart(2,'0');
+            if(a.duration) document.getElementById(prefix+'-md-'+i).textContent = '0:'+String(Math.round(a.duration)).padStart(2,'0');
           });
           a.addEventListener('ended',()=>stopChart(prefix,i));
         }
