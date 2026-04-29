@@ -424,13 +424,12 @@ const IS_LOCAL = location.hostname==='localhost'||location.hostname==='127.0.0.1
 
 function itunesSearch(q, cb) {
   if (IS_LOCAL) {
-    // JSONP per locale (file://)
     const fn = '_itcb' + Date.now() + Math.random().toString(36).slice(2);
     window[fn] = function(d) {
       delete window[fn];
       const r = (d.results||[]).filter(t=>t.previewUrl).map(t=>({
         trackName:t.trackName, artistName:t.artistName,
-        previewUrl:t.previewUrl,
+        previewUrl:t.previewUrl, // in locale usa diretto
         artworkUrl:t.artworkUrl100?t.artworkUrl100.replace('100x100bb','600x600bb'):null,
         artworkUrlSmall:t.artworkUrl100?t.artworkUrl100.replace('100x100bb','200x200bb'):null,
       }));
@@ -441,10 +440,21 @@ function itunesSearch(q, cb) {
     s.onerror=()=>{delete window[fn];cb(null);};
     document.head.appendChild(s);
   } else {
-    // Su Vercel: fetch al proxy server-side (risolve CORS)
+    // Su Vercel: fetch al proxy server-side
+    // I previewUrl vengono reindirizzati al nostro /api/proxy per evitare blocchi CORS
     fetch('/api/search?q='+encodeURIComponent(q)+'&limit=5&country=US')
       .then(r=>r.json())
-      .then(d=>cb(d.results&&d.results.length?d.results:null))
+      .then(d=>{
+        if(!d.results||!d.results.length){ cb(null); return; }
+        // Reindirizza ogni previewUrl al nostro proxy
+        const results = d.results.map(t=>({
+          ...t,
+          previewUrl: t.previewUrl
+            ? '/api/proxy?url='+encodeURIComponent(t.previewUrl)
+            : null
+        }));
+        cb(results);
+      })
       .catch(()=>cb(null));
   }
 }
