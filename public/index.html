@@ -119,6 +119,51 @@ nav{position:sticky;top:0;z-index:200;background:var(--black);border-bottom:1px 
 .ci-mb-wrap{width:100%;height:2px;background:var(--border);border-radius:1px;cursor:pointer;}
 .ci-mb{height:100%;background:var(--pl);border-radius:1px;width:0%;transition:width .1s linear;}
 .ci-mt{display:flex;justify-content:space-between;font-family:'Space Mono',monospace;font-size:.55rem;color:var(--gray);margin-top:.2rem;}
+/* MUSIC NEWS */
+.music-news-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+.mn-card{cursor:pointer;background:var(--dark);border:1px solid var(--border);transition:transform .2s,border-color .2s;}
+.mn-card:hover{transform:translateY(-4px);border-color:var(--purple);}
+.mn-img-wrap{position:relative;height:200px;overflow:hidden;}
+.mn-img-wrap canvas,.mn-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;}
+.mn-tag{position:absolute;top:.7rem;left:.7rem;background:var(--purple);color:white;font-size:.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:.2rem .5rem;}
+.mn-body{padding:1rem;}
+.mn-body h3{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;line-height:1.2;margin-bottom:.4rem;}
+.mn-body p{font-size:.78rem;color:var(--gray);line-height:1.5;}
+/* CHARTS TWO COL */
+.charts-two-col{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;}
+.chart-row{display:flex;align-items:center;gap:.6rem;padding:.45rem .3rem;border-bottom:1px solid var(--border);cursor:pointer;transition:background .15s;flex-wrap:wrap;}
+.chart-row:last-child{border-bottom:none;}
+.chart-row:hover{background:rgba(124,58,237,.07);}
+.chart-row.playing{background:rgba(124,58,237,.13);}
+.cr-num{font-family:'Bebas Neue',sans-serif;font-size:1rem;color:var(--purple);width:18px;text-align:right;flex-shrink:0;}
+.cr-img{width:32px;height:32px;object-fit:cover;flex-shrink:0;border-radius:2px;background:#1a1a1a;}
+.cr-info{flex:1;min-width:0;}
+.cr-title{font-size:.74rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.cr-artist{font-size:.62rem;color:var(--gray);}
+.cr-pw{position:relative;width:28px;height:28px;flex-shrink:0;cursor:pointer;}
+.cr-svg{width:28px;height:28px;transform:rotate(-90deg);position:absolute;top:0;left:0;pointer-events:none;}
+.cr-tr{fill:none;stroke:rgba(255,255,255,.1);stroke-width:3;}
+.cr-pr{fill:none;stroke:var(--pink);stroke-width:3;stroke-linecap:round;stroke-dasharray:56.5;stroke-dashoffset:56.5;transition:stroke-dashoffset .1s linear;}
+.cr-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:18px;height:18px;border-radius:50%;background:var(--purple);display:flex;align-items:center;justify-content:center;}
+.cr-pw:hover .cr-btn,.cr-pw.active .cr-btn{background:var(--pl);}
+.cr-ico{margin-left:1px;}
+.cr-eq{display:none;align-items:flex-end;justify-content:center;gap:1px;height:8px;width:8px;}
+.cr-eq span{display:block;width:1.5px;background:white;border-radius:1px;animation:eq .6s ease-in-out infinite alternate;}
+.cr-eq span:nth-child(2){animation-delay:.15s;}.cr-eq span:nth-child(3){animation-delay:.3s;}
+.cr-pw.active .cr-eq{display:flex;}.cr-pw.active .cr-ico{display:none;}
+.cr-mini{display:none;width:100%;padding:.25rem 0 .05rem;}
+.chart-row.playing .cr-mini{display:block;}
+.cr-mb-wrap{width:100%;height:2px;background:var(--border);border-radius:1px;cursor:pointer;}
+.cr-mb{height:100%;background:var(--pink);border-radius:1px;width:0%;transition:width .1s linear;}
+.cr-mt{display:flex;justify-content:space-between;font-family:'Space Mono',monospace;font-size:.52rem;color:var(--gray);margin-top:.15rem;}
+/* MODAL */
+.art-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:500;align-items:center;justify-content:center;padding:1.5rem;}
+.art-modal.open{display:flex;}
+.art-modal-inner{background:var(--dark);border:1px solid var(--border);max-width:640px;width:100%;position:relative;border-radius:4px;overflow:hidden;}
+.art-close{position:absolute;top:.7rem;right:.7rem;background:rgba(0,0,0,.6);border:none;color:white;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:.9rem;display:flex;align-items:center;justify-content:center;z-index:10;}
+.art-modal-body{padding:1.2rem 1.4rem 1.6rem;}
+.art-modal-body h2{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;line-height:1.15;margin:.6rem 0 .8rem;}
+.art-modal-body p{font-size:.85rem;color:var(--gl);line-height:1.8;}
 /* BIO */
 .bio-layout{display:grid;grid-template-columns:340px 1fr;gap:3rem;align-items:start;padding:2.5rem;}
 .bio-img-wrap{position:relative;}.bio-img{width:100%;aspect-ratio:3/4;object-fit:cover;filter:grayscale(20%);box-shadow:0 20px 50px rgba(0,0,0,.5);}
@@ -258,36 +303,97 @@ footer p{font-size:.7rem;color:var(--gray);font-family:'Space Mono',monospace;}
 
 <!-- MUSICA -->
 <div class="page" id="page-musica">
-  <div class="sec" style="padding-bottom:0;">
-    <div class="music-layout">
-      <div>
-        <div class="tabs">
-          <button class="tab-btn active" onclick="switchTab('mainstream',this)">MAINSTREAM</button>
-          <button class="tab-btn" onclick="switchTab('dance',this)">DANCE</button>
-          <button class="tab-btn" onclick="switchTab('house',this)">HOUSE</button>
-          <button class="tab-btn" onclick="switchTab('techno',this)">TECHNO</button>
-          <button class="tab-btn" onclick="switchTab('uscite',this)">NUOVE USCITE</button>
+
+  <!-- NOTIZIE 2x2 -->
+  <div class="sec">
+    <div class="sec-hdr"><div class="sec-title">NOTIZIE DAL MONDO</div><div class="sec-line"></div></div>
+    <div class="music-news-grid">
+
+      <!-- ART 1: UNVRS #1 club -->
+      <div class="mn-card fi" onclick="openArticle(0)">
+        <div class="mn-img-wrap">
+          <canvas id="mn-c0" width="700" height="420" style="width:100%;height:100%;display:block;"></canvas>
+          <div class="mn-tag">Club</div>
         </div>
-        <div class="tab-content active" id="tab-mainstream"><div class="news-grid-2"><div class="news-card fi"><canvas id="c-tmw2" width="600" height="450" style="width:100%;aspect-ratio:4/3;display:block;"></canvas><div class="nc-body"><div class="tag">Mainstream</div><h3>Tomorrowland Orchestra: classica ed elettronica si fondono</h3><p>Archi e sintetizzatori in produzioni per stadi e festival con raffinatezza da sala da concerto.</p></div></div><div class="news-card fi"><img class="nc-img" src="https://images.unsplash.com/photo-1506157786151-b8491531f063?w=600&q=80" alt=""><div class="nc-body"><div class="tag">Mainstream</div><h3>John Summit: top 15 Beatport Dance/Pop di aprile 2026</h3><p>Prodotto con Absolutely per Experts Only, conferma il dominio di Summit nel mainstream elettronico.</p></div></div></div></div>
-        <div class="tab-content" id="tab-dance"><div class="news-grid-2"><div class="news-card fi"><img class="nc-img" src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&q=80" alt=""><div class="nc-body"><div class="tag">Dance</div><h3>Solomun x Nina Simone: "Take Care of Business" il remix che ha fermato il tempo</h3><p>Nella top 12 di Beatport con decine di migliaia di stream giornalieri.</p></div></div><div class="news-card fi"><img class="nc-img" src="https://images.unsplash.com/photo-1571266028243-e4733b0f0bb0?w=600&q=80" alt=""><div class="nc-body"><div class="tag">Dance</div><h3>TonyPitony porta la dance italiana nel 2026 con il singolo "L'AMMOR"</h3><p>Il progetto italiano mescola radici pop e produzione club-ready internazionale.</p></div></div></div></div>
-        <div class="tab-content" id="tab-house"><div class="news-grid-2"><div class="news-card fi"><img class="nc-img" src="https://images.unsplash.com/photo-1494232410401-ad00d5433cfa?w=600&q=80" alt=""><div class="nc-body"><div class="tag">House</div><h3>Nairobi: la nuova capitale africana della house music</h3><p>La scena keniana esplode con club di eccellenza e una community giovane che fa dell'Afrohouse un'identità culturale.</p></div></div><div class="news-card fi"><canvas id="c-exaequa" width="600" height="450" style="width:100%;aspect-ratio:4/3;display:block;"></canvas><div class="nc-body"><div class="tag">House</div><h3>Ex Aequa 2026: programma gratuito under 35 con Rebeka Warrior</h3><p>Il progetto formativo torna con una seconda edizione trinazionale.</p></div></div></div></div>
-        <div class="tab-content" id="tab-techno"><div class="news-grid-2"><div class="news-card fi"><img class="nc-img" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&q=80" alt=""><div class="nc-body"><div class="tag">Techno</div><h3>ARTCORE di Indira Paganotto conquista Hï Ibiza: techno ogni domenica</h3><p>La residency della DJ spagnola è sold out alle prime tre date stagionali dell'estate 2026.</p></div></div><div class="news-card fi"><img class="nc-img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt=""><div class="nc-body"><div class="tag">Techno</div><h3>Shimza alla DJ MAG Sessions su m2o: Afro Techno incontra la radio italiana</h3><p>Suoni afrotech con l'appuntamento di aprile 2026 firmato dal DJ sudafricano.</p></div></div></div></div>
-        <div class="tab-content" id="tab-uscite"><div class="rel-grid">
-          <div class="rel-card fi"><img class="rel-img" src="https://i.discogs.com/F6vS6glFfNbXM8XVFz0Z0n09A7jRHpG5TlVgFMzQyv4/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dzLWRhdGFiYXNlLWltYWdlcy9SLTMzODU2OC0xMjcyNDAzMzYwLmpwZWc.jpeg" alt=""><div class="rel-info"><div class="tag" style="margin-bottom:.3rem;">Classico</div><h4>Laurent Garnier — Crispy Bacon (1997)</h4><p>F Communications</p></div></div>
-          <div class="rel-card fi"><canvas id="c-rel1" width="400" height="400" style="width:100%;aspect-ratio:1;display:block;margin-bottom:.6rem;"></canvas><div class="rel-info"><div class="tag" style="margin-bottom:.3rem;">House</div><h4>Luke Alessi — Yes Empress EP</h4><p>Coffee Cola, Aprile 2026</p><div class="rel-genre">Deep House</div></div></div>
-          <div class="rel-card fi"><canvas id="c-rel2" width="400" height="400" style="width:100%;aspect-ratio:1;display:block;margin-bottom:.6rem;"></canvas><div class="rel-info"><div class="tag" style="margin-bottom:.3rem;">Dance</div><h4>John Summit — DON'T BELIEVE IT</h4><p>Experts Only, Aprile 2026</p><div class="rel-genre">Dance / Pop</div></div></div>
-          <div class="rel-card fi"><img class="rel-img" src="https://i.discogs.com/ZG5SuHBRIiU_CIXmRFpMGxUAyIWpqX1zVVjsWIwqnmY/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dzLWRhdGFiYXNlLWltYWdlcy9SLTk2NTkxLTEyMDY2OTQ4MzAuanBlZw.jpeg" alt=""><div class="rel-info"><div class="tag" style="margin-bottom:.3rem;">Classico</div><h4>Inner City — Good Life (1988)</h4><p>10 Records</p></div></div>
-          <div class="rel-card fi"><canvas id="c-rel3" width="400" height="400" style="width:100%;aspect-ratio:1;display:block;margin-bottom:.6rem;"></canvas><div class="rel-info"><div class="tag" style="margin-bottom:.3rem;">Techno</div><h4>Solomun — One More (Max Styler Remix)</h4><p>Nu Moda, Marzo 2026</p><div class="rel-genre">Indie Dance</div></div></div>
-          <div class="rel-card fi"><canvas id="c-rel4" width="400" height="400" style="width:100%;aspect-ratio:1;display:block;margin-bottom:.6rem;"></canvas><div class="rel-info"><div class="tag" style="margin-bottom:.3rem;">House</div><h4>Lizwi & Tommy Veanud — UNqamlezo</h4><p>TV Recordings, Aprile 2026</p><div class="rel-genre">Afro House</div></div></div>
-        </div></div>
-      </div>
-      <div>
-        <div class="chart-widget">
-          <div class="chart-widget-hdr"><div class="bp-logo">BEATPORT</div><div><div class="chart-title">TOP 10 DANCE/POP</div><div class="chart-subtitle">Aprile 2026</div></div></div>
-          <div id="bp-chart"></div>
-          <div style="margin-top:1rem;padding-top:.8rem;border-top:1px solid var(--border);text-align:center;"><a href="https://www.beatport.com/genre/dance-pop/39/top-100" target="_blank" style="font-size:.68rem;color:var(--pl);font-family:'Space Mono',monospace;text-decoration:none;">VEDI TOP 100 SU BEATPORT →</a></div>
+        <div class="mn-body">
+          <h3>[UNVRS] è il club #1 al mondo: la rivoluzione parte da Ibiza</h3>
+          <p>L'hyperclub ibizense entra direttamente in cima alla DJ Mag Top 100 Clubs 2026 nel suo primo anno. Un record assoluto nella storia della classifica.</p>
         </div>
       </div>
+
+      <!-- ART 2: Elton John + Blessed Madonna -->
+      <div class="mn-card fi" onclick="openArticle(1)">
+        <div class="mn-img-wrap">
+          <canvas id="mn-c1" width="700" height="420" style="width:100%;height:100%;display:block;"></canvas>
+          <div class="mn-tag">Music</div>
+        </div>
+        <div class="mn-body">
+          <h3>Elton John e The Blessed Madonna: il remix album che unisce Studio 54 e la dancefloor</h3>
+          <p>Il leggendario cantautore britannico pubblica il suo primo album di remix dance via Positiva per il Record Store Day 2026.</p>
+        </div>
+      </div>
+
+      <!-- ART 3: Industria elettronica +7% -->
+      <div class="mn-card fi" onclick="openArticle(2)">
+        <div class="mn-img-wrap">
+          <canvas id="mn-c2" width="700" height="420" style="width:100%;height:100%;display:block;"></canvas>
+          <div class="mn-tag">Industry</div>
+        </div>
+        <div class="mn-body">
+          <h3>L'industria della musica elettronica vale 15,1 miliardi: +7% nel 2025</h3>
+          <p>Il report IMS Business 2026 conferma la crescita record del settore. L'elettronica torna al centro dell'economia musicale globale.</p>
+        </div>
+      </div>
+
+      <!-- ART 4: Anyma Coachella -->
+      <div class="mn-card fi" onclick="openArticle(3)">
+        <div class="mn-img-wrap">
+          <canvas id="mn-c3" width="700" height="420" style="width:100%;height:100%;display:block;"></canvas>
+          <div class="mn-tag">Festival</div>
+        </div>
+        <div class="mn-body">
+          <h3>Anyma al Coachella 2026: il set da 9 minuti in più che è costato 24.000 dollari</h3>
+          <p>Il producer italiano ha sforato i tempi al festival californiano, scatenando entusiasmo nel pubblico e una multa salata dall'organizzazione.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- LE MIGLIORI 10 DELLA SETTIMANA -->
+  <div class="sec" style="background:var(--dark);">
+    <div class="charts-two-col">
+
+      <!-- CHART DANCE -->
+      <div>
+        <div class="sec-hdr"><div class="sec-title" style="font-size:1.2rem;">LE MIGLIORI 10 DELLA SETTIMANA DANCE</div></div>
+        <div id="chart-dance"></div>
+        <audio id="dance-audio" preload="none" crossorigin="anonymous"></audio>
+      </div>
+
+      <!-- CHART MAINSTREAM -->
+      <div>
+        <div class="sec-hdr"><div class="sec-title" style="font-size:1.2rem;">LE MIGLIORI 10 DELLA SETTIMANA MAINSTREAM</div></div>
+        <div id="chart-main"></div>
+        <audio id="main-audio2" preload="none" crossorigin="anonymous"></audio>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- MODAL ARTICOLI -->
+<div class="art-modal" id="art-modal" onclick="closeArticle(event)">
+  <div class="art-modal-inner">
+    <button class="art-close" onclick="closeArticle()">✕</button>
+    <div class="art-modal-img-wrap">
+      <canvas id="art-modal-canvas" width="800" height="400" style="width:100%;height:200px;display:block;border-radius:4px 4px 0 0;"></canvas>
+    </div>
+    <div class="art-modal-body">
+      <div class="tag" id="art-modal-tag"></div>
+      <h2 id="art-modal-title"></h2>
+      <p id="art-modal-text"></p>
     </div>
   </div>
 </div>
@@ -348,12 +454,187 @@ function drawYard(id){const c=document.getElementById(id);if(!c)return;const ctx
 function drawTomorrowland(id){const c=document.getElementById(id);if(!c)return;const ctx=c.getContext('2d'),W=c.width,H=c.height;const bg=ctx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#000510');bg.addColorStop(.5,'#0d1b5e');bg.addColorStop(1,'#000510');ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);const gr=ctx.createRadialGradient(W/2,H/2,20,W/2,H/2,W*.5);gr.addColorStop(0,'rgba(200,150,255,.6)');gr.addColorStop(.5,'rgba(100,50,200,.2)');gr.addColorStop(1,'transparent');ctx.fillStyle=gr;ctx.fillRect(0,0,W,H);ctx.strokeStyle='rgba(200,150,255,.3)';ctx.lineWidth=2;for(let i=0;i<5;i++){ctx.beginPath();for(let x=0;x<W;x++){const y=H/2+Math.sin((x+i*30)*.04)*(20+i*15);x===0?ctx.moveTo(x,y):ctx.lineTo(x,y);}ctx.stroke();}ctx.fillStyle='rgba(0,0,0,.5)';ctx.fillRect(0,H*.6,W,H*.2);ctx.fillStyle='#fff';ctx.font='bold '+Math.round(W*.08)+'px Arial Black,sans-serif';ctx.textAlign='center';ctx.fillText('TOMORROWLAND',W/2,H*.7);ctx.font=Math.round(W*.04)+'px Arial';ctx.fillStyle='#a855f7';ctx.fillText('ORCHESTRA · THE ALBUM · 2026',W/2,H*.78);}
 function drawRelease(id,title,artist,c1,c2){const c=document.getElementById(id);if(!c)return;const ctx=c.getContext('2d'),W=c.width,H=c.height;const bg=ctx.createLinearGradient(0,0,W,H);bg.addColorStop(0,c1);bg.addColorStop(1,c2);ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);ctx.strokeStyle='rgba(255,255,255,.06)';ctx.lineWidth=1;for(let x=0;x<W;x+=40){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();}for(let y=0;y<H;y+=40){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}ctx.beginPath();ctx.arc(W/2,H/2,W*.3,0,Math.PI*2);ctx.fillStyle='rgba(0,0,0,.6)';ctx.fill();ctx.beginPath();ctx.arc(W/2,H/2,W*.05,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,.3)';ctx.fill();ctx.fillStyle='#fff';ctx.font='bold '+Math.round(W*.09)+'px Arial';ctx.textAlign='center';ctx.fillText(artist,W/2,H*.82);ctx.font=Math.round(W*.07)+'px Arial';ctx.fillStyle='rgba(255,255,255,.7)';ctx.fillText(title,W/2,H*.91);}
 function drawExAequa(id){const c=document.getElementById(id);if(!c)return;const ctx=c.getContext('2d'),W=c.width,H=c.height;const bg=ctx.createLinearGradient(0,0,W,H);bg.addColorStop(0,'#0f0f1a');bg.addColorStop(1,'#2d1b69');ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);for(let i=0;i<12;i++){const bh=50+Math.sin(i*.8)*80+Math.random()*60,bw=W/12*.6;const g=ctx.createLinearGradient(0,H-bh,0,H);g.addColorStop(0,'#e040fb');g.addColorStop(1,'#7c3aed');ctx.fillStyle=g;ctx.fillRect(i*(W/12)+(W/12*.2),H-bh,bw,bh);}ctx.fillStyle='rgba(0,0,0,.5)';ctx.fillRect(0,H*.6,W,H*.25);ctx.fillStyle='#fff';ctx.font='bold '+Math.round(W*.08)+'px Arial';ctx.textAlign='center';ctx.fillText('EX AEQUA 2026',W/2,H*.71);ctx.font=Math.round(W*.04)+'px Arial';ctx.fillStyle='#e040fb';ctx.fillText('DJ Training · Under 35 · Free',W/2,H*.79);}
-function drawAll(){drawYard('canvas-yard');drawTomorrowland('canvas-tmw');drawTomorrowland('c-tmw2');drawExAequa('c-exaequa');drawRelease('c-rel1','Yes Empress','Luke Alessi','#0d3b2e','#1a6b4a');drawRelease('c-rel2',"DON'T BELIEVE IT",'John Summit','#1a0533','#6b1f8c');drawRelease('c-rel3','One More Remix','Solomun','#0a0a2e','#1a1a6b');drawRelease('c-rel4','UNqamlezo','Lizwi & T.Veanud','#2d1a00','#8c4a00');}
-window.addEventListener('load',drawAll);
+function drawAll(){drawYard('canvas-yard');drawTomorrowland('canvas-tmw');}
+window.addEventListener('load',()=>{drawAll();initMusicPage();});
 
 // ── NAV ────────────────────────────────────────────────────────────
-function showPage(name,el){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));document.getElementById('page-'+name).classList.add('active');if(el)el.classList.add('active');window.scrollTo({top:0,behavior:'smooth'});setTimeout(()=>{initFadeIns();if(name==='musica')drawAll();},100);}
-function switchTab(name,btn){document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));btn.classList.add('active');document.getElementById('tab-'+name).classList.add('active');setTimeout(()=>{initFadeIns();drawAll();},60);}
+function showPage(name,el){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));document.getElementById('page-'+name).classList.add('active');if(el)el.classList.add('active');window.scrollTo({top:0,behavior:'smooth'});setTimeout(()=>{initFadeIns();if(name==='musica')initMusicPage();},100);}
+function switchTab(name,btn){document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));btn.classList.add('active');document.getElementById('tab-'+name).classList.add('active');setTimeout(initFadeIns,60);}
+
+// ── MUSIC PAGE ─────────────────────────────────────────────────────
+// Articoli completi (max 5 righe)
+const articles=[
+  {tag:'Club',title:'[UNVRS] è il club #1 al mondo: la rivoluzione parte da Ibiza',
+   text:"L'hyperclub ibizense [UNVRS], aperto solo nel maggio 2025, è balzato direttamente al numero uno della DJ Mag Top 100 Clubs 2026 — un record assoluto nella storia ventennale della classifica. Situato nel sito dell'ex Ku Club/Privilege, ospita 10.000 persone distribuite in ambienti immersivi con LED, tunnel luminosi e una main floor con schermo gigante dietro la consolle. Nel 2025 ha ospitato Carl Cox, Jamie Jones, Anyma, David Guetta e Charlotte de Witte. Per il 2026 la line-up include John Summit, Tiësto e Armin van Buuren. Il proprietario Yann Pissenem definisce [UNVRS] 'un modo diverso di vivere ogni cosa'.",
+   draw:(id)=>drawCanvas(id,'#0a0520','#3d1060','#UNVRS — IBIZA','N.1 CLUB DEL MONDO 2026','#e040fb')},
+  {tag:'Music',title:'Elton John e The Blessed Madonna: il remix album che unisce Studio 54 e la dancefloor',
+   text:"Sir Elton John e la DJ e produttrice The Blessed Madonna hanno collaborato per il primo album di remix dance della carriera del cantautore britannico. Il disco, pubblicato via Positiva per il Record Store Day 2026, reinterpreta classici di Elton con arrangiamenti club-oriented firmati dalla Madison. I due artisti hanno discusso della loro passione condivisa per Studio 54, i dischi in vinile e i momenti in pista che hanno cambiato le loro vite. Un progetto trasversale che avvicina generazioni diverse alla musica da ballo. Il progetto ha già ricevuto una standing ovation dalla critica specializzata internazionale.",
+   draw:(id)=>drawCanvas(id,'#1a0008','#6b0020','ELTON JOHN','×THE BLESSED MADONNA','#ff6b9d')},
+  {tag:'Industry',title:'L\'industria della musica elettronica vale 15,1 miliardi: +7% nel 2025',
+   text:"Il rapporto IMS Business Report 2026 ha confermato che l'industria della musica elettronica ha raggiunto il valore record di 15,1 miliardi di dollari nel 2025, con una crescita del 7% rispetto all'anno precedente. La crescita è trainata dal ritorno massiccio degli eventi live, dall'esplosione del mercato asiatico — che conta ora 31,5 club nella Top 100 Clubs — e dalla proliferazione delle piattaforme di streaming dedicate al settore. L'Europa rimane il mercato più solido con 39,5 club nella classifica DJ Mag. L'Africa e il Sud America crescono a doppia cifra come nuovi mercati emergenti.",
+   draw:(id)=>drawCanvas(id,'#001a0a','#004d1a','15,1 MLD $','INDUSTRIA ELETTRONICA +7%','#00e676')},
+  {tag:'Festival',title:'Anyma al Coachella 2026: il set da 9 minuti in più che è costato 24.000 dollari',
+   text:"Il producer italiano Anyma — al secolo Matteo Milleri — ha infranto i limiti di tempo durante il suo set al Coachella 2026, suonando per 9 minuti in più rispetto a quanto previsto dal contratto. Il costo dello sforamento: 24.000 dollari di penale dall'organizzazione del festival californiano. Nonostante la multa, il pubblico ha vissuto uno dei momenti più memorabili dell'edizione: il secondo weekend del suo set è diventato virale con milioni di visualizzazioni sui social. Anyma non si è scusato per l'eccesso di entusiasmo, confermando la sua reputazione di performer capace di trascinare qualsiasi pubblico oltre ogni limite.",
+   draw:(id)=>drawCanvas(id,'#0d0d1a','#2d2d7a','ANYMA','COACHELLA 2026 · 9 MIN IN PIÙ','#a855f7')},
+];
+
+function drawCanvas(id,c1,c2,line1,line2,accent){
+  const c=document.getElementById(id);if(!c)return;
+  const ctx=c.getContext('2d'),W=c.width,H=c.height;
+  const bg=ctx.createLinearGradient(0,0,W,H);bg.addColorStop(0,c1);bg.addColorStop(1,c2);
+  ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+  // grid
+  ctx.strokeStyle='rgba(255,255,255,.05)';ctx.lineWidth=1;
+  for(let x=0;x<W;x+=60){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();}
+  for(let y=0;y<H;y+=60){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}
+  // glow
+  const gr=ctx.createRadialGradient(W/2,H/2,10,W/2,H/2,W*.55);
+  gr.addColorStop(0,accent+'33');gr.addColorStop(1,'transparent');
+  ctx.fillStyle=gr;ctx.fillRect(0,0,W,H);
+  // text
+  ctx.textAlign='center';
+  ctx.fillStyle=accent;ctx.font='bold '+Math.round(H*.22)+'px Bebas Neue,Arial Black,sans-serif';
+  ctx.fillText(line1,W/2,H*.5);
+  ctx.fillStyle='rgba(255,255,255,.7)';ctx.font=Math.round(H*.1)+'px Arial';
+  ctx.fillText(line2,W/2,H*.68);
+}
+
+let musicPageInited=false;
+function initMusicPage(){
+  if(musicPageInited)return;
+  musicPageInited=true;
+  // Draw news canvases
+  articles.forEach((a,i)=>a.draw('mn-c'+i));
+  // Build Dance chart
+  buildChart('chart-dance','dance-audio',danceChart);
+  // Build Mainstage chart
+  buildChart('chart-main','main-audio2',mainChart);
+}
+
+// ─ DANCE/POP top 10 (solo brani ultimi 6 mesi: ott 2025 – apr 2026) ─
+const danceChart=[
+  {pos:1,title:'Elevator',artist:'Discip',q:'Discip Elevator extended mix 2026',date:'2026-04-24'},
+  {pos:2,title:'Puff Puff Pass',artist:'Kitty Hall',q:'Kitty Hall Puff Puff Pass extended 2026',date:'2026-04-02'},
+  {pos:3,title:'New Religion',artist:'Faithless, Bebe Rexha',q:'Faithless Bebe Rexha New Religion extended 2026',date:'2026-03-06'},
+  {pos:4,title:'Surrender',artist:'Westend, Lizzy Land',q:'Westend Surrender original mix 2026',date:'2026-04-10'},
+  {pos:5,title:'RUDEBOY',artist:'SLVL',q:'SLVL RUDEBOY original mix 2026',date:'2026-04-24'},
+  {pos:6,title:'World Is Mine',artist:'Lane 8, Kasbo, BJOERN',q:'Lane 8 Kasbo World Is Mine 2026',date:'2026-04-23'},
+  {pos:7,title:'The Way I Are',artist:'Timbaland, Max Dean',q:'Timbaland Max Dean Way I Are remix 2025',date:'2025-12-19'},
+  {pos:8,title:'No Broke Boys',artist:'Tinashe, Disco Lines',q:'Tinashe Disco Lines No Broke Boys extended 2026',date:'2026-02-06'},
+  {pos:9,title:'Blessings',artist:'Calvin Harris, Clementine Douglas',q:'Calvin Harris Blessings original mix 2025',date:'2025-05-09'},
+  {pos:10,title:'Loco Loco',artist:'Reinier Zonneveld, Gordo',q:'Reinier Zonneveld Gordo Loco Loco 2026',date:'2026-01-30'},
+];
+
+// ─ MAINSTAGE top 10 (solo brani ultimi 6 mesi) ─
+const mainChart=[
+  {pos:1,title:'Surrender',artist:'Westend, Lizzy Land',q:'Westend Surrender original mix mainstage 2026',date:'2026-04-10'},
+  {pos:2,title:'Désenchantée 3000',artist:'Kate Ryan, Blasterjaxx',q:'Kate Ryan Blasterjaxx Desenchantee 3000 extended 2026',date:'2026-04-06'},
+  {pos:3,title:'Vem Comigo',artist:'Armin van Buuren, Olive Anguz',q:'Armin van Buuren Vem Comigo extended 2026',date:'2026-03-13'},
+  {pos:4,title:'Caramelle',artist:'Mesto',q:'Mesto Caramelle extended 2025',date:'2025-11-28'},
+  {pos:5,title:'Science',artist:'deadmau5, Stevie Appleton',q:'deadmau5 Stevie Appleton Science 2026',date:'2026-02-20'},
+  {pos:6,title:'Bigger Than Techno',artist:'Lilly Palmer, Armin van Buuren',q:'Lilly Palmer Armin van Buuren Bigger Than Techno 2026',date:'2026-03-06'},
+  {pos:7,title:'Makina Time',artist:'Dimitri Vegas & Like Mike, DJ Konik',q:'Dimitri Vegas Like Mike Makina Time extended 2026',date:'2026-01-23'},
+  {pos:8,title:'Be The One',artist:'Adam Port, Keinemusik, SG Lewis',q:'Adam Port SG Lewis Be The One extended 2026',date:'2026-04-24'},
+  {pos:9,title:'Like That',artist:'Marco Faraone',q:'Marco Faraone Like That extended 2026',date:'2026-03-13'},
+  {pos:10,title:'How Does It Feel',artist:'Fezzo, Dubdogz, Zaark',q:'Fezzo Dubdogz How Does It Feel extended 2026',date:'2026-03-27'},
+];
+
+const CRC=56.5; // 2π×9
+let danceActive=-1, mainActive=-1;
+const danceAud={}, mainAud={};
+
+function buildChart(containerId, audioId, data){
+  const el=document.getElementById(containerId);
+  const prefix=containerId==='chart-dance'?'d':'m';
+  data.forEach((t,i)=>{
+    el.innerHTML+=`<div class="chart-row" id="${prefix}-row-${i}">
+      <div class="cr-num">${t.pos}</div>
+      <img class="cr-img" id="${prefix}-img-${i}" src="" alt="" style="background:#1a1a1a;">
+      <div class="cr-info" onclick="toggleChart('${prefix}',${i})">
+        <div class="cr-title">${t.title}</div>
+        <div class="cr-artist">${t.artist}</div>
+      </div>
+      <div class="cr-pw" id="${prefix}-pw-${i}" onclick="toggleChart('${prefix}',${i})">
+        <svg class="cr-svg" viewBox="0 0 28 28"><circle class="cr-tr" cx="14" cy="14" r="9"/><circle class="cr-pr" id="${prefix}-pr-${i}" cx="14" cy="14" r="9" stroke-dasharray="${CRC.toFixed(1)}" stroke-dashoffset="${CRC.toFixed(1)}"/></svg>
+        <div class="cr-btn">
+          <svg class="cr-ico" width="6" height="7" viewBox="0 0 6 7" fill="white"><polygon points="0,0 6,3.5 0,7"/></svg>
+          <div class="cr-eq"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+      <div class="cr-mini" id="${prefix}-mini-${i}">
+        <div class="cr-mb-wrap" onclick="seekChart(event,'${prefix}',${i})"><div class="cr-mb" id="${prefix}-mb-${i}"></div></div>
+        <div class="cr-mt"><span id="${prefix}-mc-${i}">0:00</span><span id="${prefix}-md-${i}">0:30</span></div>
+      </div>
+      <audio id="${prefix}-a-${i}" preload="none" crossorigin="anonymous"></audio>
+    </div>`;
+    // Load art + preview
+    setTimeout(()=>{
+      itunesSearch(t.q,function(results){
+        if(!results||!results.length)return;
+        const tr=results[0];
+        if(tr.artworkUrlSmall){const img=document.getElementById(prefix+'-img-'+i);if(img)img.src=tr.artworkUrlSmall.replace('600x600bb','200x200bb');}
+        if(tr.previewUrl){
+          const a=document.getElementById(prefix+'-a-'+i);if(!a)return;
+          a.src=tr.previewUrl;
+          if(prefix==='d')danceAud[i]=true; else mainAud[i]=true;
+          a.addEventListener('timeupdate',()=>{
+            if(!a.duration)return;
+            const p=a.currentTime/a.duration;
+            document.getElementById(prefix+'-pr-'+i).style.strokeDashoffset=CRC-(CRC*p);
+            document.getElementById(prefix+'-mb-'+i).style.width=(p*100)+'%';
+            document.getElementById(prefix+'-mc-'+i).textContent='0:'+String(Math.floor(a.currentTime)).padStart(2,'0');
+            if(a.duration)document.getElementById(prefix+'-md-'+i).textContent='0:'+String(Math.round(a.duration)).padStart(2,'0');
+          });
+          a.addEventListener('ended',()=>stopChart(prefix,i));
+        }
+      });
+    },i*550);
+  });
+}
+
+function toggleChart(prefix,i){
+  const active=prefix==='d'?danceActive:mainActive;
+  const hasPreview=prefix==='d'?danceAud:mainAud;
+  if(active===i){stopChart(prefix,i);return;}
+  if(active>=0)stopChart(prefix,active);
+  if(!hasPreview[i])return;
+  if(prefix==='d')danceActive=i; else mainActive=i;
+  const a=document.getElementById(prefix+'-a-'+i);
+  a.currentTime=0;a.play().catch(()=>{});
+  document.getElementById(prefix+'-row-'+i).classList.add('playing');
+  document.getElementById(prefix+'-pw-'+i).classList.add('active');
+}
+function stopChart(prefix,i){
+  const a=document.getElementById(prefix+'-a-'+i);if(a){a.pause();a.currentTime=0;}
+  const row=document.getElementById(prefix+'-row-'+i);if(row)row.classList.remove('playing');
+  const pw=document.getElementById(prefix+'-pw-'+i);if(pw)pw.classList.remove('active');
+  const pr=document.getElementById(prefix+'-pr-'+i);if(pr)pr.style.strokeDashoffset=CRC;
+  const mb=document.getElementById(prefix+'-mb-'+i);if(mb)mb.style.width='0%';
+  const mc=document.getElementById(prefix+'-mc-'+i);if(mc)mc.textContent='0:00';
+  if(prefix==='d')danceActive=-1; else mainActive=-1;
+}
+function seekChart(e,prefix,i){
+  const a=document.getElementById(prefix+'-a-'+i);if(!a||!a.duration)return;
+  const r=document.getElementById(prefix+'-mb-'+i).parentElement.getBoundingClientRect();
+  a.currentTime=((e.clientX-r.left)/r.width)*a.duration;
+}
+
+// ── MODAL ──────────────────────────────────────────────────────────
+function openArticle(i){
+  const art=articles[i];
+  document.getElementById('art-modal-tag').textContent=art.tag;
+  document.getElementById('art-modal-title').textContent=art.title;
+  document.getElementById('art-modal-text').textContent=art.text;
+  art.draw('art-modal-canvas');
+  document.getElementById('art-modal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeArticle(e){
+  if(e&&e.target!==document.getElementById('art-modal')&&!e.target.classList.contains('art-close'))return;
+  document.getElementById('art-modal').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeArticle({target:document.getElementById('art-modal')});});
 
 // ── DISCO DEL GIORNO ───────────────────────────────────────────────
 const dischi=[
@@ -396,77 +677,6 @@ audio.addEventListener('timeupdate',()=>{if(!audio.duration)return;const p=audio
 audio.addEventListener('error',()=>{document.getElementById('pl-status').textContent='✗ Errore caricamento audio';});
 function togglePlayer(){if(!audio.src){return;}if(playing)audio.pause();else audio.play().catch(()=>{document.getElementById('pl-status').textContent='✗ Errore — riprova';});}
 function seekPlayer(e){if(!audio.duration)return;const r=document.getElementById('pl-bar').parentElement.getBoundingClientRect();audio.currentTime=((e.clientX-r.left)/r.width)*audio.duration;}
-
-// ── BEATPORT CHART ─────────────────────────────────────────────────
-const bpData=[
-  {pos:1,title:"Your Love",artist:"Frankie Knuckles",genre:"House",q:"Frankie Knuckles Your Love"},
-  {pos:2,title:"Good Life",artist:"Inner City",genre:"Detroit House",q:"Inner City Good Life"},
-  {pos:3,title:"Ride on Time",artist:"Black Box",genre:"Italo House",q:"Black Box Ride On Time"},
-  {pos:4,title:"Crispy Bacon",artist:"Laurent Garnier",genre:"French Techno",q:"Laurent Garnier Crispy Bacon"},
-  {pos:5,title:"French Kiss",artist:"Lil Louis",genre:"Chicago House",q:"Lil Louis French Kiss"},
-  {pos:6,title:"Strings of Life",artist:"Rhythim Is Rhythim",genre:"Detroit Techno",q:"Rhythim Is Rhythim Strings of Life"},
-  {pos:7,title:"Pacific State",artist:"808 State",genre:"Balearic",q:"808 State Pacific State"},
-  {pos:8,title:"Voodoo Ray",artist:"A Guy Called Gerald",genre:"House",q:"A Guy Called Gerald Voodoo Ray"},
-  {pos:9,title:"Promised Land",artist:"Joe Smooth",genre:"House",q:"Joe Smooth Promised Land"},
-  {pos:10,title:"Big Fun",artist:"Inner City",genre:"Detroit House",q:"Inner City Big Fun house"},
-];
-const BPARC=65.97;
-const bpEl=document.getElementById('bp-chart');
-let bpActive=-1;
-const bpHasPreview={};
-
-bpData.forEach((t,i)=>{
-  bpEl.innerHTML+=`<div class="chart-item" id="ci-${i}">
-    <div class="ci-num">${t.pos}</div>
-    <img class="ci-img" id="ci-img-${i}" src="" alt="" style="background:#1a1a1a;">
-    <div class="ci-info" onclick="toggleBP(${i})"><div class="ci-title">${t.title}</div><div class="ci-artist">${t.artist}</div><div class="ci-genre">${t.genre}</div></div>
-    <div class="ci-pw" id="ci-pw-${i}" onclick="toggleBP(${i})">
-      <svg class="ci-svg" viewBox="0 0 30 30"><circle class="ci-tr" cx="15" cy="15" r="10.5"/><circle class="ci-pr" id="ci-pr-${i}" cx="15" cy="15" r="10.5" stroke-dasharray="${BPARC.toFixed(2)}" stroke-dashoffset="${BPARC.toFixed(2)}"/></svg>
-      <div class="ci-btn"><svg class="ci-ico" width="7" height="8" viewBox="0 0 7 8" fill="white"><polygon points="0,0 7,4 0,8"/></svg><div class="ci-eq"><span></span><span></span><span></span></div></div>
-    </div>
-    <div class="ci-mini" id="ci-mini-${i}">
-      <div class="ci-mb-wrap" onclick="seekBP(event,${i})"><div class="ci-mb" id="ci-mb-${i}"></div></div>
-      <div class="ci-mt"><span id="ci-mc-${i}">0:00</span><span id="ci-md-${i}">0:30</span></div>
-    </div>
-    <audio id="ci-a-${i}" preload="none" crossorigin="anonymous"></audio>
-  </div>`;
-});
-
-bpData.forEach((t,i)=>{
-  setTimeout(()=>{
-    itunesSearch(t.q,function(results){
-      if(!results||!results.length)return;
-      const tr=results[0];
-      if(tr.artworkUrlSmall){const img=document.getElementById('ci-img-'+i);if(img)img.src=tr.artworkUrlSmall.replace('600x600bb','200x200bb');}
-      if(tr.previewUrl){
-        const a=document.getElementById('ci-a-'+i);if(!a)return;
-        a.src=tr.previewUrl;bpHasPreview[i]=true;
-        a.addEventListener('timeupdate',()=>{if(!a.duration)return;const p=a.currentTime/a.duration;document.getElementById('ci-pr-'+i).style.strokeDashoffset=BPARC-(BPARC*p);document.getElementById('ci-mb-'+i).style.width=(p*100)+'%';document.getElementById('ci-mc-'+i).textContent='0:'+String(Math.floor(a.currentTime)).padStart(2,'0');if(a.duration)document.getElementById('ci-md-'+i).textContent='0:'+String(Math.round(a.duration)).padStart(2,'0');});
-        a.addEventListener('ended',()=>stopBP(i));
-      }
-    });
-  },i*600);
-});
-
-function toggleBP(i){
-  const a=document.getElementById('ci-a-'+i);
-  if(bpActive===i){if(a.paused){a.play().catch(()=>{});document.getElementById('ci-pw-'+i).classList.add('active');}else{a.pause();document.getElementById('ci-pw-'+i).classList.remove('active');}return;}
-  if(bpActive>=0)stopBP(bpActive);
-  if(!bpHasPreview[i])return;
-  bpActive=i;a.currentTime=0;a.play().catch(()=>{});
-  document.getElementById('ci-'+i).classList.add('playing');
-  document.getElementById('ci-pw-'+i).classList.add('active');
-}
-function stopBP(i){
-  const a=document.getElementById('ci-a-'+i);if(a){a.pause();a.currentTime=0;}
-  document.getElementById('ci-'+i).classList.remove('playing');
-  document.getElementById('ci-pw-'+i).classList.remove('active');
-  document.getElementById('ci-pr-'+i).style.strokeDashoffset=BPARC;
-  document.getElementById('ci-mb-'+i).style.width='0%';
-  document.getElementById('ci-mc-'+i).textContent='0:00';
-  if(bpActive===i)bpActive=-1;
-}
-function seekBP(e,i){const a=document.getElementById('ci-a-'+i);if(!a||!a.duration)return;const r=document.getElementById('ci-mb-'+i).parentElement.getBoundingClientRect();a.currentTime=((e.clientX-r.left)/r.width)*a.duration;}
 
 // ── UTILS ──────────────────────────────────────────────────────────
 function toggleLike(btn){const liked=btn.dataset.liked==='1';const n=parseInt(btn.textContent.match(/\d+/)[0]);btn.style.color=liked?'var(--gray)':'var(--pl)';btn.dataset.liked=liked?'0':'1';btn.innerHTML=btn.innerHTML.replace(/\d+/,liked?n-1:n+1);}
