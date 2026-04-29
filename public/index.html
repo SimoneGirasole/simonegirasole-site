@@ -267,7 +267,7 @@ footer p{font-size:.7rem;color:var(--gray);font-family:'Space Mono',monospace;}
             <div class="pl-status" id="pl-status">⟳ Caricamento...</div>
           </div>
         </div>
-        <audio id="main-audio" preload="none" crossorigin="anonymous"></audio>
+        <audio id="main-audio" preload="none"></audio>
       </div>
     </div>
   </div>
@@ -368,14 +368,14 @@ footer p{font-size:.7rem;color:var(--gray);font-family:'Space Mono',monospace;}
       <div>
         <div class="sec-hdr"><div class="sec-title" style="font-size:1.2rem;">LE MIGLIORI 10 DELLA SETTIMANA DANCE</div></div>
         <div id="chart-dance"></div>
-        <audio id="dance-audio" preload="none" crossorigin="anonymous"></audio>
+        <audio id="dance-audio" preload="none"></audio>
       </div>
 
       <!-- CHART MAINSTREAM -->
       <div>
         <div class="sec-hdr"><div class="sec-title" style="font-size:1.2rem;">LE MIGLIORI 10 DELLA SETTIMANA MAINSTREAM</div></div>
         <div id="chart-main"></div>
-        <audio id="main-audio2" preload="none" crossorigin="anonymous"></audio>
+        <audio id="main-audio2" preload="none"></audio>
       </div>
 
     </div>
@@ -423,45 +423,30 @@ footer p{font-size:.7rem;color:var(--gray);font-family:'Space Mono',monospace;}
 const IS_LOCAL = location.hostname==='localhost'||location.hostname==='127.0.0.1'||location.protocol==='file:';
 
 function itunesSearch(q, cb) {
-  // Prova prima IT, poi US come fallback (catalogo più completo per dance/electronic)
-  function trySearch(query, country, onDone) {
-    if (IS_LOCAL) {
-      const fn = '_itcb' + Date.now() + Math.random().toString(36).slice(2);
-      window[fn] = function(d) {
-        delete window[fn];
-        const r = (d.results||[]).filter(t=>t.previewUrl).map(t=>({
-          trackName:t.trackName, artistName:t.artistName,
-          previewUrl:t.previewUrl,
-          artworkUrl:t.artworkUrl100?t.artworkUrl100.replace('100x100bb','600x600bb'):null,
-          artworkUrlSmall:t.artworkUrl100?t.artworkUrl100.replace('100x100bb','200x200bb'):null,
-        }));
-        onDone(r.length?r:null);
-      };
-      const s=document.createElement('script');
-      s.src='https://itunes.apple.com/search?callback='+fn+'&term='+encodeURIComponent(query)+'&media=music&limit=5&country='+country;
-      s.onerror=()=>{delete window[fn];onDone(null);};
-      document.head.appendChild(s);
-    } else {
-      fetch('/api/search?q='+encodeURIComponent(query)+'&limit=5&country='+country)
-        .then(r=>r.json())
-        .then(d=>onDone(d.results&&d.results.length?d.results:null))
-        .catch(()=>onDone(null));
-    }
+  if (IS_LOCAL) {
+    // JSONP per locale (file://)
+    const fn = '_itcb' + Date.now() + Math.random().toString(36).slice(2);
+    window[fn] = function(d) {
+      delete window[fn];
+      const r = (d.results||[]).filter(t=>t.previewUrl).map(t=>({
+        trackName:t.trackName, artistName:t.artistName,
+        previewUrl:t.previewUrl,
+        artworkUrl:t.artworkUrl100?t.artworkUrl100.replace('100x100bb','600x600bb'):null,
+        artworkUrlSmall:t.artworkUrl100?t.artworkUrl100.replace('100x100bb','200x200bb'):null,
+      }));
+      cb(r.length?r:null);
+    };
+    const s=document.createElement('script');
+    s.src='https://itunes.apple.com/search?callback='+fn+'&term='+encodeURIComponent(q)+'&media=music&limit=5&country=US';
+    s.onerror=()=>{delete window[fn];cb(null);};
+    document.head.appendChild(s);
+  } else {
+    // Su Vercel: fetch al proxy server-side (risolve CORS)
+    fetch('/api/search?q='+encodeURIComponent(q)+'&limit=5&country=US')
+      .then(r=>r.json())
+      .then(d=>cb(d.results&&d.results.length?d.results:null))
+      .catch(()=>cb(null));
   }
-
-  // 1. Cerca in IT
-  trySearch(q, 'IT', function(results) {
-    if(results) { cb(results); return; }
-    // 2. Fallback: cerca in US
-    trySearch(q, 'US', function(results2) {
-      if(results2) { cb(results2); return; }
-      // 3. Fallback: query semplificata (solo prima parola artista + titolo) in US
-      const simple = q.split(' ').slice(0,3).join(' ');
-      trySearch(simple, 'US', function(results3) {
-        cb(results3);
-      });
-    });
-  });
 }
 
 // ── CANVAS ────────────────────────────────────────────────────────
@@ -580,7 +565,7 @@ function buildChart(containerId, audioId, data){
         <div class="cr-mb-wrap" onclick="seekChart(event,'${prefix}',${i})"><div class="cr-mb" id="${prefix}-mb-${i}"></div></div>
         <div class="cr-mt"><span id="${prefix}-mc-${i}">0:00</span><span id="${prefix}-md-${i}">0:30</span></div>
       </div>
-      <audio id="${prefix}-a-${i}" preload="none" crossorigin="anonymous"></audio>
+      <audio id="${prefix}-a-${i}" preload="none"></audio>
     </div>`;
     // Load art + preview con fallback foto Simone
     setTimeout(()=>{
