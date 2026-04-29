@@ -1,9 +1,6 @@
 {
   "name": "simonegirasole-site",
   "version": "1.0.0",
-  "description": "Simone Girasole DJ Site",
   "private": true,
-  "engines": {
-    "node": "24.x"
-  }
+  "engines": { "node": "24.x" }
 }
