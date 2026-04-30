@@ -5,13 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Simone Girasole — DJ · Producer · Radio</title>
 <link rel="icon" href="/favicon.ico">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&family=Raleway:wght@100;200;300&display=swap" rel="stylesheet">
 <style>
 :root{--black:#0a0a0a;--dark:#111;--border:#222;--purple:#7c3aed;--pl:#a855f7;--pink:#e040fb;--white:#f5f5f5;--gray:#888;--gl:#ccc;}
 *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
 body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;overflow-x:hidden;}
 nav{position:sticky;top:0;z-index:200;background:var(--black);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:62px;}
-.logo{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:.06em;cursor:pointer;}.logo span{color:var(--purple);}
+.logo{cursor:pointer;display:flex;align-items:center;line-height:1;user-select:none;}
+.logo-wrap{display:flex;flex-direction:column;align-items:flex-start;gap:2px;}
+.logo-name{font-family:'Raleway',sans-serif;font-weight:200;font-size:1.7rem;letter-spacing:.2em;text-transform:uppercase;line-height:1;}
+.logo-name .ln-first{color:var(--white);}
+.logo-name .ln-last{color:var(--pink);}
+.logo-tag{font-family:'Raleway',sans-serif;font-weight:200;font-size:.5rem;letter-spacing:.45em;text-transform:uppercase;color:var(--gray);line-height:1;}
 .nav-links{display:flex;list-style:none;}
 .nav-links a{color:var(--gray);text-decoration:none;font-size:.75rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;padding:.5rem 1.4rem;transition:color .2s;display:block;}
 .nav-links a:hover,.nav-links a.active{color:var(--white);}.nav-links a.active{border-bottom:2px solid var(--purple);}
@@ -183,7 +188,12 @@ footer p{font-size:.7rem;color:var(--gray);font-family:'Space Mono',monospace;}
 <body>
 
 <nav>
-  <div class="logo" onclick="showPage('home')">SIMONE<span>.</span>DJ</div>
+  <div class="logo" onclick="showPage('home')">
+  <div class="logo-wrap">
+    <div class="logo-name"><span class="ln-first">SIMONE </span><span class="ln-last">GIRASOLE</span></div>
+    <div class="logo-tag">DJ · Producer · Radio Host</div>
+  </div>
+</div>
   <ul class="nav-links">
     <li><a href="#" class="active" onclick="showPage('home',this);return false;">Home</a></li>
     <li><a href="#" onclick="showPage('bio',this);return false;">Bio</a></li>
@@ -356,7 +366,10 @@ footer p{font-size:.7rem;color:var(--gray);font-family:'Space Mono',monospace;}
 </div>
 
 <footer>
-  <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;cursor:pointer;margin-bottom:.4rem;" onclick="showPage('home')">SIMONE<span style="color:var(--purple);">.</span>DJ</div>
+  <div onclick="showPage('home')" style="cursor:pointer;margin-bottom:.6rem;">
+    <div style="font-family:'Raleway',sans-serif;font-weight:200;font-size:1.7rem;letter-spacing:.2em;text-transform:uppercase;line-height:1;"><span style="color:var(--white);">SIMONE </span><span style="color:var(--pink);">GIRASOLE</span></div>
+    <div style="font-family:'Raleway',sans-serif;font-weight:200;font-size:.5rem;letter-spacing:.45em;text-transform:uppercase;color:var(--gray);margin-top:4px;">DJ · Producer · Radio Host · Roma</div>
+  </div>
   <p>© 2026 Simone Girasole — DJ · Producer · Radio Host · Roma · m2o Radio</p>
 </footer>
 
