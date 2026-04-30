@@ -654,16 +654,27 @@ function buildChart(containerId, data) {
 
 function toggleChart(prefix, i) {
   const active = prefix==='d' ? danceActive : mainActive;
-  const hasPreview = prefix==='d' ? danceAud : mainAud;
   if (active === i) { stopChart(prefix, i); return; }
   if (active >= 0) stopChart(prefix, active);
-  if (!hasPreview[i]) return;
   if (prefix==='d') danceActive=i; else mainActive=i;
-  const a = document.getElementById(prefix+'-a-'+i);
-  a.currentTime = 0;
-  a.play().catch(() => {});
   document.getElementById(prefix+'-row-'+i).classList.add('playing');
   document.getElementById(prefix+'-pw-'+i).classList.add('active');
+  const a = document.getElementById(prefix+'-a-'+i);
+  if (!a) return;
+  if (a.src && a.src !== window.location.href) {
+    a.currentTime = 0;
+    a.play().catch(() => {});
+  } else {
+    // Audio non ancora arrivato — osserva e parte appena c'è il src
+    const check = setInterval(() => {
+      if (a.src && a.src !== window.location.href) {
+        clearInterval(check);
+        a.currentTime = 0;
+        a.play().catch(() => {});
+      }
+    }, 200);
+    setTimeout(() => clearInterval(check), 10000);
+  }
 }
 function stopChart(prefix, i) {
   const a = document.getElementById(prefix+'-a-'+i); if(a){a.pause();a.currentTime=0;}
