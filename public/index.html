@@ -24,29 +24,40 @@ nav{position:sticky;top:0;z-index:200;background:var(--black);border-bottom:1px 
 .ticker-inner{display:inline-block;animation:tick 40s linear infinite;font-family:'Space Mono',monospace;font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;}
 @keyframes tick{from{transform:translateX(100vw);}to{transform:translateX(-100%);}}
 .page{display:none;}.page.active{display:block;}
-.hero{display:grid;grid-template-columns:1fr 360px;gap:1px;background:var(--border);border-bottom:1px solid var(--border);}
-.hero-main{position:relative;height:500px;overflow:hidden;cursor:pointer;}
-.hero-main img{width:100%;height:100%;object-fit:cover;filter:brightness(.55);transition:transform .6s;}
-.hero-main:hover img{transform:scale(1.04);}
-.hero-main-content{position:absolute;bottom:0;left:0;right:0;padding:2rem;background:linear-gradient(transparent,rgba(0,0,0,.92));}
-.hero-title{font-family:'Bebas Neue',sans-serif;font-size:2.7rem;line-height:1;}
-.hero-side{display:flex;flex-direction:column;gap:1px;background:var(--border);}
-.hero-side-item{flex:1;position:relative;overflow:hidden;cursor:pointer;}
-.hero-side-item img{width:100%;height:100%;object-fit:cover;filter:brightness(.55);transition:transform .4s;}
-.hero-side-item:hover img{transform:scale(1.05);}
-.hero-side-content{position:absolute;bottom:0;left:0;right:0;padding:1rem;background:linear-gradient(transparent,rgba(0,0,0,.9));}
-.hero-side-content h3{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;line-height:1.15;}
 .tag{display:inline-block;border:1px solid var(--purple);color:var(--pl);font-size:.62rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:.18rem .5rem;margin-bottom:.6rem;}
 .sec{padding:2.5rem;border-bottom:1px solid var(--border);}
 .sec-hdr{display:flex;align-items:center;gap:1rem;margin-bottom:1.8rem;}
 .sec-title{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:.05em;border-left:4px solid var(--purple);padding-left:.8rem;}
 .sec-line{flex:1;height:1px;background:repeating-linear-gradient(90deg,var(--border) 0,var(--border) 6px,transparent 6px,transparent 12px);}
-.news-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;}
-.news-card{cursor:pointer;transition:transform .2s;}.news-card:hover{transform:translateY(-4px);}
-.nc-img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;}
-.nc-body{padding:.8rem 0;}
-.nc-body h3{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;line-height:1.15;margin:.4rem 0 .3rem;}
-.nc-body p{font-size:.78rem;color:var(--gray);line-height:1.55;}
+/* HERO PRINCIPALE */
+.home-hero{position:relative;height:480px;overflow:hidden;cursor:pointer;border-bottom:1px solid var(--border);}
+.home-hero canvas{width:100%;height:100%;display:block;}
+.home-hero-overlay{position:absolute;inset:0;background:linear-gradient(transparent 35%,rgba(0,0,0,.92));display:flex;flex-direction:column;justify-content:flex-end;padding:2.2rem 2.5rem;}
+.home-hero-tag{display:inline-block;background:var(--purple);color:white;font-size:.62rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:.22rem .6rem;margin-bottom:.7rem;}
+.home-hero-title{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;line-height:1.05;color:white;margin-bottom:.5rem;max-width:820px;}
+.home-hero-sub{font-size:.85rem;color:#ccc;line-height:1.6;max-width:700px;margin-bottom:.8rem;}
+.home-hero-cta{font-size:.68rem;color:var(--pl);letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--purple);display:inline-block;padding-bottom:1px;}
+/* NEWS GRID 4 */
+.home-news-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);}
+.hn-card{background:var(--black);cursor:pointer;transition:background .15s;}
+.hn-card:hover{background:#0f0f0f;}
+.hn-canvas{width:100%;aspect-ratio:4/3;display:block;}
+.hn-body{padding:.8rem 1rem 1rem;}
+.hn-tag{display:inline-block;background:transparent;border:1px solid var(--purple);color:var(--pl);font-size:.55rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.15rem .4rem;margin-bottom:.4rem;}
+.hn-title{font-family:'Bebas Neue',sans-serif;font-size:1.05rem;line-height:1.2;color:var(--white);margin-bottom:.35rem;}
+.hn-sub{font-size:.72rem;color:var(--gray);line-height:1.5;}
+.hn-more{font-size:.6rem;color:var(--purple);margin-top:.5rem;letter-spacing:.08em;text-transform:uppercase;}
+/* TECH GRID 2x2 */
+.home-tech-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);}
+.ht-card{background:var(--black);cursor:pointer;transition:background .15s;}
+.ht-card:hover{background:#0f0f0f;}
+.ht-canvas{width:100%;aspect-ratio:16/7;display:block;}
+.ht-body{padding:.7rem 1rem .9rem;}
+.ht-tag{display:inline-block;background:transparent;border:1px solid var(--purple);color:var(--pl);font-size:.55rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.15rem .4rem;margin-bottom:.35rem;}
+.ht-title{font-family:'Bebas Neue',sans-serif;font-size:1rem;line-height:1.2;color:var(--white);margin-bottom:.3rem;}
+.ht-sub{font-size:.72rem;color:var(--gray);line-height:1.45;}
+.ht-more{font-size:.6rem;color:var(--purple);margin-top:.45rem;letter-spacing:.08em;text-transform:uppercase;}
+/* CARD META */
 .card-meta{display:flex;align-items:center;gap:1rem;margin-top:.6rem;font-size:.72rem;color:var(--gray);font-family:'Space Mono',monospace;}
 .like-btn{background:none;border:none;color:var(--gray);cursor:pointer;display:flex;align-items:center;gap:.3rem;font-size:.72rem;transition:color .2s;}.like-btn:hover{color:var(--pl);}
 /* DISCO DEL GIORNO */
@@ -201,25 +212,105 @@ footer p{font-size:.7rem;color:var(--gray);font-family:'Space Mono',monospace;}
     <li><a href="#" onclick="showPage('links',this);return false;">Link</a></li>
   </ul>
 </nav>
-<div class="ticker"><span class="ticker-inner">★ MIR Expo 2026 a Rimini: tre giorni di tecnologia DJ &nbsp;&nbsp;&nbsp; ★ DJ MAG Top 100 Clubs 2026: la classifica è online &nbsp;&nbsp;&nbsp; ★ Indira Paganotto: ARTCORE ad Hï Ibiza ogni domenica &nbsp;&nbsp;&nbsp; ★ YARD Festival Portogallo: Jamie Jones e Seth Troxler &nbsp;&nbsp;&nbsp; ★ John Summit top Beatport Dance/Pop Aprile 2026 &nbsp;&nbsp;&nbsp; ★ Solomun + Nina Simone: il remix che conquista i club &nbsp;&nbsp;&nbsp;</span></div>
+<div class="ticker"><span class="ticker-inner">★ Cercle Festival 2026: 22-24 maggio a Parigi · 44 artisti su 3 palchi &nbsp;&nbsp;&nbsp; ★ Gabry Ponte a San Siro: 27 giugno la più grande dancefloor italiana &nbsp;&nbsp;&nbsp; ★ IMS Ibiza 2026: Pete Tong, Eliza Rose e Jazzy protagonisti &nbsp;&nbsp;&nbsp; ★ Kappa FuturFestival Torino 3-5 luglio: Sven Väth e Charlotte de Witte &nbsp;&nbsp;&nbsp; ★ Transfigure VST: resintesi spettrale a 120 oscillatori per producer &nbsp;&nbsp;&nbsp; ★ Ableton Live 12.1: nuovi dispositivi MIDI e workflow ottimizzato &nbsp;&nbsp;&nbsp;</span></div>
 
 <!-- ═══ HOME ═══ -->
 <div class="page active" id="page-home">
-  <div class="hero">
-    <div class="hero-main"><img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1200&q=80" alt=""><div class="hero-main-content"><div class="tag">Clubbing</div><h1 class="hero-title">MIR Expo 2026: Rimini capitale europea del DJ e della tecnologia musicale</h1></div></div>
-    <div class="hero-side">
-      <div class="hero-side-item"><img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&q=80" alt=""><div class="hero-side-content"><div class="tag">Featured</div><h3>DJ MAG Top 100 Clubs 2026: i migliori club del mondo</h3></div></div>
-      <div class="hero-side-item"><img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&q=80" alt=""><div class="hero-side-content"><div class="tag">Ibiza</div><h3>Indira Paganotto: residency ad Hï Ibiza con ARTCORE ogni domenica</h3></div></div>
+
+  <!-- HERO PRINCIPALE — notizia della settimana -->
+  <div class="home-hero" onclick="openHomeArticle(0)">
+    <canvas id="hero-canvas" width="1400" height="480"></canvas>
+    <div class="home-hero-overlay">
+      <span class="home-hero-tag" id="hero-tag">Clubbing</span>
+      <div class="home-hero-title" id="hero-title">Cercle Festival 2026: tre giorni di musica nell'aeroporto storico di Parigi</div>
+      <div class="home-hero-sub" id="hero-sub">Dal 22 al 24 maggio al Musée de l'Air et de l'Espace di Le Bourget. Eric Prydz, ARTBAT, Ben Böhmer, Vintage Culture tra i 44 artisti in lineup. Dopo 24.000 spettatori nel 2024, il festival si conferma tra i più importanti d'Europa.</div>
+      <span class="home-hero-cta">Leggi l'articolo completo →</span>
     </div>
   </div>
 
-  <div class="sec">
+  <!-- 4 NOTIZIE CLUBBING -->
+  <div class="sec" style="padding:2rem 2.5rem 0;">
     <div class="sec-hdr"><div class="sec-title">ULTIME NEWS</div><div class="sec-line"></div></div>
-    <div class="news-grid">
-      <div class="news-card fi"><canvas id="canvas-yard" width="600" height="450" style="width:100%;aspect-ratio:4/3;display:block;"></canvas><div class="nc-body"><div class="tag">House</div><h3>YARD Festival 2026: Jamie Jones e Seth Troxler in Portogallo</h3><p>Dal 21 al 24 maggio, nelle White Sand Mountains, un lineup che promette scintille underground.</p><div class="card-meta"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> 28 <button class="like-btn" onclick="toggleLike(this)"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> 14</button></div></div></div>
-      <div class="news-card fi"><img class="nc-img" src="https://images.unsplash.com/photo-1494232410401-ad00d5433cfa?w=600&q=80" alt=""><div class="nc-body"><div class="tag">Techno</div><h3>Analogue Cops: vent'anni di visione analogica dall'underground italiano a Berlino</h3><p>Lucretio e Marieu raccontano il nuovo progetto su Diggers Society.</p><div class="card-meta"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> 19 <button class="like-btn" onclick="toggleLike(this)"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> 9</button></div></div></div>
-      <div class="news-card fi"><img class="nc-img" src="https://images.unsplash.com/photo-1506157786151-b8491531f063?w=600&q=80" alt=""><div class="nc-body"><div class="tag">Dance</div><h3>Sziget Festival 2026: la musica elettronica diventa il fulcro dell'edizione</h3><p>Per la prima volta l'elettronica riceve più spazio degli headliner pop a Budapest.</p><div class="card-meta"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> 41 <button class="like-btn" onclick="toggleLike(this)"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> 22</button></div></div></div>
-      <div class="news-card fi"><canvas id="canvas-tmw" width="600" height="450" style="width:100%;aspect-ratio:4/3;display:block;"></canvas><div class="nc-body"><div class="tag">Mainstream</div><h3>Tomorrowland Orchestra: il primo album dell'ensemble più grande nella storia dei festival</h3><p>Archi, ottoni e synthesizer. Il confine tra classica ed elettronica scompare.</p><div class="card-meta"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> 35 <button class="like-btn" onclick="toggleLike(this)"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> 18</button></div></div></div>
+  </div>
+  <div class="home-news-grid">
+    <div class="hn-card" onclick="openHomeArticle(1)">
+      <canvas class="hn-canvas" id="hn-c0" width="400" height="300"></canvas>
+      <div class="hn-body">
+        <span class="hn-tag">Festival · Italia</span>
+        <div class="hn-title">Gabry Ponte a San Siro: 27 giugno la più grande dancefloor italiana</div>
+        <div class="hn-sub">70.000 persone allo Stadio San Siro per il primo grande concerto dance della storia del Meazza.</div>
+        <div class="hn-more">Leggi →</div>
+      </div>
+    </div>
+    <div class="hn-card" onclick="openHomeArticle(2)">
+      <canvas class="hn-canvas" id="hn-c1" width="400" height="300"></canvas>
+      <div class="hn-body">
+        <span class="hn-tag">Ibiza · IMS 2026</span>
+        <div class="hn-title">IMS Ibiza 2026: Pete Tong, Eliza Rose e Jazzy tra i protagonisti</div>
+        <div class="hn-sub">L'International Music Summit torna dal 22 al 24 aprile con conferenze e performance dal vivo.</div>
+        <div class="hn-more">Leggi →</div>
+      </div>
+    </div>
+    <div class="hn-card" onclick="openHomeArticle(3)">
+      <canvas class="hn-canvas" id="hn-c2" width="400" height="300"></canvas>
+      <div class="hn-body">
+        <span class="hn-tag">Open Air · Milano</span>
+        <div class="hn-title">Vision Open Air: Ilario Alicante apre la stagione all'Ex Macello il 1° maggio</div>
+        <div class="hn-sub">Il format L/NK di Alicante inaugura la stagione outdoor milanese in uno dei venues più affascinanti d'Italia.</div>
+        <div class="hn-more">Leggi →</div>
+      </div>
+    </div>
+    <div class="hn-card" onclick="openHomeArticle(4)">
+      <canvas class="hn-canvas" id="hn-c3" width="400" height="300"></canvas>
+      <div class="hn-body">
+        <span class="hn-tag">Kappa · Torino</span>
+        <div class="hn-title">Kappa FuturFestival 2026: Sven Väth e Charlotte de Witte headliner</div>
+        <div class="hn-sub">Dal 3 al 5 luglio torna a Torino il principale festival techno e house italiano con un lineup stellare.</div>
+        <div class="hn-more">Leggi →</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4 NOTIZIE TECH & GEAR -->
+  <div class="sec" style="padding:2rem 2.5rem 0;background:var(--dark);">
+    <div class="sec-hdr"><div class="sec-title">TECH &amp; GEAR</div><div class="sec-line"></div></div>
+  </div>
+  <div class="home-tech-grid" style="background:var(--dark);padding-bottom:2.5rem;">
+    <div class="ht-card" onclick="openHomeArticle(5)">
+      <canvas class="ht-canvas" id="ht-c0" width="600" height="262"></canvas>
+      <div class="ht-body">
+        <span class="ht-tag">VST · Sound Design</span>
+        <div class="ht-title">Transfigure: resintesi spettrale a 120 oscillatori per producer e DJ</div>
+        <div class="ht-sub">Il nuovo plugin trasforma qualsiasi suono in texture uniche con elaborazione spettrale in tempo reale e XY Pad espressivo.</div>
+        <div class="ht-more">Leggi →</div>
+      </div>
+    </div>
+    <div class="ht-card" onclick="openHomeArticle(6)">
+      <canvas class="ht-canvas" id="ht-c1" width="600" height="262"></canvas>
+      <div class="ht-body">
+        <span class="ht-tag">Hardware · Akai</span>
+        <div class="ht-title">Akai MPC Sample 2026: il beatmaking portatile ridefinito</div>
+        <div class="ht-sub">Nuovo campionatore tascabile con interfaccia touch, connettività USB-C e integrazione cloud per la produzione ovunque.</div>
+        <div class="ht-more">Leggi →</div>
+      </div>
+    </div>
+    <div class="ht-card" onclick="openHomeArticle(7)">
+      <canvas class="ht-canvas" id="ht-c2" width="600" height="262"></canvas>
+      <div class="ht-body">
+        <span class="ht-tag">AI Plugin · Sonible</span>
+        <div class="ht-title">Sonible pure:level: il level rider AI che cambia il mixing</div>
+        <div class="ht-sub">Intelligenza artificiale applicata al livellamento automatico di tracce e mix con risultati trasparenti e naturali.</div>
+        <div class="ht-more">Leggi →</div>
+      </div>
+    </div>
+    <div class="ht-card" onclick="openHomeArticle(8)">
+      <canvas class="ht-canvas" id="ht-c3" width="600" height="262"></canvas>
+      <div class="ht-body">
+        <span class="ht-tag">DAW · Ableton</span>
+        <div class="ht-title">Ableton Live 12.1: nuovi dispositivi MIDI e workflow ottimizzato</div>
+        <div class="ht-sub">L'aggiornamento porta nuovi strumenti nativi, miglioramenti al MIDI routing e ottimizzazioni per producer elettronici.</div>
+        <div class="ht-more">Leggi →</div>
+      </div>
     </div>
   </div>
 
@@ -239,8 +330,6 @@ footer p{font-size:.7rem;color:var(--gray);font-family:'Space Mono',monospace;}
         <div class="disco-year" id="d-year"></div>
         <p class="disco-desc" id="d-desc"></p>
         <div class="tag" id="d-genre" style="cursor:default;margin-bottom:1.4rem;"></div>
-
-        <!-- PLAYER — unico, senza duplicati -->
         <div class="player-wrap">
           <img class="pl-art" id="pl-art" src="" alt="" style="display:none;" onerror="this.style.display='none';document.getElementById('pl-art-ph').style.display='flex';">
           <div class="pl-art-ph" id="pl-art-ph"><svg width="18" height="18" fill="none" stroke="var(--gray)" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div>
@@ -259,7 +348,6 @@ footer p{font-size:.7rem;color:var(--gray);font-family:'Space Mono',monospace;}
             <div class="pl-status" id="pl-status">▶ Premi play</div>
           </div>
         </div>
-        <!-- audio element nascosto per il Disco del Giorno -->
         <audio id="disco-audio" preload="none"></audio>
       </div>
     </div>
@@ -365,12 +453,20 @@ footer p{font-size:.7rem;color:var(--gray);font-family:'Space Mono',monospace;}
   </div>
 </div>
 
-<footer>
-  <div onclick="showPage('home')" style="cursor:pointer;margin-bottom:.6rem;">
-    <div style="font-family:'Raleway',sans-serif;font-weight:200;font-size:1.7rem;letter-spacing:.2em;text-transform:uppercase;line-height:1;"><span style="color:var(--white);">SIMONE </span><span style="color:var(--pink);">GIRASOLE</span></div>
-    <div style="font-family:'Raleway',sans-serif;font-weight:200;font-size:.5rem;letter-spacing:.45em;text-transform:uppercase;color:var(--gray);margin-top:4px;">DJ · Producer · Radio Host · Roma</div>
+<footer style="background:var(--dark);border-top:1px solid var(--border);padding:2.5rem 2.5rem 1.8rem;display:flex;flex-direction:column;align-items:center;gap:1.4rem;">
+  <div style="text-align:center;cursor:pointer;" onclick="showPage('home')">
+    <div style="font-family:'Raleway',sans-serif;font-weight:200;font-size:1.6rem;letter-spacing:.2em;text-transform:uppercase;line-height:1;"><span style="color:var(--white);">SIMONE </span><span style="color:var(--pink);">GIRASOLE</span></div>
+    <div style="font-family:'Raleway',sans-serif;font-weight:200;font-size:.5rem;letter-spacing:.45em;text-transform:uppercase;color:var(--gray);margin-top:4px;">DJ · Producer · Radio Host</div>
   </div>
-  <p>© 2026 Simone Girasole — DJ · Producer · Radio Host · Roma · m2o Radio</p>
+  <div style="width:40px;height:1px;background:var(--purple);"></div>
+  <p style="font-family:'Space Mono',monospace;font-size:.65rem;color:var(--gray);letter-spacing:.08em;text-align:center;line-height:1.8;">
+    DJ · Producer · Radio Host · Regista<br>
+    m2o Radio · Radio Capital · Radio Deejay
+  </p>
+  <div style="font-family:'Space Mono',monospace;font-size:.58rem;color:#3a3a3a;letter-spacing:.05em;text-align:center;line-height:1.7;border-top:1px solid #1a1a1a;padding-top:1rem;width:100%;">
+    © 2026 Simone Girasole — Tutti i diritti riservati.<br>
+    È vietata la riproduzione anche parziale dei contenuti senza autorizzazione scritta.
+  </div>
 </footer>
 
 <script>
@@ -855,9 +951,221 @@ function initMusicPage() {
   buildChart('chart-main', mainChart);
 }
 
+// ── NOTIZIE HOME — aggiorna ogni settimana ────────────────────────
+const homeArticles = [
+  // [0] HERO — notizia principale
+  {
+    tag:'Clubbing', tagColor:'#7c3aed',
+    title:'Cercle Festival 2026: tre giorni nell'aeroporto storico di Parigi',
+    sub:'Dal 22 al 24 maggio al Musée de l'Air et de l'Espace di Le Bourget.',
+    text:'Il Cercle Festival torna nel 2026 al Musée de l'Air et de l'Espace di Le Bourget, Parigi, dal 22 al 24 maggio. Dopo il successo del 2024 con 24.000 spettatori, quest'anno il festival si estende a tre giorni con 44 artisti su tre palchi unici: lo stage A380 sotto il più grande aereo passeggeri del mondo, l'Ariane stage davanti a un razzo di 54 metri e il Concorde stage tra due aerei supersonici. In lineup Eric Prydz, ARTBAT, Ben Böhmer, Vintage Culture, Adriatique, Kölsch, Monolink e molti altri. Una serata esclusiva alla Tour Eiffel il 21 maggio aprirà le danze con Kölsch, LP Giobbi e Chambord per 200 privilegiati.',
+    colors:['#04001a','#1a0050','#0d0030'], accent:'rgba(120,40,255,',
+    dest:'musica'
+  },
+  // [1-4] NEWS CLUBBING
+  {
+    tag:'Festival · Italia', tagColor:'#1060cc',
+    title:'Gabry Ponte a San Siro: la più grande dancefloor italiana',
+    sub:'70.000 persone il 27 giugno allo Stadio San Siro di Milano.',
+    text:'Il 27 giugno 2026 lo Stadio San Siro di Milano si trasforma nella più grande dancefloor d'Italia con Gabry Ponte come protagonista assoluto. Con oltre 70.000 posti disponibili, l'evento "San Siro Dance" promette di riscrivere la storia della musica elettronica italiana. Gabry Ponte, il DJ e producer italiano più ascoltato nel mondo, porta finalmente il suo show esplosivo nel tempio del calcio milanese con un live set di produzione scenografica da record. I biglietti sono disponibili su Ticketmaster e nei circuiti abituali.',
+    colors:['#000a1a','#002060','#001540'], accent:'rgba(0,120,255,',
+    dest:'musica'
+  },
+  {
+    tag:'Ibiza · IMS 2026', tagColor:'#7c1090',
+    title:'IMS Ibiza 2026: Pete Tong, Eliza Rose e Jazzy protagonisti',
+    sub:'L'International Music Summit torna dal 22 al 24 aprile.',
+    text:'L'International Music Summit 2026 si è svolto ad Ibiza dal 22 al 24 aprile con un programma ricco di conferenze, panel e performance dal vivo. Pete Tong ha aperto i lavori con un keynote sull'evoluzione della scena dance globale, mentre Eliza Rose e Jazzy hanno rappresentato la nuova generazione di artiste britanniche che stanno ridisegnando il panorama della musica elettronica. L'IMS è il principale evento professionale del settore dance e attira ogni anno i protagonisti dell'industria musicale globale. Quest'anno ha registrato un record di partecipanti con oltre 3.000 professionisti accreditati.',
+    colors:['#0d0015','#3d0060','#200040'], accent:'rgba(200,40,255,',
+    dest:'musica'
+  },
+  {
+    tag:'Open Air · Milano', tagColor:'#006630',
+    title:'Vision Open Air: Ilario Alicante apre la stagione all'Ex Macello',
+    sub:'Il 1° maggio a Milano con il format L/NK.',
+    text:'Il 1° maggio 2026 l'Ex Macello di Milano ha ospitato l'opening della stagione outdoor di Vision con Ilario Alicante e il suo format L/NK. L'evento ha segnato il debutto della nuova area outdoor della venue milanese, con una produzione sonora e visiva di altissimo livello. Ilario Alicante, tra i producer techno italiani più apprezzati a livello internazionale, ha proposto un set di oltre quattro ore che ha entusiasmato il pubblico. Vision Open Air tornerà il 16 maggio con Amelie Lens e Nina Kraviz per chiudere la stagione indoor al Fabrique.',
+    colors:['#001208','#004020','#002818'], accent:'rgba(0,180,60,',
+    dest:'musica'
+  },
+  {
+    tag:'Kappa · Torino', tagColor:'#883000',
+    title:'Kappa FuturFestival 2026: Sven Väth e Charlotte de Witte headliner',
+    sub:'Dal 3 al 5 luglio a Torino, il festival techno italiano.',
+    text:'Il Kappa FuturFestival 2026 si terrà dal 3 al 5 luglio a Torino con un lineup che include Sven Väth, Charlotte de Witte e le resident del Berghain in un B2B esclusivo. Giunto alla sua quattordicesima edizione, il Kappa si conferma come il festival di riferimento per la scena techno e house in Italia, con una capacità di oltre 30.000 spettatori al giorno nell'area Parco Dora. Il festival è noto per la qualità del sound system, la cura del booking e l'atmosfera unica che si crea tra i capannoni industriali torinesi trasformati in un tempio della musica elettronica.',
+    colors:['#120500','#3d1000','#251000'], accent:'rgba(255,100,0,',
+    dest:'musica'
+  },
+  // [5-8] TECH & GEAR
+  {
+    tag:'VST · Sound Design', tagColor:'#5020aa',
+    title:'Transfigure: resintesi spettrale a 120 oscillatori per producer',
+    sub:'Il plugin che trasforma qualsiasi suono in texture uniche.',
+    text:'Transfigure è il nuovo plugin VST che sta rivoluzionando il sound design per DJ e producer. Basato su un motore di resintesi spettrale con 120 oscillatori, permette di trasformare in tempo reale qualsiasi suono in texture mai sentite prima. L'interfaccia include un XY Pad espressivo per il controllo live dei parametri, ideale per performance e produzioni in studio. Il plugin è compatibile con tutte le principali DAW in formato VST3, AU e AAX. Disponibile su nueko.net, è già diventato uno strumento essenziale per i producer di musica elettronica che cercano sonorità originali e distintive.',
+    colors:['#080018','#200050','#100030'], accent:'rgba(120,40,255,',
+    dest:'musica'
+  },
+  {
+    tag:'Hardware · Akai', tagColor:'#004488',
+    title:'Akai MPC Sample 2026: beatmaking portatile ridefinito',
+    sub:'Il nuovo campionatore tascabile con touch e USB-C.',
+    text:'Akai ha presentato l'MPC Sample 2026, il nuovo campionatore portatile che ridefinisce il concetto di beatmaking mobile. Con interfaccia touch capacitiva, connettività USB-C, 16 pad retroilluminati e integrazione cloud nativa, l'MPC Sample permette di creare beat professionali ovunque. La batteria integrata garantisce fino a 8 ore di utilizzo continuo. Il dispositivo si sincronizza automaticamente con Ableton Live, Logic Pro e tutte le principali DAW via USB. Disponibile a partire da maggio 2026 al prezzo di 299€, l'MPC Sample è già preordinabile sui principali siti di strumenti musicali.',
+    colors:['#00080f','#002040','#001530'], accent:'rgba(0,120,200,',
+    dest:'musica'
+  },
+  {
+    tag:'AI Plugin · Sonible', tagColor:'#005520',
+    title:'Sonible pure:level: l'AI che cambia il modo di mixare',
+    sub:'Level rider intelligente per tracce e mix con precisione naturale.',
+    text:'Sonible ha lanciato pure:level, il nuovo plugin AI per il livellamento automatico di tracce e mix. A differenza dei tradizionali compressori, pure:level analizza il contenuto musicale con intelligenza artificiale e applica una curva di volume dinamica che segue naturalmente il fraseggio musicale, senza artefatti o pompaggio. Il plugin è particolarmente efficace su voci, chitarre acustiche e strumenti a dinamica variabile. Disponibile in formato VST3, AU e AAX, pure:level è in vendita su sonible.com al prezzo di 69€. Audiofader.com ne ha pubblicato una recensione entusiastica definendolo "rivoluzionario per il workflow moderno".',
+    colors:['#040f00','#104000','#082800'], accent:'rgba(0,180,40,',
+    dest:'musica'
+  },
+  {
+    tag:'DAW · Ableton', tagColor:'#882200',
+    title:'Ableton Live 12.1: nuovi dispositivi MIDI e workflow ottimizzato',
+    sub:'L'aggiornamento che i producer elettronici aspettavano.',
+    text:'Ableton ha rilasciato Live 12.1, aggiornamento gratuito per tutti gli utenti di Live 12 che introduce nuovi dispositivi MIDI nativi, miglioramenti sostanziali al routing e nuove funzionalità per i producer di musica elettronica. Tra le novità principali: il nuovo MIDI Arpeggiator polifonico, il Chord Generator con suggerimenti armonici basati su AI, e il miglioramento del motore audio con latenza ridotta del 20%. L'aggiornamento ottimizza anche l'integrazione con Push 3 e introduce il supporto nativo per i controller MPE. Disponibile gratis via Ableton.com per tutti i possessori di licenza Suite o Standard.',
+    colors:['#0f0400','#3a1000','#250a00'], accent:'rgba(255,80,0,',
+    dest:'musica'
+  }
+];
+
+// Funzione canvas retrowave 3D
+function drawRW(id, colors, accentRgb, label1, label2, isWide) {
+  const c = document.getElementById(id); if(!c) return;
+  const ctx = c.getContext('2d'), W = c.width, H = c.height;
+  // Background gradient
+  const bg = ctx.createLinearGradient(0,0,W,H);
+  bg.addColorStop(0, colors[0]); bg.addColorStop(.5, colors[1]); bg.addColorStop(1, colors[2]);
+  ctx.fillStyle = bg; ctx.fillRect(0,0,W,H);
+  // Griglia prospettica
+  const vx=W/2, vy=H*(isWide?.38:.42);
+  ctx.lineWidth=.8;
+  for(let i=0;i<=16;i++){
+    const x=W*i/16;
+    ctx.strokeStyle=accentRgb+'0.2)';
+    ctx.beginPath(); ctx.moveTo(x,H); ctx.lineTo(vx,vy); ctx.stroke();
+  }
+  for(let j=1;j<=8;j++){
+    const t=Math.pow(j/8,1.4);
+    const y=vy+(H-vy)*t;
+    const spread=1-Math.pow(1-t,.6);
+    ctx.strokeStyle=accentRgb+(0.15*(1-t*.5))+')';
+    ctx.beginPath(); ctx.moveTo(vx-vx*spread,y); ctx.lineTo(vx+(W-vx)*spread,y); ctx.stroke();
+  }
+  // Stelle
+  for(let s=0;s<(isWide?20:40);s++){
+    const sx=Math.random()*W, sy=Math.random()*vy*.9;
+    ctx.beginPath(); ctx.arc(sx,sy,Math.random()*1.5+.5,0,Math.PI*2);
+    ctx.fillStyle=`rgba(255,255,255,${Math.random()*.8+.2})`; ctx.fill();
+  }
+  // Cerchi concentrici
+  for(let r=1;r<=4;r++){
+    ctx.beginPath();
+    ctx.ellipse(vx, vy, W*.12*r, H*.06*r, 0, 0, Math.PI*2);
+    ctx.strokeStyle=accentRgb+(0.3-r*.05)+')'; ctx.lineWidth=1; ctx.stroke();
+  }
+  // Raggi di luce
+  [[0,H*.3,W*.55,0],[W,H*.25,W*.45,0],[W*.5,0,0,H*.5]].forEach(([x1,y1,x2,y2])=>{
+    const g=ctx.createLinearGradient(x1,y1,x2,y2);
+    g.addColorStop(0,'transparent'); g.addColorStop(.5,accentRgb+'0.2)'); g.addColorStop(1,'transparent');
+    ctx.strokeStyle=g; ctx.lineWidth=1.2;
+    ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke();
+  });
+  // Fade bottom
+  const fade=ctx.createLinearGradient(0,H*.5,0,H);
+  fade.addColorStop(0,'transparent'); fade.addColorStop(1,'rgba(0,0,0,0.8)');
+  ctx.fillStyle=fade; ctx.fillRect(0,0,W,H);
+  // Testo
+  ctx.textAlign='center';
+  if(label1){
+    ctx.font=`bold ${isWide?H*.28:H*.22}px Bebas Neue, Arial Black, sans-serif`;
+    ctx.fillStyle='rgba(255,255,255,0.08)';
+    ctx.fillText(label1,W/2,H*.55);
+    ctx.strokeStyle=accentRgb+'0.6)'; ctx.lineWidth=.8;
+    ctx.strokeText(label1,W/2,H*.55);
+  }
+  if(label2){
+    ctx.font=`bold ${isWide?H*.18:H*.14}px Bebas Neue, Arial Black, sans-serif`;
+    ctx.fillStyle='rgba(255,255,255,0.9)';
+    ctx.fillText(label2,W/2,H*.75);
+  }
+}
+
+// Tech canvas stile PCB/circuito
+function drawTech(id, colors, accentRgb, label1, label2) {
+  const c = document.getElementById(id); if(!c) return;
+  const ctx = c.getContext('2d'), W = c.width, H = c.height;
+  const bg = ctx.createLinearGradient(0,0,W,H);
+  bg.addColorStop(0,colors[0]); bg.addColorStop(1,colors[1]);
+  ctx.fillStyle=bg; ctx.fillRect(0,0,W,H);
+  // Grid PCB
+  ctx.strokeStyle=accentRgb+'0.1)'; ctx.lineWidth=.6;
+  for(let x=0;x<W;x+=28){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();}
+  for(let y=0;y<H;y+=28){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}
+  // Nodi
+  [[W*.2,H*.3],[W*.5,H*.2],[W*.75,H*.4],[W*.35,H*.55],[W*.65,H*.3]].forEach(([nx,ny])=>{
+    ctx.beginPath(); ctx.arc(nx,ny,3.5,0,Math.PI*2);
+    ctx.fillStyle=accentRgb+'0.8)'; ctx.fill();
+    ctx.beginPath(); ctx.arc(nx,ny,9,0,Math.PI*2);
+    ctx.strokeStyle=accentRgb+'0.25)'; ctx.lineWidth=1; ctx.stroke();
+  });
+  // Barre EQ 3D
+  const bars=20, bw=W/bars*.72, by=H*.78;
+  const heights=[.35,.52,.45,.68,.82,.75,.6,.88,.72,.55,.9,.65,.48,.7,.85,.6,.42,.75,.58,.4];
+  for(let i=0;i<bars;i++){
+    const bh=H*heights[i]*.32, x=W*.05+i*(W*.9/bars);
+    const alpha=.5+.4*(1-Math.abs(i-bars/2)/(bars/2));
+    ctx.fillStyle=accentRgb+alpha+')'; ctx.fillRect(x,by-bh,bw*.75,bh);
+    ctx.fillStyle=accentRgb+(alpha*.6)+')';
+    ctx.beginPath(); ctx.moveTo(x,by-bh); ctx.lineTo(x+bw*.75,by-bh);
+    ctx.lineTo(x+bw*.75+5,by-bh-4); ctx.lineTo(x+5,by-bh-4); ctx.closePath(); ctx.fill();
+  }
+  const fade=ctx.createLinearGradient(0,H*.45,0,H);
+  fade.addColorStop(0,'transparent'); fade.addColorStop(1,'rgba(0,0,0,0.85)');
+  ctx.fillStyle=fade; ctx.fillRect(0,0,W,H);
+  ctx.textAlign='center';
+  ctx.font=`bold ${H*.22}px Bebas Neue, Arial Black, sans-serif`;
+  ctx.fillStyle='rgba(255,255,255,0.9)'; ctx.fillText(label1,W/2,H*.45);
+  ctx.font=`bold ${H*.14}px Bebas Neue, Arial Black, sans-serif`;
+  ctx.fillStyle=accentRgb+'0.8)'; ctx.fillText(label2,W/2,H*.62);
+}
+
+// Apri articolo dalla home → va in musica e mostra il modale
+function openHomeArticle(idx) {
+  const art = homeArticles[idx];
+  if (!art) return;
+  showPage('musica', document.querySelector('.nav-links a[onclick*="musica"]'));
+  setTimeout(() => {
+    document.getElementById('art-modal-tag').textContent = art.tag;
+    document.getElementById('art-modal-title').textContent = art.title;
+    document.getElementById('art-modal-text').textContent = art.text;
+    // Disegna copertina nel modal
+    const mc = document.getElementById('art-modal-canvas');
+    if (mc) {
+      if (idx < 5) drawRW('art-modal-canvas', art.colors, art.accent, art.title.split(':')[0].split(' ').slice(-1)[0].toUpperCase(), art.tag.split('·')[0].trim().toUpperCase(), true);
+      else drawTech('art-modal-canvas', art.colors, art.accent, art.title.split(':')[0].toUpperCase().substring(0,12), art.tag.split('·')[0].trim().toUpperCase());
+    }
+    document.getElementById('art-modal').classList.add('open');
+    document.body.style.overflow='hidden';
+  }, 120);
+}
+
 window.addEventListener('load', () => {
-  drawYard('canvas-yard');
-  drawTomorrowland('canvas-tmw');
+  // Hero canvas
+  drawRW('hero-canvas', homeArticles[0].colors, homeArticles[0].accent, 'CERCLE', 'FESTIVAL', true);
+  // News clubbing
+  drawRW('hn-c0', homeArticles[1].colors, homeArticles[1].accent, 'SAN SIRO', 'DANCE', false);
+  drawRW('hn-c1', homeArticles[2].colors, homeArticles[2].accent, 'IMS', 'IBIZA', false);
+  drawRW('hn-c2', homeArticles[3].colors, homeArticles[3].accent, 'VISION', 'OPEN AIR', false);
+  drawRW('hn-c3', homeArticles[4].colors, homeArticles[4].accent, 'KAPPA', 'TORINO', false);
+  // Tech covers
+  drawTech('ht-c0', homeArticles[5].colors, homeArticles[5].accent, 'TRANSFIGURE', 'VST');
+  drawTech('ht-c1', homeArticles[6].colors, homeArticles[6].accent, 'AKAI MPC', 'HARDWARE');
+  drawTech('ht-c2', homeArticles[7].colors, homeArticles[7].accent, 'PURE:LEVEL', 'AI PLUGIN');
+  drawTech('ht-c3', homeArticles[8].colors, homeArticles[8].accent, 'ABLETON', 'LIVE 12.1');
+  // Musica page canvas (già esistenti)
+  articles.forEach((a,i) => a.draw('mn-c'+i));
 });
 
 // ── NAV ───────────────────────────────────────────────────────────
