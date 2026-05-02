@@ -953,80 +953,77 @@ function initMusicPage() {
 
 // ── NOTIZIE HOME — aggiorna ogni settimana ────────────────────────
 const homeArticles = [
-  // [0] HERO — notizia principale
   {
-    tag:'Clubbing', tagColor:'#7c3aed',
-    title:'Cercle Festival 2026: tre giorni nell'aeroporto storico di Parigi',
-    sub:'Dal 22 al 24 maggio al Musée de l'Air et de l'Espace di Le Bourget.',
-    text:'Il Cercle Festival torna nel 2026 al Musée de l'Air et de l'Espace di Le Bourget, Parigi, dal 22 al 24 maggio. Dopo il successo del 2024 con 24.000 spettatori, quest'anno il festival si estende a tre giorni con 44 artisti su tre palchi unici: lo stage A380 sotto il più grande aereo passeggeri del mondo, l'Ariane stage davanti a un razzo di 54 metri e il Concorde stage tra due aerei supersonici. In lineup Eric Prydz, ARTBAT, Ben Böhmer, Vintage Culture, Adriatique, Kölsch, Monolink e molti altri. Una serata esclusiva alla Tour Eiffel il 21 maggio aprirà le danze con Kölsch, LP Giobbi e Chambord per 200 privilegiati.',
-    colors:['#04001a','#1a0050','#0d0030'], accent:'rgba(120,40,255,',
-    dest:'musica'
-  },
-  // [1-4] NEWS CLUBBING
-  {
-    tag:'Festival · Italia', tagColor:'#1060cc',
-    title:'Gabry Ponte a San Siro: la più grande dancefloor italiana',
-    sub:'70.000 persone il 27 giugno allo Stadio San Siro di Milano.',
-    text:'Il 27 giugno 2026 lo Stadio San Siro di Milano si trasforma nella più grande dancefloor d'Italia con Gabry Ponte come protagonista assoluto. Con oltre 70.000 posti disponibili, l'evento "San Siro Dance" promette di riscrivere la storia della musica elettronica italiana. Gabry Ponte, il DJ e producer italiano più ascoltato nel mondo, porta finalmente il suo show esplosivo nel tempio del calcio milanese con un live set di produzione scenografica da record. I biglietti sono disponibili su Ticketmaster e nei circuiti abituali.',
-    colors:['#000a1a','#002060','#001540'], accent:'rgba(0,120,255,',
-    dest:'musica'
+    tag:"Clubbing", tagColor:"#7c3aed",
+    title:"Cercle Festival 2026: tre giorni di musica nell'aeroporto storico di Parigi",
+    sub:"Dal 22 al 24 maggio al Musée de l'Air et de l'Espace di Le Bourget.",
+    text:"Il Cercle Festival torna nel 2026 al Musée de l'Air et de l'Espace di Le Bourget, Parigi, dal 22 al 24 maggio. Dopo il successo del 2024 con 24.000 spettatori, quest'anno il festival si estende a tre giorni con 44 artisti su tre palchi unici: lo stage A380 sotto il più grande aereo passeggeri del mondo, l'Ariane stage davanti a un razzo di 54 metri e il Concorde stage tra due aerei supersonici. In lineup Eric Prydz, ARTBAT, Ben Böhmer, Vintage Culture, Adriatique, Kölsch, Monolink e molti altri. Una serata esclusiva alla Tour Eiffel il 21 maggio aprirà le danze con Kölsch, LP Giobbi e Chambord per 200 privilegiati.",
+    colors:["#04001a","#1a0050","#0d0030"], accent:"rgba(120,40,255,",
+    dest:"musica"
   },
   {
-    tag:'Ibiza · IMS 2026', tagColor:'#7c1090',
-    title:'IMS Ibiza 2026: Pete Tong, Eliza Rose e Jazzy protagonisti',
-    sub:'L'International Music Summit torna dal 22 al 24 aprile.',
-    text:'L'International Music Summit 2026 si è svolto ad Ibiza dal 22 al 24 aprile con un programma ricco di conferenze, panel e performance dal vivo. Pete Tong ha aperto i lavori con un keynote sull'evoluzione della scena dance globale, mentre Eliza Rose e Jazzy hanno rappresentato la nuova generazione di artiste britanniche che stanno ridisegnando il panorama della musica elettronica. L'IMS è il principale evento professionale del settore dance e attira ogni anno i protagonisti dell'industria musicale globale. Quest'anno ha registrato un record di partecipanti con oltre 3.000 professionisti accreditati.',
-    colors:['#0d0015','#3d0060','#200040'], accent:'rgba(200,40,255,',
-    dest:'musica'
+    tag:"Festival · Italia", tagColor:"#1060cc",
+    title:"Gabry Ponte a San Siro: la più grande dancefloor italiana",
+    sub:"70.000 persone il 27 giugno allo Stadio San Siro di Milano.",
+    text:"Il 27 giugno 2026 lo Stadio San Siro di Milano si trasforma nella più grande dancefloor d'Italia con Gabry Ponte come protagonista assoluto. Con oltre 70.000 posti disponibili, l'evento San Siro Dance promette di riscrivere la storia della musica elettronica italiana. Gabry Ponte, il DJ e producer italiano più ascoltato nel mondo, porta finalmente il suo show esplosivo nel tempio del calcio milanese con un live set di produzione scenografica da record. I biglietti sono disponibili su Ticketmaster e nei circuiti abituali.",
+    colors:["#000a1a","#002060","#001540"], accent:"rgba(0,120,255,",
+    dest:"musica"
   },
   {
-    tag:'Open Air · Milano', tagColor:'#006630',
-    title:'Vision Open Air: Ilario Alicante apre la stagione all'Ex Macello',
-    sub:'Il 1° maggio a Milano con il format L/NK.',
-    text:'Il 1° maggio 2026 l'Ex Macello di Milano ha ospitato l'opening della stagione outdoor di Vision con Ilario Alicante e il suo format L/NK. L'evento ha segnato il debutto della nuova area outdoor della venue milanese, con una produzione sonora e visiva di altissimo livello. Ilario Alicante, tra i producer techno italiani più apprezzati a livello internazionale, ha proposto un set di oltre quattro ore che ha entusiasmato il pubblico. Vision Open Air tornerà il 16 maggio con Amelie Lens e Nina Kraviz per chiudere la stagione indoor al Fabrique.',
-    colors:['#001208','#004020','#002818'], accent:'rgba(0,180,60,',
-    dest:'musica'
+    tag:"Ibiza · IMS 2026", tagColor:"#7c1090",
+    title:"IMS Ibiza 2026: Pete Tong, Eliza Rose e Jazzy protagonisti",
+    sub:"L'International Music Summit torna dal 22 al 24 aprile.",
+    text:"L'International Music Summit 2026 si è svolto ad Ibiza dal 22 al 24 aprile con un programma ricco di conferenze, panel e performance dal vivo. Pete Tong ha aperto i lavori con un keynote sull'evoluzione della scena dance globale, mentre Eliza Rose e Jazzy hanno rappresentato la nuova generazione di artiste britanniche che stanno ridisegnando il panorama della musica elettronica. L'IMS è il principale evento professionale del settore dance e attira ogni anno i protagonisti dell'industria musicale globale. Quest'anno ha registrato un record di partecipanti con oltre 3.000 professionisti accreditati.",
+    colors:["#0d0015","#3d0060","#200040"], accent:"rgba(200,40,255,",
+    dest:"musica"
   },
   {
-    tag:'Kappa · Torino', tagColor:'#883000',
-    title:'Kappa FuturFestival 2026: Sven Väth e Charlotte de Witte headliner',
-    sub:'Dal 3 al 5 luglio a Torino, il festival techno italiano.',
-    text:'Il Kappa FuturFestival 2026 si terrà dal 3 al 5 luglio a Torino con un lineup che include Sven Väth, Charlotte de Witte e le resident del Berghain in un B2B esclusivo. Giunto alla sua quattordicesima edizione, il Kappa si conferma come il festival di riferimento per la scena techno e house in Italia, con una capacità di oltre 30.000 spettatori al giorno nell'area Parco Dora. Il festival è noto per la qualità del sound system, la cura del booking e l'atmosfera unica che si crea tra i capannoni industriali torinesi trasformati in un tempio della musica elettronica.',
-    colors:['#120500','#3d1000','#251000'], accent:'rgba(255,100,0,',
-    dest:'musica'
-  },
-  // [5-8] TECH & GEAR
-  {
-    tag:'VST · Sound Design', tagColor:'#5020aa',
-    title:'Transfigure: resintesi spettrale a 120 oscillatori per producer',
-    sub:'Il plugin che trasforma qualsiasi suono in texture uniche.',
-    text:'Transfigure è il nuovo plugin VST che sta rivoluzionando il sound design per DJ e producer. Basato su un motore di resintesi spettrale con 120 oscillatori, permette di trasformare in tempo reale qualsiasi suono in texture mai sentite prima. L'interfaccia include un XY Pad espressivo per il controllo live dei parametri, ideale per performance e produzioni in studio. Il plugin è compatibile con tutte le principali DAW in formato VST3, AU e AAX. Disponibile su nueko.net, è già diventato uno strumento essenziale per i producer di musica elettronica che cercano sonorità originali e distintive.',
-    colors:['#080018','#200050','#100030'], accent:'rgba(120,40,255,',
-    dest:'musica'
+    tag:"Open Air · Milano", tagColor:"#006630",
+    title:"Vision Open Air: Ilario Alicante apre la stagione all'Ex Macello",
+    sub:"Il 1° maggio a Milano con il format L/NK.",
+    text:"Il 1° maggio 2026 l'Ex Macello di Milano ha ospitato l'opening della stagione outdoor di Vision con Ilario Alicante e il suo format L/NK. L'evento ha segnato il debutto della nuova area outdoor della venue milanese, con una produzione sonora e visiva di altissimo livello. Ilario Alicante, tra i producer techno italiani più apprezzati a livello internazionale, ha proposto un set di oltre quattro ore che ha entusiasmato il pubblico. Vision Open Air tornerà il 16 maggio con Amelie Lens e Nina Kraviz per chiudere la stagione indoor al Fabrique.",
+    colors:["#001208","#004020","#002818"], accent:"rgba(0,180,60,",
+    dest:"musica"
   },
   {
-    tag:'Hardware · Akai', tagColor:'#004488',
-    title:'Akai MPC Sample 2026: beatmaking portatile ridefinito',
-    sub:'Il nuovo campionatore tascabile con touch e USB-C.',
-    text:'Akai ha presentato l'MPC Sample 2026, il nuovo campionatore portatile che ridefinisce il concetto di beatmaking mobile. Con interfaccia touch capacitiva, connettività USB-C, 16 pad retroilluminati e integrazione cloud nativa, l'MPC Sample permette di creare beat professionali ovunque. La batteria integrata garantisce fino a 8 ore di utilizzo continuo. Il dispositivo si sincronizza automaticamente con Ableton Live, Logic Pro e tutte le principali DAW via USB. Disponibile a partire da maggio 2026 al prezzo di 299€, l'MPC Sample è già preordinabile sui principali siti di strumenti musicali.',
-    colors:['#00080f','#002040','#001530'], accent:'rgba(0,120,200,',
-    dest:'musica'
+    tag:"Kappa · Torino", tagColor:"#883000",
+    title:"Kappa FuturFestival 2026: Sven Väth e Charlotte de Witte headliner",
+    sub:"Dal 3 al 5 luglio a Torino, il festival techno italiano.",
+    text:"Il Kappa FuturFestival 2026 si terrà dal 3 al 5 luglio a Torino con un lineup che include Sven Väth, Charlotte de Witte e le resident del Berghain in un B2B esclusivo. Giunto alla sua quattordicesima edizione, il Kappa si conferma come il festival di riferimento per la scena techno e house in Italia, con una capacità di oltre 30.000 spettatori al giorno nell'area Parco Dora. Il festival è noto per la qualità del sound system, la cura del booking e l'atmosfera unica che si crea tra i capannoni industriali torinesi trasformati in un tempio della musica elettronica.",
+    colors:["#120500","#3d1000","#251000"], accent:"rgba(255,100,0,",
+    dest:"musica"
   },
   {
-    tag:'AI Plugin · Sonible', tagColor:'#005520',
-    title:'Sonible pure:level: l'AI che cambia il modo di mixare',
-    sub:'Level rider intelligente per tracce e mix con precisione naturale.',
-    text:'Sonible ha lanciato pure:level, il nuovo plugin AI per il livellamento automatico di tracce e mix. A differenza dei tradizionali compressori, pure:level analizza il contenuto musicale con intelligenza artificiale e applica una curva di volume dinamica che segue naturalmente il fraseggio musicale, senza artefatti o pompaggio. Il plugin è particolarmente efficace su voci, chitarre acustiche e strumenti a dinamica variabile. Disponibile in formato VST3, AU e AAX, pure:level è in vendita su sonible.com al prezzo di 69€. Audiofader.com ne ha pubblicato una recensione entusiastica definendolo "rivoluzionario per il workflow moderno".',
-    colors:['#040f00','#104000','#082800'], accent:'rgba(0,180,40,',
-    dest:'musica'
+    tag:"VST · Sound Design", tagColor:"#5020aa",
+    title:"Transfigure: resintesi spettrale a 120 oscillatori per producer",
+    sub:"Il plugin che trasforma qualsiasi suono in texture uniche.",
+    text:"Transfigure è il nuovo plugin VST che sta rivoluzionando il sound design per DJ e producer. Basato su un motore di resintesi spettrale con 120 oscillatori, permette di trasformare in tempo reale qualsiasi suono in texture mai sentite prima. L'interfaccia include un XY Pad espressivo per il controllo live dei parametri, ideale per performance e produzioni in studio. Il plugin è compatibile con tutte le principali DAW in formato VST3, AU e AAX. Disponibile su nueko.net, è già diventato uno strumento essenziale per i producer di musica elettronica che cercano sonorità originali e distintive.",
+    colors:["#080018","#200050","#100030"], accent:"rgba(120,40,255,",
+    dest:"musica"
   },
   {
-    tag:'DAW · Ableton', tagColor:'#882200',
-    title:'Ableton Live 12.1: nuovi dispositivi MIDI e workflow ottimizzato',
-    sub:'L'aggiornamento che i producer elettronici aspettavano.',
-    text:'Ableton ha rilasciato Live 12.1, aggiornamento gratuito per tutti gli utenti di Live 12 che introduce nuovi dispositivi MIDI nativi, miglioramenti sostanziali al routing e nuove funzionalità per i producer di musica elettronica. Tra le novità principali: il nuovo MIDI Arpeggiator polifonico, il Chord Generator con suggerimenti armonici basati su AI, e il miglioramento del motore audio con latenza ridotta del 20%. L'aggiornamento ottimizza anche l'integrazione con Push 3 e introduce il supporto nativo per i controller MPE. Disponibile gratis via Ableton.com per tutti i possessori di licenza Suite o Standard.',
-    colors:['#0f0400','#3a1000','#250a00'], accent:'rgba(255,80,0,',
-    dest:'musica'
+    tag:"Hardware · Akai", tagColor:"#004488",
+    title:"Akai MPC Sample 2026: beatmaking portatile ridefinito",
+    sub:"Il nuovo campionatore tascabile con touch e USB-C.",
+    text:"Akai ha presentato l'MPC Sample 2026, il nuovo campionatore portatile che ridefinisce il concetto di beatmaking mobile. Con interfaccia touch capacitiva, connettività USB-C, 16 pad retroilluminati e integrazione cloud nativa, l'MPC Sample permette di creare beat professionali ovunque. La batteria integrata garantisce fino a 8 ore di utilizzo continuo. Il dispositivo si sincronizza automaticamente con Ableton Live, Logic Pro e tutte le principali DAW via USB. Disponibile a partire da maggio 2026 al prezzo di 299€, preordinabile sui principali siti di strumenti musicali.",
+    colors:["#00080f","#002040","#001530"], accent:"rgba(0,120,200,",
+    dest:"musica"
+  },
+  {
+    tag:"AI Plugin · Sonible", tagColor:"#005520",
+    title:"Sonible pure:level: l'AI che cambia il modo di mixare",
+    sub:"Level rider intelligente per tracce e mix con precisione naturale.",
+    text:"Sonible ha lanciato pure:level, il nuovo plugin AI per il livellamento automatico di tracce e mix. A differenza dei tradizionali compressori, pure:level analizza il contenuto musicale con intelligenza artificiale e applica una curva di volume dinamica che segue naturalmente il fraseggio musicale, senza artefatti o pompaggio. Il plugin è particolarmente efficace su voci, chitarre acustiche e strumenti a dinamica variabile. Disponibile in formato VST3, AU e AAX, pure:level è in vendita su sonible.com al prezzo di 69€. Audiofader.com ne ha pubblicato una recensione definendolo rivoluzionario per il workflow moderno.",
+    colors:["#040f00","#104000","#082800"], accent:"rgba(0,180,40,",
+    dest:"musica"
+  },
+  {
+    tag:"DAW · Ableton", tagColor:"#882200",
+    title:"Ableton Live 12.1: nuovi dispositivi MIDI e workflow ottimizzato",
+    sub:"L'aggiornamento che i producer elettronici aspettavano.",
+    text:"Ableton ha rilasciato Live 12.1, aggiornamento gratuito per tutti gli utenti di Live 12 che introduce nuovi dispositivi MIDI nativi, miglioramenti al routing e nuove funzionalità per i producer di musica elettronica. Tra le novità principali: il nuovo MIDI Arpeggiator polifonico, il Chord Generator con suggerimenti armonici AI, e il miglioramento del motore audio con latenza ridotta del 20%. L'aggiornamento ottimizza anche l'integrazione con Push 3 e introduce il supporto nativo per i controller MPE. Disponibile gratis via Ableton.com per tutti i possessori di licenza Suite o Standard.",
+    colors:["#0f0400","#3a1000","#250a00"], accent:"rgba(255,80,0,",
+    dest:"musica"
   }
 ];
 
