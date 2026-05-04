@@ -1,0 +1,289 @@
+/* ══════════════════════════════════════════════════════════════
+   PATCH TIPOGRAFIA — simonegirasole.com
+   Maggio 2026 — Leggibilità e impatto visivo migliorati
+   
+   ISTRUZIONI:
+   1. Carica questo file in /public/typography.css su GitHub
+   2. Aggiungi nell'index.html, nell'<head>, DOPO il tag </style> esistente:
+      <link rel="stylesheet" href="/typography.css">
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── NAVBAR ──────────────────────────────────────────────────── */
+.logo-name {
+  font-size: 1.9rem;
+}
+.logo-tag {
+  font-size: 0.62rem;
+  letter-spacing: .4em;
+}
+.nav-links a {
+  font-size: .88rem;
+  letter-spacing: .12em;
+  padding: .5rem 1.2rem;
+}
+
+/* ── TICKER ───────────────────────────────────────────────────── */
+.ticker-inner {
+  font-size: .78rem;
+}
+
+/* ── TAG GLOBALI ─────────────────────────────────────────────── */
+.tag {
+  font-size: .72rem;
+  padding: .22rem .65rem;
+}
+.home-hero-tag {
+  font-size: .72rem;
+  padding: .28rem .75rem;
+}
+.home-hero-cta {
+  font-size: .76rem;
+}
+
+/* ── HERO HOME ────────────────────────────────────────────────── */
+.home-hero {
+  height: 560px;
+}
+.home-hero-title {
+  font-size: 3.8rem;
+  line-height: 1.03;
+}
+.home-hero-sub {
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+.home-hero-overlay {
+  padding: 2.5rem 3rem;
+}
+
+/* ── SEZIONI — titoli e respiro ──────────────────────────────── */
+.sec-title {
+  font-size: 2rem;
+}
+.sec {
+  padding: 2.8rem;
+}
+.sec-hdr {
+  margin-bottom: 2rem;
+}
+
+/* ── NEWS GRID (4 card) ──────────────────────────────────────── */
+.hn-img-tag {
+  font-size: .68rem;
+  padding: .22rem .55rem;
+}
+.hn-img-title {
+  font-size: 1.2rem;
+  line-height: 1.25;
+}
+.hn-img-label {
+  padding: .75rem 1rem;
+}
+.hn-sub {
+  font-size: .88rem;
+  line-height: 1.55;
+}
+.hn-more {
+  font-size: .72rem;
+  margin-top: .6rem;
+}
+.hn-body {
+  padding: .85rem 1rem 1.05rem;
+}
+
+/* ── TECH GRID (2×2) ─────────────────────────────────────────── */
+.ht-img-tag {
+  font-size: .68rem;
+  padding: .2rem .5rem;
+}
+.ht-img-title {
+  font-size: 1.15rem;
+  line-height: 1.25;
+}
+.ht-sub {
+  font-size: .88rem;
+  line-height: 1.5;
+}
+.ht-more {
+  font-size: .72rem;
+}
+.ht-body {
+  padding: .8rem 1rem .95rem;
+}
+
+/* ── DISCO SECTION ────────────────────────────────────────────── */
+.disco-sec {
+  padding: 2.8rem;
+}
+.disco-inner {
+  gap: 3.5rem;
+}
+.disco-title {
+  font-size: 3.2rem;
+}
+.disco-artist {
+  font-size: 1.12rem;
+}
+.disco-year {
+  font-size: .82rem;
+  margin-bottom: 1rem;
+}
+.disco-desc {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+/* ── PLAYER (Disco del giorno) ────────────────────────────────── */
+.pl-title {
+  font-size: 1.05rem;
+}
+.pl-artist {
+  font-size: .8rem;
+  margin-bottom: .45rem;
+}
+.pl-times {
+  font-size: .68rem;
+}
+.pl-status {
+  font-size: .68rem;
+}
+
+/* ── BIO PAGE ─────────────────────────────────────────────────── */
+.bio-layout {
+  padding: 3rem;
+}
+.bio-content h1 {
+  font-size: 4rem;
+}
+.bio-content .role {
+  font-size: .9rem;
+  letter-spacing: .14em;
+  margin-bottom: 2rem;
+}
+.bio-text p {
+  font-size: 1rem;
+  line-height: 1.85;
+}
+.bio-section-title {
+  font-size: 1.6rem;
+}
+.club-tag {
+  font-size: .8rem;
+  padding: .35rem .85rem;
+}
+.stat-num {
+  font-size: 2.7rem;
+}
+.stat-label {
+  font-size: .78rem;
+}
+.bio-img-caption {
+  font-size: .75rem;
+}
+
+/* ── MUSIC PAGE ───────────────────────────────────────────────── */
+.mn-tag {
+  font-size: .7rem;
+  padding: .24rem .6rem;
+}
+.mn-body h3 {
+  font-size: 1.38rem;
+  line-height: 1.25;
+  margin-bottom: .5rem;
+}
+.mn-body p {
+  font-size: .92rem;
+  line-height: 1.6;
+}
+.mn-body {
+  padding: 1.15rem;
+}
+
+/* ── TABS ──────────────────────────────────────────────────────── */
+.tab-btn {
+  font-size: 1.1rem;
+  padding: .8rem 1.4rem;
+}
+
+/* ── CHARTS ────────────────────────────────────────────────────── */
+.cr-title {
+  font-size: 1.32rem;
+}
+.cr-artist {
+  font-size: .82rem;
+  margin-top: .15rem;
+}
+.chart-row {
+  min-height: 78px;
+}
+.cr-num {
+  font-size: 2.5rem;
+}
+.cr-info {
+  padding: .6rem .9rem;
+}
+
+/* ── MODAL ARTICOLI ────────────────────────────────────────────── */
+.art-modal-body h2 {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin: .7rem 0 .9rem;
+}
+.art-modal-body p {
+  font-size: .97rem;
+  line-height: 1.85;
+}
+.art-modal-body {
+  padding: 1.4rem 1.8rem 1.8rem;
+}
+
+/* ── BOTTOM PLAYER ─────────────────────────────────────────────── */
+.bp-title {
+  font-size: 1.2rem;
+}
+.bp-artist {
+  font-size: .78rem;
+}
+.bp-time {
+  font-size: .7rem;
+}
+
+/* ── LINK PAGE ─────────────────────────────────────────────────── */
+.links-page h1 {
+  font-size: 3.2rem;
+}
+.links-page .sub {
+  font-size: .9rem;
+  margin-bottom: 2.8rem;
+}
+.link-name {
+  font-size: 1.45rem;
+}
+.link-url {
+  font-size: .8rem;
+  margin-top: .15rem;
+}
+.link-card {
+  padding: 1.2rem 1.5rem;
+  margin-bottom: .9rem;
+}
+.link-icon {
+  width: 50px;
+  height: 50px;
+}
+.consulenza-headline {
+  font-size: 1.7rem;
+}
+.consulenza-sub {
+  font-size: .9rem;
+  line-height: 1.7;
+}
+.consulenza-btn {
+  font-size: .74rem;
+  padding: .5rem 1.2rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────────────────── */
+footer p {
+  font-size: .78rem;
+}
