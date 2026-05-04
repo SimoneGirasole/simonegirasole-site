@@ -11,68 +11,79 @@
 :root{--black:#0a0a0a;--dark:#111;--border:#222;--purple:#7c3aed;--pl:#a855f7;--pink:#e040fb;--white:#f5f5f5;--gray:#888;--gl:#ccc;}
 *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
 body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;overflow-x:hidden;}
+
+/* ── NAV ── */
 nav{position:sticky;top:0;z-index:200;background:var(--black);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:62px;}
 .logo{cursor:pointer;display:flex;align-items:center;line-height:1;user-select:none;}
 .logo-wrap{display:flex;flex-direction:column;align-items:flex-start;gap:2px;}
-.logo-name{font-family:'Raleway',sans-serif;font-weight:200;font-size:1.7rem;letter-spacing:.2em;text-transform:uppercase;line-height:1;}
+.logo-name{font-family:'Raleway',sans-serif;font-weight:200;font-size:1.9rem;letter-spacing:.2em;text-transform:uppercase;line-height:1;}
 .logo-name .ln-first{color:var(--white);}
 .logo-name .ln-last{color:var(--pink);}
-.logo-tag{font-family:'Raleway',sans-serif;font-weight:200;font-size:.5rem;letter-spacing:.45em;text-transform:uppercase;color:var(--gray);line-height:1;}
+.logo-tag{font-family:'Raleway',sans-serif;font-weight:200;font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gray);line-height:1;}
 .nav-links{display:flex;list-style:none;}
-.nav-links a{color:var(--gray);text-decoration:none;font-size:.75rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;padding:.5rem 1.4rem;transition:color .2s;display:block;}
+.nav-links a{color:var(--gray);text-decoration:none;font-size:.88rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.5rem 1.2rem;transition:color .2s;display:block;}
 .nav-links a:hover,.nav-links a.active{color:var(--white);}.nav-links a.active{border-bottom:2px solid var(--purple);}
+.nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.5rem;background:none;border:none;}
+.nav-burger span{display:block;width:24px;height:2px;background:var(--white);transition:all .3s;}
+
+/* ── TICKER ── */
 .ticker{background:var(--purple);padding:.35rem 0;overflow:hidden;white-space:nowrap;}
-.ticker-inner{display:inline-block;animation:tick 40s linear infinite;font-family:'Space Mono',monospace;font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;}
+.ticker-inner{display:inline-block;animation:tick 40s linear infinite;font-family:'Space Mono',monospace;font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;}
 @keyframes tick{from{transform:translateX(100vw);}to{transform:translateX(-100%);}}
+
+/* ── PAGES ── */
 .page{display:none;}.page.active{display:block;}
-.tag{display:inline-block;border:1px solid var(--purple);color:var(--pl);font-size:.62rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:.18rem .5rem;margin-bottom:.6rem;}
-.sec{padding:2.5rem;border-bottom:1px solid var(--border);}
-.sec-hdr{display:flex;align-items:center;gap:1rem;margin-bottom:1.8rem;}
-.sec-title{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:.05em;border-left:4px solid var(--purple);padding-left:.8rem;}
+.tag{display:inline-block;border:1px solid var(--purple);color:var(--pl);font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:.22rem .65rem;margin-bottom:.6rem;}
+.sec{padding:2.8rem;border-bottom:1px solid var(--border);}
+.sec-hdr{display:flex;align-items:center;gap:1rem;margin-bottom:2rem;}
+.sec-title{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:.05em;border-left:4px solid var(--purple);padding-left:.8rem;}
 .sec-line{flex:1;height:1px;background:repeating-linear-gradient(90deg,var(--border) 0,var(--border) 6px,transparent 6px,transparent 12px);}
-/* HERO PRINCIPALE */
-.home-hero{position:relative;height:480px;overflow:hidden;cursor:pointer;border-bottom:1px solid var(--border);}
+
+/* ── HERO HOME ── */
+.home-hero{position:relative;height:560px;overflow:hidden;cursor:pointer;border-bottom:1px solid var(--border);}
 .home-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45;}
 .home-hero-tint{position:absolute;inset:0;}
-.home-hero-overlay{position:absolute;inset:0;background:linear-gradient(transparent 30%,rgba(0,0,0,.92));display:flex;flex-direction:column;justify-content:flex-end;padding:2.2rem 2.5rem;}
-.home-hero-tag{display:inline-block;background:var(--purple);color:white;font-size:.62rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:.22rem .6rem;margin-bottom:.7rem;}
-.home-hero-title{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;line-height:1.05;color:white;margin-bottom:.5rem;max-width:820px;}
-.home-hero-sub{font-size:.85rem;color:#ccc;line-height:1.6;max-width:700px;margin-bottom:.8rem;}
-.home-hero-cta{font-size:.68rem;color:var(--pl);letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--purple);display:inline-block;padding-bottom:1px;}
-/* NEWS GRID 4 */
+.home-hero-overlay{position:absolute;inset:0;background:linear-gradient(transparent 20%,rgba(0,0,0,.93));display:flex;flex-direction:column;justify-content:flex-end;padding:2.5rem 3rem;}
+.home-hero-tag{display:inline-block;background:var(--purple);color:white;font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:.28rem .75rem;margin-bottom:.7rem;}
+.home-hero-title{font-family:'Bebas Neue',sans-serif;font-size:3.8rem;line-height:1.03;color:white;margin-bottom:.5rem;max-width:820px;}
+.home-hero-sub{font-size:1.05rem;color:#ccc;line-height:1.65;max-width:700px;margin-bottom:.8rem;}
+.home-hero-cta{font-size:.76rem;color:var(--pl);letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--purple);display:inline-block;padding-bottom:1px;}
+
+/* ── NEWS GRID 4 ── */
 .home-news-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);}
 .hn-card{background:var(--black);cursor:pointer;transition:transform .2s;}
 .hn-card:hover{transform:translateY(-3px);}
 .hn-img-wrap{position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;}
-.hn-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5;}
+.hn-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55;transition:opacity .3s;}
+.hn-card:hover .hn-img{opacity:.7;}
 .hn-img-tint{position:absolute;inset:0;}
 .hn-img-fade{position:absolute;inset:0;background:linear-gradient(transparent 30%,rgba(0,0,0,.85));}
-.hn-img-label{position:absolute;bottom:0;left:0;right:0;padding:.6rem .8rem;}
-.hn-img-tag{display:inline-block;font-size:.55rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.18rem .45rem;border-radius:2px;color:white;margin-bottom:.3rem;}
-.hn-img-title{font-family:'Bebas Neue',sans-serif;font-size:1.05rem;line-height:1.2;color:white;}
-.hn-body{padding:.65rem .9rem .85rem;}
-.hn-sub{font-size:.72rem;color:var(--gray);line-height:1.5;}
-.hn-more{font-size:.6rem;color:var(--purple);margin-top:.5rem;letter-spacing:.08em;text-transform:uppercase;}
-/* TECH GRID 2x2 */
+.hn-img-label{position:absolute;bottom:0;left:0;right:0;padding:.75rem 1rem;}
+.hn-img-tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.22rem .55rem;border-radius:2px;color:white;margin-bottom:.3rem;}
+.hn-img-title{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;line-height:1.25;color:white;}
+.hn-body{padding:.85rem 1rem 1.05rem;}
+.hn-sub{font-size:.88rem;color:var(--gray);line-height:1.55;}
+.hn-more{font-size:.72rem;color:var(--purple);margin-top:.6rem;letter-spacing:.08em;text-transform:uppercase;}
+
+/* ── TECH GRID 2x2 ── */
 .home-tech-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);}
 .ht-card{background:var(--black);cursor:pointer;transition:transform .2s;}
 .ht-card:hover{transform:translateY(-3px);}
 .ht-img-wrap{position:relative;width:100%;aspect-ratio:16/7;overflow:hidden;}
-.ht-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45;}
+.ht-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45;transition:opacity .3s;}
+.ht-card:hover .ht-img{opacity:.65;}
 .ht-img-tint{position:absolute;inset:0;}
 .ht-img-fade{position:absolute;inset:0;background:linear-gradient(transparent 25%,rgba(0,0,0,.88));}
-.ht-img-label{position:absolute;bottom:0;left:0;right:0;padding:.5rem .8rem;}
-.ht-img-tag{display:inline-block;font-size:.55rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.16rem .4rem;border-radius:2px;color:white;margin-bottom:.25rem;}
-.ht-img-title{font-family:'Bebas Neue',sans-serif;font-size:1rem;line-height:1.2;color:white;}
-.ht-body{padding:.6rem .9rem .8rem;}
-.ht-sub{font-size:.72rem;color:var(--gray);line-height:1.45;}
-.ht-more{font-size:.6rem;color:var(--purple);margin-top:.45rem;letter-spacing:.08em;text-transform:uppercase;}
-/* CARD META */
-.card-meta{display:flex;align-items:center;gap:1rem;margin-top:.6rem;font-size:.72rem;color:var(--gray);font-family:'Space Mono',monospace;}
-.like-btn{background:none;border:none;color:var(--gray);cursor:pointer;display:flex;align-items:center;gap:.3rem;font-size:.72rem;transition:color .2s;}.like-btn:hover{color:var(--pl);}
-/* DISCO DEL GIORNO */
-.disco-sec{background:var(--dark);padding:2.5rem;border-bottom:1px solid var(--border);}
-.disco-inner{display:grid;grid-template-columns:220px 1fr;gap:3rem;align-items:start;}
+.ht-img-label{position:absolute;bottom:0;left:0;right:0;padding:.75rem 1rem;}
+.ht-img-tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.2rem .5rem;border-radius:2px;color:white;margin-bottom:.25rem;}
+.ht-img-title{font-family:'Bebas Neue',sans-serif;font-size:1.15rem;line-height:1.25;color:white;}
+.ht-body{padding:.8rem 1rem .95rem;}
+.ht-sub{font-size:.88rem;color:var(--gray);line-height:1.5;}
+.ht-more{font-size:.72rem;color:var(--purple);margin-top:.45rem;letter-spacing:.08em;text-transform:uppercase;}
+
+/* ── DISCO ── */
+.disco-sec{background:var(--dark);padding:2.8rem;border-bottom:1px solid var(--border);}
+.disco-inner{display:grid;grid-template-columns:220px 1fr;gap:3.5rem;align-items:start;}
 .disco-cover-wrap{position:relative;width:200px;height:200px;}
 .disco-cover{width:200px;height:200px;object-fit:cover;display:block;box-shadow:0 20px 50px rgba(0,0,0,.6),0 0 0 1px var(--border);}
 .disco-ph{width:200px;height:200px;background:#1a1a1a;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;}
@@ -82,11 +93,12 @@ nav{position:sticky;top:0;z-index:200;background:var(--black);border-bottom:1px 
 .disco-badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--purple);color:var(--white);font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:.28rem .8rem;margin-bottom:.9rem;}
 .disco-dot{width:6px;height:6px;background:var(--white);border-radius:50%;animation:blink 1.2s ease-in-out infinite;}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-.disco-title{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;line-height:1;margin-bottom:.2rem;}
-.disco-artist{font-size:1rem;color:var(--pl);font-weight:500;margin-bottom:.2rem;}
-.disco-year{font-family:'Space Mono',monospace;font-size:.7rem;color:var(--gray);margin-bottom:.9rem;}
-.disco-desc{font-size:.85rem;color:var(--gl);line-height:1.7;max-width:520px;margin-bottom:1.4rem;}
-/* PLAYER */
+.disco-title{font-family:'Bebas Neue',sans-serif;font-size:3.2rem;line-height:1;margin-bottom:.2rem;}
+.disco-artist{font-size:1.12rem;color:var(--pl);font-weight:500;margin-bottom:.2rem;}
+.disco-year{font-family:'Space Mono',monospace;font-size:.82rem;color:var(--gray);margin-bottom:1rem;}
+.disco-desc{font-size:1rem;color:var(--gl);line-height:1.75;max-width:520px;margin-bottom:1.4rem;}
+
+/* ── PLAYER ── */
 .player-wrap{display:flex;align-items:center;gap:1.2rem;background:rgba(255,255,255,.03);border:1px solid var(--border);padding:1rem 1.2rem;max-width:440px;}
 .pl-art{width:58px;height:58px;object-fit:cover;flex-shrink:0;box-shadow:0 4px 12px rgba(0,0,0,.5);}
 .pl-art-ph{width:58px;height:58px;flex-shrink:0;background:#1a1a1a;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;}
@@ -95,50 +107,51 @@ nav{position:sticky;top:0;z-index:200;background:var(--black);border-bottom:1px 
 .pl-track{fill:none;stroke:rgba(255,255,255,.08);stroke-width:4;}
 .pl-arc{fill:none;stroke:var(--pink);stroke-width:4;stroke-linecap:round;stroke-dasharray:163.4;stroke-dashoffset:163.4;transition:stroke-dashoffset .1s linear;}
 .pl-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:42px;height:42px;border-radius:50%;background:var(--purple);display:flex;align-items:center;justify-content:center;transition:background .2s,transform .1s;box-shadow:0 3px 14px rgba(124,58,237,.5);}
-.pl-ring-wrap:hover .pl-btn,.pl-ring-wrap.playing .pl-btn{background:var(--pl);}
-.pl-ring-wrap:hover .pl-btn{transform:translate(-50%,-50%) scale(1.07);}
+.pl-ring-wrap:hover .pl-btn{background:var(--pl);transform:translate(-50%,-50%) scale(1.07);}
 .pl-ico-play{margin-left:3px;}
 .pl-info{flex:1;min-width:0;}
-.pl-title{font-family:'Bebas Neue',sans-serif;font-size:.95rem;letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.pl-artist{font-size:.7rem;color:var(--gray);margin-bottom:.35rem;}
+.pl-title{font-family:'Bebas Neue',sans-serif;font-size:1.05rem;letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.pl-artist{font-size:.8rem;color:var(--gray);margin-bottom:.45rem;}
 .pl-bar-wrap{width:100%;height:3px;background:var(--border);border-radius:2px;cursor:pointer;}
 .pl-bar{height:100%;background:var(--pink);border-radius:2px;width:0%;transition:width .1s linear;}
-.pl-times{display:flex;justify-content:space-between;font-family:'Space Mono',monospace;font-size:.58rem;color:var(--gray);margin-top:.2rem;}
-.pl-status{font-family:'Space Mono',monospace;font-size:.58rem;color:var(--pink);letter-spacing:.1em;text-transform:uppercase;margin-top:.3rem;}
-/* MUSIC PAGE */
-.tabs{display:flex;border-bottom:1px solid var(--border);margin-bottom:1.8rem;}
-.tab-btn{background:none;border:none;color:var(--gray);font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.1em;padding:.7rem 1.2rem;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .2s,border-color .2s;}
-.tab-btn.active{color:var(--white);border-bottom-color:var(--purple);}
-.tab-content{display:none;}.tab-content.active{display:block;}
-/* MUSIC NEWS */
-.music-news-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
-.mn-card{cursor:pointer;background:var(--dark);border:1px solid var(--border);transition:transform .2s,border-color .2s;}
-.mn-card:hover{transform:translateY(-4px);border-color:var(--purple);}
-.mn-img-wrap{position:relative;height:200px;overflow:hidden;}
-.mn-img-wrap canvas,.mn-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;}
-.mn-tag{position:absolute;top:.7rem;left:.7rem;background:var(--purple);color:white;font-size:.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:.2rem .5rem;}
-.mn-body{padding:1rem;}
-.mn-body h3{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;line-height:1.2;margin-bottom:.4rem;}
-.mn-body p{font-size:.78rem;color:var(--gray);line-height:1.5;}
-/* CHARTS — stile radioappalla */
+.pl-times{display:flex;justify-content:space-between;font-family:'Space Mono',monospace;font-size:.68rem;color:var(--gray);margin-top:.2rem;}
+.pl-status{font-family:'Space Mono',monospace;font-size:.68rem;color:var(--pink);letter-spacing:.1em;text-transform:uppercase;margin-top:.3rem;}
+
+/* ── MUSIC PAGE ── */
+/* Grid notizie musica — stesso stile home news */
+.music-news-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);}
+.mn-card{background:var(--black);cursor:pointer;transition:transform .2s;}
+.mn-card:hover{transform:translateY(-3px);}
+.mn-img-wrap{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;}
+.mn-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5;transition:opacity .3s;}
+.mn-card:hover .mn-img{opacity:.7;}
+.mn-img-tint{position:absolute;inset:0;}
+.mn-img-fade{position:absolute;inset:0;background:linear-gradient(transparent 25%,rgba(0,0,0,.88));}
+.mn-img-label{position:absolute;bottom:0;left:0;right:0;padding:.9rem 1.1rem;}
+.mn-img-tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.22rem .55rem;border-radius:2px;color:white;margin-bottom:.35rem;}
+.mn-img-title{font-family:'Bebas Neue',sans-serif;font-size:1.35rem;line-height:1.2;color:white;}
+.mn-body{padding:1rem 1.1rem 1.2rem;}
+.mn-sub{font-size:.9rem;color:var(--gray);line-height:1.55;}
+.mn-more{font-size:.72rem;color:var(--purple);margin-top:.6rem;letter-spacing:.08em;text-transform:uppercase;}
+
+/* ── CHARTS ── */
 .charts-two-col{display:grid;grid-template-columns:1fr 1fr;gap:3rem;}
-.chart-row{display:flex;align-items:center;border-bottom:1px solid var(--border);cursor:pointer;transition:background .15s;position:relative;min-height:72px;}
+.chart-row{display:flex;align-items:center;border-bottom:1px solid var(--border);cursor:pointer;transition:background .15s;position:relative;min-height:78px;}
 .chart-row:last-child{border-bottom:none;}
 .chart-row:hover{background:rgba(124,58,237,.08);}
 .chart-row.playing{background:var(--purple);}
-.cr-num{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;color:var(--purple);width:54px;text-align:center;flex-shrink:0;line-height:1;}
+.cr-num{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--purple);width:54px;text-align:center;flex-shrink:0;line-height:1;}
 .chart-row.playing .cr-num{color:rgba(255,255,255,.45);}
 .cr-img{width:64px;height:64px;object-fit:cover;flex-shrink:0;background:#1a1a1a;}
-.cr-info{flex:1;min-width:0;padding:.5rem .8rem;}
-.cr-title{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.03em;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.cr-artist{font-size:.72rem;color:var(--gray);margin-top:.1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.cr-info{flex:1;min-width:0;padding:.6rem .9rem;}
+.cr-title{font-family:'Bebas Neue',sans-serif;font-size:1.32rem;letter-spacing:.03em;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.cr-artist{font-size:.82rem;color:var(--gray);margin-top:.15rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .chart-row.playing .cr-title{color:white;}
 .chart-row.playing .cr-artist{color:rgba(255,255,255,.75);}
 .cr-pw{position:relative;width:46px;height:46px;flex-shrink:0;cursor:pointer;margin-right:.8rem;}
 .cr-svg{width:46px;height:46px;transform:rotate(-90deg);position:absolute;top:0;left:0;pointer-events:none;}
-.cr-tr{fill:none;stroke:rgba(255,255,255,.2);stroke-width:3;}
+.cr-tr{fill:none;stroke:rgba(255,255,255,.1);stroke-width:3;}
 .cr-pr{fill:none;stroke:var(--pink);stroke-width:3;stroke-linecap:round;stroke-dasharray:125;stroke-dashoffset:125;transition:stroke-dashoffset .1s linear;}
-.chart-row:not(.playing) .cr-tr{stroke:rgba(255,255,255,.1);}
 .cr-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:34px;height:34px;border-radius:50%;background:var(--purple);border:none;display:flex;align-items:center;justify-content:center;transition:background .2s;}
 .chart-row:not(.playing):hover .cr-btn{background:var(--pl);}
 .chart-row.playing .cr-btn{background:rgba(255,255,255,.2);}
@@ -147,95 +160,222 @@ nav{position:sticky;top:0;z-index:200;background:var(--black);border-bottom:1px 
 .cr-eq span{display:block;width:3px;background:white;border-radius:1px;animation:eq .6s ease-in-out infinite alternate;}
 .cr-eq span:nth-child(2){animation-delay:.15s;}.cr-eq span:nth-child(3){animation-delay:.3s;}
 .cr-pw.active .cr-eq{display:flex;}.cr-pw.active .cr-ico{display:none;}
-/* Barra progresso inline sotto la riga playing */
 .cr-prog-row{display:none;background:var(--purple);padding:.35rem calc(.8rem + 64px + 54px) .45rem calc(54px + 64px + .8rem);}
 .chart-row.playing ~ .cr-prog-row{display:block;}
 .cr-prog-bar-wrap{width:100%;height:3px;background:rgba(255,255,255,.25);border-radius:2px;cursor:pointer;}
 .cr-prog-bar{height:100%;background:white;border-radius:2px;width:0%;transition:width .1s linear;}
 .cr-prog-time{display:flex;justify-content:space-between;font-family:'Space Mono',monospace;font-size:.55rem;color:rgba(255,255,255,.7);margin-top:.25rem;}
-/* BOTTOM PLAYER FISSO */
+
+/* ── BOTTOM PLAYER ── */
 .bottom-player{position:fixed;bottom:0;left:0;right:0;height:70px;background:var(--purple);z-index:400;display:flex;align-items:center;gap:1rem;padding:0 1.5rem;transform:translateY(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);border-top:2px solid var(--pl);box-shadow:0 -4px 24px rgba(124,58,237,.4);}
 .bottom-player.visible{transform:translateY(0);}
 body.has-player{padding-bottom:70px;}
 .bp-art{width:48px;height:48px;object-fit:cover;flex-shrink:0;border-radius:2px;background:rgba(255,255,255,.1);}
 .bp-info{min-width:0;max-width:200px;flex-shrink:0;}
-.bp-title{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:white;line-height:1.1;}
-.bp-artist{font-size:.68rem;color:rgba(255,255,255,.75);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.bp-title{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:white;line-height:1.1;}
+.bp-artist{font-size:.78rem;color:rgba(255,255,255,.75);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .bp-btn{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.2);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;flex-shrink:0;}
 .bp-btn:hover{background:rgba(255,255,255,.35);}
 .bp-progress{flex:1;display:flex;align-items:center;gap:.7rem;}
 .bp-bar-wrap{flex:1;height:4px;background:rgba(255,255,255,.25);border-radius:2px;cursor:pointer;}
 .bp-bar{height:100%;background:white;border-radius:2px;width:0%;transition:width .1s linear;}
-.bp-time{font-family:'Space Mono',monospace;font-size:.62rem;color:rgba(255,255,255,.8);white-space:nowrap;flex-shrink:0;}
+.bp-time{font-family:'Space Mono',monospace;font-size:.7rem;color:rgba(255,255,255,.8);white-space:nowrap;flex-shrink:0;}
 .bp-close{background:none;border:none;color:rgba(255,255,255,.5);cursor:pointer;font-size:1.3rem;line-height:1;padding:.2rem;flex-shrink:0;transition:color .2s;}
 .bp-close:hover{color:white;}
-/* MODAL */
-.art-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:500;align-items:center;justify-content:center;padding:1.5rem;}
+
+/* ── MODAL — si apre IN HOME, senza spostarsi ── */
+.art-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:500;align-items:center;justify-content:center;padding:1.5rem;}
 .art-modal.open{display:flex;}
-.art-modal-inner{background:var(--dark);border:1px solid var(--border);max-width:640px;width:100%;position:relative;border-radius:4px;overflow:hidden;}
-.art-close{position:absolute;top:.7rem;right:.7rem;background:rgba(0,0,0,.6);border:none;color:white;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:.9rem;display:flex;align-items:center;justify-content:center;z-index:10;}
-.art-modal-body{padding:1.2rem 1.4rem 1.6rem;}
-.art-modal-body h2{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;line-height:1.15;margin:.6rem 0 .8rem;}
-.art-modal-body p{font-size:.85rem;color:var(--gl);line-height:1.8;}
-/* BIO */
-.bio-layout{display:grid;grid-template-columns:340px 1fr;gap:3rem;align-items:start;padding:2.5rem;}
-.bio-img-wrap{position:relative;}.bio-img{width:100%;aspect-ratio:3/4;object-fit:cover;filter:grayscale(20%);box-shadow:0 20px 50px rgba(0,0,0,.5);}
-.bio-img-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.85));padding:1rem;font-family:'Space Mono',monospace;font-size:.65rem;color:var(--gray);}
-.bio-content h1{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;letter-spacing:.04em;line-height:1;margin-bottom:.3rem;}
-.bio-content .role{font-size:.8rem;color:var(--pl);font-family:'Space Mono',monospace;letter-spacing:.15em;text-transform:uppercase;margin-bottom:1.8rem;}
+.art-modal-inner{background:var(--dark);border:1px solid var(--border);max-width:680px;width:100%;position:relative;border-radius:6px;overflow:hidden;max-height:90vh;overflow-y:auto;}
+.art-close{position:absolute;top:.8rem;right:.8rem;background:rgba(0,0,0,.7);border:none;color:white;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;z-index:10;transition:background .2s;}
+.art-close:hover{background:var(--purple);}
+.art-modal-hero{position:relative;width:100%;height:220px;overflow:hidden;}
+.art-modal-hero img{width:100%;height:100%;object-fit:cover;opacity:.5;}
+.art-modal-hero-tint{position:absolute;inset:0;}
+.art-modal-hero-fade{position:absolute;inset:0;background:linear-gradient(transparent 30%,rgba(0,0,0,.9));}
+.art-modal-body{padding:1.4rem 1.8rem 1.8rem;}
+.art-modal-tag-label{display:inline-block;background:var(--purple);color:white;font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:.22rem .6rem;margin-bottom:.7rem;}
+.art-modal-body h2{font-family:'Bebas Neue',sans-serif;font-size:2rem;line-height:1.2;margin-bottom:.9rem;}
+.art-modal-body p{font-size:.97rem;color:var(--gl);line-height:1.85;}
+
+/* ── BIO ── */
+.bio-layout{display:grid;grid-template-columns:340px 1fr;gap:3rem;align-items:start;padding:3rem;}
+.bio-img-wrap{position:relative;}
+.bio-img{width:100%;aspect-ratio:3/4;object-fit:cover;filter:grayscale(20%);box-shadow:0 20px 50px rgba(0,0,0,.5);}
+.bio-img-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.85));padding:1rem;font-family:'Space Mono',monospace;font-size:.75rem;color:var(--gray);}
+.bio-content h1{font-family:'Bebas Neue',sans-serif;font-size:4rem;letter-spacing:.04em;line-height:1;margin-bottom:.3rem;}
+.bio-content .role{font-size:.9rem;color:var(--pl);font-family:'Space Mono',monospace;letter-spacing:.14em;text-transform:uppercase;margin-bottom:2rem;}
 .bio-stats{display:flex;gap:2rem;margin:2rem 0;padding:1.5rem;background:var(--dark);border:1px solid var(--border);}
-.stat-num{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--pl);line-height:1;}
-.stat-label{font-size:.7rem;color:var(--gray);font-family:'Space Mono',monospace;text-transform:uppercase;letter-spacing:.1em;}
-.bio-text p{font-size:.9rem;color:var(--gl);line-height:1.8;margin-bottom:1rem;}
-.bio-section-title{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.08em;border-left:3px solid var(--purple);padding-left:.7rem;margin:1.8rem 0 1rem;}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:2.7rem;color:var(--pl);line-height:1;}
+.stat-label{font-size:.78rem;color:var(--gray);font-family:'Space Mono',monospace;text-transform:uppercase;letter-spacing:.1em;}
+.bio-text p{font-size:1rem;color:var(--gl);line-height:1.85;margin-bottom:1rem;}
+.bio-section-title{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:.08em;border-left:3px solid var(--purple);padding-left:.7rem;margin:1.8rem 0 1rem;}
 .club-list{display:flex;flex-wrap:wrap;gap:.5rem;}
-.club-tag{border:1px solid var(--border);padding:.3rem .7rem;font-size:.72rem;color:var(--gl);font-family:'Space Mono',monospace;cursor:default;transition:border-color .2s,color .2s;}.club-tag:hover{border-color:var(--purple);color:var(--white);}
-/* CONSULENZA RADIOFONICA */
+.club-tag{border:1px solid var(--border);padding:.35rem .85rem;font-size:.8rem;color:var(--gl);font-family:'Space Mono',monospace;cursor:default;transition:border-color .2s,color .2s;}
+.club-tag:hover{border-color:var(--purple);color:var(--white);}
+
+/* ── CONSULENZA ── */
 .consulenza-card{background:linear-gradient(135deg,#1a0040 0%,#0a001a 100%);border:1px solid var(--purple);border-radius:6px;padding:1.5rem 1.8rem;margin-top:1.5rem;display:flex;align-items:center;gap:1.5rem;}
 .consulenza-icon{width:52px;height:52px;background:var(--purple);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.consulenza-headline{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:.06em;color:white;line-height:1.1;margin-bottom:.3rem;}
-.consulenza-sub{font-size:.78rem;color:var(--gl);line-height:1.6;margin-bottom:.8rem;max-width:480px;}
-.consulenza-btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--purple);color:white;font-family:'Space Mono',monospace;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.45rem 1.1rem;text-decoration:none;transition:background .2s;}
+.consulenza-headline{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:.06em;color:white;line-height:1.1;margin-bottom:.3rem;}
+.consulenza-sub{font-size:.9rem;color:var(--gl);line-height:1.7;margin-bottom:.8rem;max-width:480px;}
+.consulenza-btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--purple);color:white;font-family:'Space Mono',monospace;font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.5rem 1.2rem;text-decoration:none;transition:background .2s;}
 .consulenza-btn:hover{background:var(--pl);}
 .links-divider{height:1px;background:var(--border);margin:.4rem 0;}
-/* LINKS */
+
+/* ── LINKS ── */
 .links-page{padding:3rem 2.5rem;max-width:700px;margin:0 auto;}
-.links-page h1{font-family:'Bebas Neue',sans-serif;font-size:3rem;letter-spacing:.04em;margin-bottom:.4rem;}
-.links-page .sub{font-size:.8rem;color:var(--gray);font-family:'Space Mono',monospace;margin-bottom:2.5rem;}
-.link-card{display:flex;align-items:center;gap:1.2rem;padding:1.1rem 1.4rem;background:var(--dark);border:1px solid var(--border);margin-bottom:.8rem;text-decoration:none;color:var(--white);transition:border-color .2s,transform .15s,background .2s;}
+.links-page h1{font-family:'Bebas Neue',sans-serif;font-size:3.2rem;letter-spacing:.04em;margin-bottom:.4rem;}
+.links-page .sub{font-size:.9rem;color:var(--gray);font-family:'Space Mono',monospace;margin-bottom:2.8rem;}
+.link-card{display:flex;align-items:center;gap:1.2rem;padding:1.2rem 1.5rem;background:var(--dark);border:1px solid var(--border);margin-bottom:.9rem;text-decoration:none;color:var(--white);transition:border-color .2s,transform .15s,background .2s;}
 .link-card:hover{border-color:var(--purple);transform:translateX(4px);background:rgba(124,58,237,.06);}
-.link-icon{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.link-name{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:.05em;}
-.link-url{font-size:.72rem;color:var(--gray);font-family:'Space Mono',monospace;margin-top:.1rem;}
+.link-icon{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.link-name{font-family:'Bebas Neue',sans-serif;font-size:1.45rem;letter-spacing:.05em;}
+.link-url{font-size:.8rem;color:var(--gray);font-family:'Space Mono',monospace;margin-top:.15rem;}
 .link-arrow{margin-left:auto;color:var(--gray);}.link-card:hover .link-arrow{color:var(--pl);}
-footer{background:var(--dark);border-top:1px solid var(--border);padding:1.8rem 2.5rem;text-align:center;}
-footer p{font-size:.7rem;color:var(--gray);font-family:'Space Mono',monospace;}
+
+/* ── FOOTER ── */
+footer{background:var(--dark);border-top:1px solid var(--border);padding:2.5rem 2.5rem 1.8rem;display:flex;flex-direction:column;align-items:center;gap:1.4rem;}
+footer p{font-size:.78rem;color:var(--gray);font-family:'Space Mono',monospace;}
+
+/* ── ANIMATIONS ── */
 .fi{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease;}.fi.in{opacity:1;transform:translateY(0);}
 @keyframes eq{from{height:2px;}to{height:8px;}}
+
+/* ════════════════════════════════════════════════════
+   RESPONSIVE MOBILE
+   ════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* NAV mobile */
+  nav{padding:0 1.2rem;height:56px;}
+  .logo-name{font-size:1.4rem;}
+  .logo-tag{font-size:.5rem;letter-spacing:.3em;}
+  .nav-links{display:none;position:fixed;top:56px;left:0;right:0;background:var(--black);border-bottom:1px solid var(--border);flex-direction:column;padding:.5rem 0;z-index:199;}
+  .nav-links.open{display:flex;}
+  .nav-links a{padding:.9rem 1.5rem;font-size:1rem;border-bottom:1px solid var(--border);}
+  .nav-links a.active{border-bottom:2px solid var(--purple);}
+  .nav-burger{display:flex;}
+
+  /* TICKER */
+  .ticker-inner{font-size:.7rem;}
+
+  /* HERO */
+  .home-hero{height:380px;}
+  .home-hero-overlay{padding:1.5rem;}
+  .home-hero-title{font-size:2.2rem;}
+  .home-hero-sub{font-size:.88rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+  .home-hero-cta{font-size:.7rem;}
+
+  /* SEC */
+  .sec{padding:1.5rem;}
+  .sec-title{font-size:1.5rem;}
+  .sec-hdr{margin-bottom:1.2rem;}
+
+  /* NEWS GRID: 2 colonne su mobile */
+  .home-news-grid{grid-template-columns:1fr 1fr;}
+  .hn-img-title{font-size:.95rem;}
+  .hn-img-tag{font-size:.6rem;}
+  .hn-body{padding:.6rem .75rem .8rem;}
+  .hn-sub{font-size:.8rem;}
+
+  /* TECH GRID: 1 colonna su mobile */
+  .home-tech-grid{grid-template-columns:1fr;}
+  .ht-img-wrap{aspect-ratio:16/6;}
+
+  /* DISCO */
+  .disco-sec{padding:1.5rem;}
+  .disco-inner{grid-template-columns:1fr;gap:1.5rem;}
+  .disco-cover-wrap{width:140px;height:140px;margin:0 auto;}
+  .disco-cover{width:140px;height:140px;}
+  .disco-ph{width:140px;height:140px;}
+  .vinyl{right:-30px;width:130px;height:130px;}
+  .disco-title{font-size:2.2rem;}
+  .disco-artist{font-size:1rem;}
+  .disco-desc{font-size:.9rem;}
+  .player-wrap{max-width:100%;}
+
+  /* MUSIC PAGE */
+  .music-news-grid{grid-template-columns:1fr;}
+  .mn-img-wrap{aspect-ratio:16/8;}
+  .mn-img-title{font-size:1.1rem;}
+
+  /* CHARTS */
+  .charts-two-col{grid-template-columns:1fr;gap:0;}
+  .cr-title{font-size:1.1rem;}
+  .cr-artist{font-size:.75rem;}
+  .cr-num{font-size:1.8rem;width:40px;}
+  .cr-img{width:50px;height:50px;}
+  .cr-prog-row{padding:.35rem calc(.8rem + 50px + 40px) .45rem calc(40px + 50px + .8rem);}
+
+  /* BIO */
+  .bio-layout{grid-template-columns:1fr;gap:1.5rem;padding:1.5rem;}
+  .bio-content h1{font-size:2.8rem;}
+  .bio-content .role{font-size:.78rem;}
+  .bio-stats{flex-wrap:wrap;gap:1rem;padding:1rem;}
+  .stat-num{font-size:2rem;}
+  .stat-label{font-size:.7rem;}
+  .bio-text p{font-size:.92rem;}
+  .bio-section-title{font-size:1.3rem;}
+
+  /* LINKS */
+  .links-page{padding:1.5rem;}
+  .links-page h1{font-size:2.4rem;}
+  .link-card{padding:.9rem 1rem;}
+  .link-name{font-size:1.2rem;}
+  .link-url{font-size:.72rem;}
+  .consulenza-card{flex-direction:column;align-items:flex-start;}
+  .consulenza-headline{font-size:1.4rem;}
+  .consulenza-sub{font-size:.85rem;}
+
+  /* MODAL */
+  .art-modal{padding:.8rem;}
+  .art-modal-inner{max-height:85vh;}
+  .art-modal-hero{height:160px;}
+  .art-modal-body{padding:1rem 1.2rem 1.4rem;}
+  .art-modal-body h2{font-size:1.5rem;}
+  .art-modal-body p{font-size:.88rem;}
+
+  /* BOTTOM PLAYER */
+  .bottom-player{padding:0 1rem;gap:.7rem;}
+  .bp-info{max-width:120px;}
+  .bp-title{font-size:1rem;}
+  .bp-artist{font-size:.7rem;}
+  .bp-time{display:none;}
+}
+
+@media (max-width: 420px) {
+  .home-news-grid{grid-template-columns:1fr;}
+  .home-hero-title{font-size:1.9rem;}
+  .home-hero{height:320px;}
+  .logo-name{font-size:1.2rem;}
+}
 </style>
 </head>
 <body>
 
 <nav>
   <div class="logo" onclick="showPage('home')">
-  <div class="logo-wrap">
-    <div class="logo-name"><span class="ln-first">SIMONE </span><span class="ln-last">GIRASOLE</span></div>
-    <div class="logo-tag">DJ · Producer · Radio Host</div>
+    <div class="logo-wrap">
+      <div class="logo-name"><span class="ln-first">SIMONE </span><span class="ln-last">GIRASOLE</span></div>
+      <div class="logo-tag">DJ · Producer · Radio Host</div>
+    </div>
   </div>
-</div>
-  <ul class="nav-links">
-    <li><a href="#" class="active" onclick="showPage('home',this);return false;">Home</a></li>
-    <li><a href="#" onclick="showPage('bio',this);return false;">Bio</a></li>
-    <li><a href="#" onclick="showPage('musica',this);return false;">Musica</a></li>
-    <li><a href="#" onclick="showPage('links',this);return false;">Link</a></li>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#" class="active" onclick="showPage('home',this);closeMobileNav();return false;">Home</a></li>
+    <li><a href="#" onclick="showPage('bio',this);closeMobileNav();return false;">Bio</a></li>
+    <li><a href="#" onclick="showPage('musica',this);closeMobileNav();return false;">Musica</a></li>
+    <li><a href="#" onclick="showPage('links',this);closeMobileNav();return false;">Link</a></li>
   </ul>
+  <button class="nav-burger" id="nav-burger" onclick="toggleMobileNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 <div class="ticker"><span class="ticker-inner" id="site-ticker">★ Caricamento notizie...</span></div>
 
 <!-- ═══ HOME ═══ -->
 <div class="page active" id="page-home">
 
-  <!-- HERO + NEWS + TECH — generati da WEEKLY_CONTENT in content.js -->
   <div class="home-hero" id="home-hero-wrap" onclick="openHomeArticle(0)">
     <img class="home-hero-img" id="home-hero-img" src="" alt="">
     <div class="home-hero-tint" id="home-hero-tint"></div>
@@ -246,16 +386,17 @@ footer p{font-size:.7rem;color:var(--gray);font-family:'Space Mono',monospace;}
       <span class="home-hero-cta">Leggi l'articolo completo →</span>
     </div>
   </div>
+
   <div class="sec" style="padding:2rem 2.5rem 0;">
     <div class="sec-hdr"><div class="sec-title">ULTIME NEWS</div><div class="sec-line"></div></div>
   </div>
   <div class="home-news-grid" id="home-news-grid"></div>
+
   <div class="sec" style="padding:2rem 2.5rem 0;background:var(--dark);">
     <div class="sec-hdr"><div class="sec-title">TECH &amp; GEAR</div><div class="sec-line"></div></div>
   </div>
   <div class="home-tech-grid" id="home-tech-grid" style="background:var(--dark);padding-bottom:2.5rem;"></div>
 
-  <!-- DISCO DEL GIORNO -->
   <div class="disco-sec">
     <div class="sec-hdr"><div class="sec-title">DISCO CHE STORIA DELLA SETTIMANA</div><div class="sec-line"></div></div>
     <div class="disco-inner">
@@ -327,42 +468,40 @@ footer p{font-size:.7rem;color:var(--gray);font-family:'Space Mono',monospace;}
 <div class="page" id="page-musica">
   <div class="sec">
     <div class="sec-hdr"><div class="sec-title">NOTIZIE DAL MONDO</div><div class="sec-line"></div></div>
-    <div class="music-news-grid">
-      <div class="mn-card fi" onclick="openArticle(0)"><div class="mn-img-wrap"><canvas id="mn-c0" width="700" height="420" style="width:100%;height:100%;display:block;"></canvas><div class="mn-tag">Club</div></div><div class="mn-body"><h3>[UNVRS] è il club #1 al mondo: la rivoluzione parte da Ibiza</h3><p>L'hyperclub ibizense entra direttamente in cima alla DJ Mag Top 100 Clubs 2026 nel suo primo anno.</p></div></div>
-      <div class="mn-card fi" onclick="openArticle(1)"><div class="mn-img-wrap"><canvas id="mn-c1" width="700" height="420" style="width:100%;height:100%;display:block;"></canvas><div class="mn-tag">Music</div></div><div class="mn-body"><h3>Elton John e The Blessed Madonna: il remix album che unisce Studio 54 e la dancefloor</h3><p>Il leggendario cantautore britannico pubblica il suo primo album di remix dance via Positiva per il Record Store Day 2026.</p></div></div>
-      <div class="mn-card fi" onclick="openArticle(2)"><div class="mn-img-wrap"><canvas id="mn-c2" width="700" height="420" style="width:100%;height:100%;display:block;"></canvas><div class="mn-tag">Industry</div></div><div class="mn-body"><h3>L'industria della musica elettronica vale 15,1 miliardi: +7% nel 2025</h3><p>Il report IMS Business 2026 conferma la crescita record del settore.</p></div></div>
-      <div class="mn-card fi" onclick="openArticle(3)"><div class="mn-img-wrap"><canvas id="mn-c3" width="700" height="420" style="width:100%;height:100%;display:block;"></canvas><div class="mn-tag">Festival</div></div><div class="mn-body"><h3>Anyma al Coachella 2026: il set da 9 minuti in più che è costato 24.000 dollari</h3><p>Il producer italiano ha sforato i tempi al festival californiano.</p></div></div>
-    </div>
+    <div class="music-news-grid" id="music-news-grid"></div>
   </div>
-
   <div class="sec" style="background:var(--dark);">
     <div class="charts-two-col">
       <div>
-        <div class="sec-hdr"><div class="sec-title" style="font-size:1.2rem;">LE MIGLIORI 10 DELLA SETTIMANA DANCE</div></div>
+        <div class="sec-hdr"><div class="sec-title" style="font-size:1.4rem;">TOP 10 DANCE</div></div>
         <div id="chart-dance"></div>
       </div>
       <div>
-        <div class="sec-hdr"><div class="sec-title" style="font-size:1.2rem;">LE MIGLIORI 10 DELLA SETTIMANA MAINSTREAM</div></div>
+        <div class="sec-hdr"><div class="sec-title" style="font-size:1.4rem;">TOP 10 MAINSTREAM</div></div>
         <div id="chart-main"></div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- MODAL ARTICOLI -->
+<!-- MODAL ARTICOLI — rimane sulla pagina corrente -->
 <div class="art-modal" id="art-modal" onclick="closeArticle(event)">
   <div class="art-modal-inner">
     <button class="art-close" onclick="closeArticle()">✕</button>
-    <canvas id="art-modal-canvas" width="800" height="400" style="width:100%;height:200px;display:block;border-radius:4px 4px 0 0;"></canvas>
+    <div class="art-modal-hero">
+      <img id="art-modal-img" src="" alt="" style="display:none;">
+      <div class="art-modal-hero-tint" id="art-modal-tint"></div>
+      <div class="art-modal-hero-fade"></div>
+    </div>
     <div class="art-modal-body">
-      <div class="tag" id="art-modal-tag"></div>
+      <div class="art-modal-tag-label" id="art-modal-tag"></div>
       <h2 id="art-modal-title"></h2>
       <p id="art-modal-text"></p>
     </div>
   </div>
 </div>
 
-<!-- BOTTOM PLAYER FISSO -->
+<!-- BOTTOM PLAYER -->
 <div class="bottom-player" id="bottom-player">
   <img class="bp-art" id="bp-art" src="" alt="">
   <div class="bp-info">
@@ -391,59 +530,53 @@ footer p{font-size:.7rem;color:var(--gray);font-family:'Space Mono',monospace;}
     <a class="link-card fi" href="https://x.com/SimoneGirasole" target="_blank"><div class="link-icon" style="background:#000;"><svg width="20" height="20" fill="white" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.259 5.632L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></div><div><div class="link-name">X (Twitter)</div><div class="link-url">x.com/SimoneGirasole</div></div><div class="link-arrow"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></a>
     <a class="link-card fi" href="https://soundcloud.com/djsimonegirasole" target="_blank"><div class="link-icon" style="background:#FF5500;"><svg width="22" height="22" fill="white" viewBox="0 0 24 24"><path d="M2 18q0 1.4.95 2.45Q3.9 21.5 5.35 21.5q1.5 0 2.5-1.05.1-.1.2-.2h10.35q1.25 0 2.1-.875.85-.875.85-2.125 0-1.2-.825-2.075Q19.75 14.3 18.5 14.2q.2-.7.2-1.45 0-2.35-1.625-4.025Q15.45 7.05 13.1 7.05q-1.5 0-2.775.725T8.4 9.65q-.65-.35-1.4-.35-1.15 0-2.025.875Q4.1 11.05 4.1 12.2q0 .2.05.45Q2.9 13.25 2 14.8q-.5.85-.5 1.9z"/></svg></div><div><div class="link-name">SoundCloud</div><div class="link-url">soundcloud.com/djsimonegirasole</div></div><div class="link-arrow"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></a>
     <a class="link-card fi" href="mailto:girasole@m2o.it"><div class="link-icon" style="background:#555;"><svg width="22" height="22" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="link-name">Booking / Contatti</div><div class="link-url">girasole@m2o.it</div></div><div class="link-arrow"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></a>
-
     <div class="links-divider"></div>
-
     <a class="link-card fi" href="https://www.radioonweb.it/" target="_blank" style="border-color:var(--purple);"><div class="link-icon" style="background:var(--purple);"><svg width="22" height="22" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg></div><div><div class="link-name">Radio On Web</div><div class="link-url">radioonweb.it · Radio streaming &amp; consulenza</div></div><div class="link-arrow"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></a>
-
-    <a class="link-card fi" href="https://www.linkedin.com/company/53233436/" target="_blank" style="border-color:#0A66C2;"><div class="link-icon" style="background:#0A66C2;"><svg width="22" height="22" fill="white" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div><div><div class="link-name">Società di Consulenza Radiofonica</div><div class="link-url">linkedin.com/company · Consulenza radio &amp; media</div></div><div class="link-arrow"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></a>
-
-    <!-- BANNER CONSULENZA -->
+    <a class="link-card fi" href="https://www.linkedin.com/company/53233436/" target="_blank" style="border-color:#0A66C2;"><div class="link-icon" style="background:#0A66C2;"><svg width="22" height="22" fill="white" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div><div><div class="link-name">Consulenza Radiofonica</div><div class="link-url">linkedin.com/company · Consulenza radio &amp; media</div></div><div class="link-arrow"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></a>
     <div class="consulenza-card fi">
-      <div class="consulenza-icon">
-        <svg width="26" height="26" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-      </div>
+      <div class="consulenza-icon"><svg width="26" height="26" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
       <div>
         <div class="consulenza-headline">Vuoi una consulenza radiofonica?</div>
-        <div class="consulenza-sub">Oltre 26 anni di esperienza nel mondo della radio italiana. Strategie editoriali, format, palinsesti e produzione per emittenti nazionali e locali. Contattaci per scoprire come possiamo far crescere la tua radio.</div>
+        <div class="consulenza-sub">Oltre 26 anni di esperienza nel mondo della radio italiana. Strategie editoriali, format, palinsesti e produzione per emittenti nazionali e locali.</div>
         <a class="consulenza-btn" href="https://www.radioonweb.it/" target="_blank">Contattaci →</a>
       </div>
     </div>
-
   </div>
 </div>
 
-<footer style="background:var(--dark);border-top:1px solid var(--border);padding:2.5rem 2.5rem 1.8rem;display:flex;flex-direction:column;align-items:center;gap:1.4rem;">
+<footer>
   <div style="text-align:center;cursor:pointer;" onclick="showPage('home')">
     <div style="font-family:'Raleway',sans-serif;font-weight:200;font-size:1.6rem;letter-spacing:.2em;text-transform:uppercase;line-height:1;"><span style="color:var(--white);">SIMONE </span><span style="color:var(--pink);">GIRASOLE</span></div>
     <div style="font-family:'Raleway',sans-serif;font-weight:200;font-size:.5rem;letter-spacing:.45em;text-transform:uppercase;color:var(--gray);margin-top:4px;">DJ · Producer · Radio Host</div>
   </div>
   <div style="width:40px;height:1px;background:var(--purple);"></div>
-  <p style="font-family:'Space Mono',monospace;font-size:.65rem;color:var(--gray);letter-spacing:.08em;text-align:center;line-height:1.8;">
-    DJ · Producer · Radio Host · Regista<br>
-    m2o Radio · Radio Capital · Radio Deejay
-  </p>
-  <div style="font-family:'Space Mono',monospace;font-size:.58rem;color:#3a3a3a;letter-spacing:.05em;text-align:center;line-height:1.7;border-top:1px solid #1a1a1a;padding-top:1rem;width:100%;">
-    © 2026 Simone Girasole — Tutti i diritti riservati.<br>
-    È vietata la riproduzione anche parziale dei contenuti senza autorizzazione scritta.
-  </div>
+  <p style="font-family:'Space Mono',monospace;font-size:.65rem;color:var(--gray);letter-spacing:.08em;text-align:center;line-height:1.8;">DJ · Producer · Radio Host · Regista<br>m2o Radio · Radio Capital · Radio Deejay</p>
+  <div style="font-family:'Space Mono',monospace;font-size:.58rem;color:#3a3a3a;letter-spacing:.05em;text-align:center;line-height:1.7;border-top:1px solid #1a1a1a;padding-top:1rem;width:100%;">© 2026 Simone Girasole — Tutti i diritti riservati.</div>
 </footer>
 
 <script>
-// ── ENVIRONMENT ────────────────────────────────────────────────────
 const IS_LOCAL = location.hostname==='localhost'||location.hostname==='127.0.0.1'||location.protocol==='file:';
 
-// ── iTunes SEARCH (proxy su Vercel, JSONP in locale) ───────────────
+/* ── MOBILE NAV ── */
+function toggleMobileNav() {
+  const nl = document.getElementById('nav-links');
+  nl.classList.toggle('open');
+}
+function closeMobileNav() {
+  document.getElementById('nav-links').classList.remove('open');
+}
+
+/* ── iTunes SEARCH ── */
 function itunesSearch(q, cb) {
   if (IS_LOCAL) {
     const fn = '_itcb' + Date.now() + Math.random().toString(36).slice(2);
     window[fn] = function(d) {
       delete window[fn];
       const r = (d.results||[]).filter(t=>t.previewUrl).map(t=>({
-        trackName: t.trackName, artistName: t.artistName,
-        previewUrl: t.previewUrl, // in locale CORS potrebbe bloccare, ma proviamo
-        artworkUrl: t.artworkUrl100?t.artworkUrl100.replace('100x100bb','600x600bb'):null,
-        artworkUrlSmall: t.artworkUrl100?t.artworkUrl100.replace('100x100bb','200x200bb'):null,
+        trackName:t.trackName, artistName:t.artistName,
+        previewUrl:t.previewUrl,
+        artworkUrl:t.artworkUrl100?t.artworkUrl100.replace('100x100bb','600x600bb'):null,
+        artworkUrlSmall:t.artworkUrl100?t.artworkUrl100.replace('100x100bb','200x200bb'):null,
       }));
       cb(r.length ? r : null);
     };
@@ -452,137 +585,71 @@ function itunesSearch(q, cb) {
     s.onerror = () => { delete window[fn]; cb(null); };
     document.head.appendChild(s);
   } else {
-    // Su Vercel: proxy server-side, poi rewrap previewUrl attraverso /api/proxy
     fetch('/api/search?q='+encodeURIComponent(q)+'&limit=5&country=US')
-      .then(r => r.json())
-      .then(d => {
-        if (!d.results || !d.results.length) { cb(null); return; }
-        const results = d.results.map(t => ({
-          ...t,
-          // Passa ogni previewUrl attraverso il nostro proxy per evitare CORS
-          previewUrl: t.previewUrl ? '/api/proxy?url='+encodeURIComponent(t.previewUrl) : null
-        }));
-        cb(results);
-      })
-      .catch(() => cb(null));
+      .then(r=>r.json())
+      .then(d=>{
+        if (!d.results||!d.results.length){cb(null);return;}
+        cb(d.results.map(t=>({...t,previewUrl:t.previewUrl?'/api/proxy?url='+encodeURIComponent(t.previewUrl):null})));
+      }).catch(()=>cb(null));
   }
 }
 
-// ── CANVAS DRAWINGS ────────────────────────────────────────────────
-function drawCanvas(id,c1,c2,line1,line2,accent){
-  const c=document.getElementById(id); if(!c) return;
-  const ctx=c.getContext('2d'),W=c.width,H=c.height;
-  const bg=ctx.createLinearGradient(0,0,W,H); bg.addColorStop(0,c1); bg.addColorStop(1,c2);
-  ctx.fillStyle=bg; ctx.fillRect(0,0,W,H);
-  ctx.strokeStyle='rgba(255,255,255,.05)'; ctx.lineWidth=1;
-  for(let x=0;x<W;x+=60){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();}
-  for(let y=0;y<H;y+=60){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}
-  const gr=ctx.createRadialGradient(W/2,H/2,10,W/2,H/2,W*.55);
-  gr.addColorStop(0,accent+'33'); gr.addColorStop(1,'transparent');
-  ctx.fillStyle=gr; ctx.fillRect(0,0,W,H);
-  ctx.textAlign='center';
-  ctx.fillStyle=accent; ctx.font='bold '+Math.round(H*.22)+'px Bebas Neue,Arial Black,sans-serif';
-  ctx.fillText(line1,W/2,H*.5);
-  ctx.fillStyle='rgba(255,255,255,.7)'; ctx.font=Math.round(H*.1)+'px Arial';
-  ctx.fillText(line2,W/2,H*.68);
-}
-function drawYard(id){
-  const c=document.getElementById(id); if(!c) return;
-  const ctx=c.getContext('2d'),W=c.width,H=c.height;
-  const bg=ctx.createLinearGradient(0,0,0,H);
-  bg.addColorStop(0,'#1a0533'); bg.addColorStop(.4,'#6b1f8c'); bg.addColorStop(.7,'#e85d04'); bg.addColorStop(1,'#1a0533');
-  ctx.fillStyle=bg; ctx.fillRect(0,0,W,H);
-  ctx.fillStyle='rgba(0,0,0,.7)';
-  for(let x=0;x<W;x+=12){const h=40+Math.sin(x*.08)*20+Math.random()*25; ctx.fillRect(x,H-h,10,h);}
-  [{x:.2,c:'rgba(255,100,200,.4)'},{x:.5,c:'rgba(150,50,255,.5)'},{x:.8,c:'rgba(255,180,50,.4)'}].forEach(l=>{
-    const g=ctx.createRadialGradient(W*l.x,H*.3,5,W*l.x,H*.3,W*.35);
-    g.addColorStop(0,l.c); g.addColorStop(1,'transparent'); ctx.fillStyle=g; ctx.fillRect(0,0,W,H);
-  });
-  ctx.fillStyle='rgba(0,0,0,.5)'; ctx.fillRect(0,H*.55,W,H*.2);
-  ctx.fillStyle='#fff'; ctx.font='bold '+Math.round(W*.09)+'px Arial Black,sans-serif'; ctx.textAlign='center';
-  ctx.fillText('YARD FESTIVAL',W/2,H*.68);
-  ctx.font=Math.round(W*.045)+'px Arial'; ctx.fillStyle='#e040fb';
-  ctx.fillText('Jamie Jones · Seth Troxler · Portogallo 2026',W/2,H*.76);
-}
-function drawTomorrowland(id){
-  const c=document.getElementById(id); if(!c) return;
-  const ctx=c.getContext('2d'),W=c.width,H=c.height;
-  const bg=ctx.createLinearGradient(0,0,0,H);
-  bg.addColorStop(0,'#000510'); bg.addColorStop(.5,'#0d1b5e'); bg.addColorStop(1,'#000510');
-  ctx.fillStyle=bg; ctx.fillRect(0,0,W,H);
-  const gr=ctx.createRadialGradient(W/2,H/2,20,W/2,H/2,W*.5);
-  gr.addColorStop(0,'rgba(200,150,255,.6)'); gr.addColorStop(.5,'rgba(100,50,200,.2)'); gr.addColorStop(1,'transparent');
-  ctx.fillStyle=gr; ctx.fillRect(0,0,W,H);
-  ctx.strokeStyle='rgba(200,150,255,.3)'; ctx.lineWidth=2;
-  for(let i=0;i<5;i++){ctx.beginPath();for(let x=0;x<W;x++){const y=H/2+Math.sin((x+i*30)*.04)*(20+i*15); x===0?ctx.moveTo(x,y):ctx.lineTo(x,y);}ctx.stroke();}
-  ctx.fillStyle='rgba(0,0,0,.5)'; ctx.fillRect(0,H*.6,W,H*.2);
-  ctx.fillStyle='#fff'; ctx.font='bold '+Math.round(W*.08)+'px Arial Black,sans-serif'; ctx.textAlign='center';
-  ctx.fillText('TOMORROWLAND',W/2,H*.7);
-  ctx.font=Math.round(W*.04)+'px Arial'; ctx.fillStyle='#a855f7';
-  ctx.fillText('ORCHESTRA · THE ALBUM · 2026',W/2,H*.78);
-}
-
-// ── ARTICOLI ──────────────────────────────────────────────────────
-const articles = [
-  {tag:'Club',title:'[UNVRS] è il club #1 al mondo: la rivoluzione parte da Ibiza',
-   text:"L'hyperclub ibizense [UNVRS], aperto solo nel maggio 2025, è balzato direttamente al numero uno della DJ Mag Top 100 Clubs 2026 — un record assoluto nella storia ventennale della classifica. Situato nel sito dell'ex Ku Club/Privilege, ospita 10.000 persone distribuite in ambienti immersivi con LED, tunnel luminosi e una main floor con schermo gigante dietro la consolle. Nel 2025 ha ospitato Carl Cox, Jamie Jones, Anyma, David Guetta e Charlotte de Witte. Per il 2026 la line-up include John Summit, Tiësto e Armin van Buuren.",
-   draw:(id)=>drawCanvas(id,'#0a0520','#3d1060','#UNVRS','N.1 CLUB DEL MONDO 2026','#e040fb')},
-  {tag:'Music',title:'Elton John e The Blessed Madonna: il remix album che unisce Studio 54 e la dancefloor',
-   text:"Sir Elton John e la DJ e produttrice The Blessed Madonna hanno collaborato per il primo album di remix dance della carriera del cantautore britannico. Il disco, pubblicato via Positiva per il Record Store Day 2026, reinterpreta classici di Elton con arrangiamenti club-oriented firmati dalla Madison. I due artisti hanno discusso della loro passione condivisa per Studio 54, i dischi in vinile e i momenti in pista che hanno cambiato le loro vite. Un progetto trasversale che avvicina generazioni diverse alla musica da ballo.",
-   draw:(id)=>drawCanvas(id,'#1a0008','#6b0020','ELTON JOHN','× THE BLESSED MADONNA','#ff6b9d')},
-  {tag:'Industry',title:'L\'industria della musica elettronica vale 15,1 miliardi: +7% nel 2025',
-   text:"Il rapporto IMS Business Report 2026 ha confermato che l'industria della musica elettronica ha raggiunto il valore record di 15,1 miliardi di dollari nel 2025, con una crescita del 7% rispetto all'anno precedente. La crescita è trainata dal ritorno massiccio degli eventi live, dall'esplosione del mercato asiatico e dalla proliferazione delle piattaforme di streaming dedicate al settore. L'Europa rimane il mercato più solido con 39,5 club nella classifica DJ Mag. L'Africa e il Sud America crescono a doppia cifra come nuovi mercati emergenti.",
-   draw:(id)=>drawCanvas(id,'#001a0a','#004d1a','15,1 MLD $','INDUSTRIA ELETTRONICA +7%','#00e676')},
-  {tag:'Festival',title:'Anyma al Coachella 2026: il set da 9 minuti in più che è costato 24.000 dollari',
-   text:"Il producer italiano Anyma — al secolo Matteo Milleri — ha infranto i limiti di tempo durante il suo set al Coachella 2026, suonando per 9 minuti in più rispetto a quanto previsto dal contratto. Il costo dello sforamento: 24.000 dollari di penale dall'organizzazione del festival californiano. Nonostante la multa, il pubblico ha vissuto uno dei momenti più memorabili dell'edizione: il secondo weekend del suo set è diventato virale con milioni di visualizzazioni sui social. Anyma non si è scusato per l'eccesso di entusiasmo.",
-   draw:(id)=>drawCanvas(id,'#0d0d1a','#2d2d7a','ANYMA','COACHELLA 2026 · +9 MIN','#a855f7')},
+/* ── ARTICOLI — dati ── */
+// Aggiornati da initFromContent se WEEKLY_CONTENT disponibile
+let allArticles = [
+  /* 0: hero */ {tag:'',tagColor:'#7c3aed',title:'',sub:'',text:'',photo:'',tint:'rgba(4,0,26,0.6),rgba(26,0,80,0.4)'},
+  /* 1-4: news */ {tag:'Clubbing',tagColor:'#7c3aed',title:'Cercle Festival 2026',sub:'Dal 22 al 24 maggio a Parigi.',text:'Il Cercle Festival torna al Musée de l\'Air et de l\'Espace di Le Bourget dal 22 al 24 maggio. Tre giorni con 44 artisti su tre palchi unici: A380, Ariane e Concorde. In lineup Eric Prydz, ARTBAT, Ben Böhmer, Vintage Culture, Adriatique, Kölsch e Monolink.',photo:'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=900&q=80',tint:'rgba(4,0,26,0.6),rgba(26,0,80,0.4)'},
+  {tag:'Festival · Italia',tagColor:'#1060cc',title:'Gabry Ponte a San Siro',sub:'70.000 persone il 27 giugno.',text:'Il 27 giugno 2026 lo Stadio San Siro si trasforma nella più grande dancefloor d\'Italia con Gabry Ponte come protagonista assoluto. Con oltre 70.000 posti, l\'evento San Siro Dance promette di riscrivere la storia della musica elettronica italiana.',photo:'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=900&q=80',tint:'rgba(0,10,26,0.6),rgba(0,32,96,0.4)'},
+  {tag:'Ibiza · IMS 2026',tagColor:'#7c1090',title:'IMS Ibiza 2026',sub:'Pete Tong, Eliza Rose e Jazzy protagonisti.',text:'L\'International Music Summit 2026 si è svolto ad Ibiza dal 22 al 24 aprile. Pete Tong ha aperto i lavori con un keynote sull\'evoluzione della scena dance globale, mentre Eliza Rose e Jazzy hanno rappresentato la nuova generazione di artiste britanniche.',photo:'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=900&q=80',tint:'rgba(13,0,21,0.6),rgba(61,0,96,0.4)'},
+  {tag:'Open Air · Milano',tagColor:'#006630',title:'Vision Open Air: Ilario Alicante',sub:'Il 1° maggio a Milano con L/NK.',text:'Il 1° maggio 2026 l\'Ex Macello di Milano ha ospitato l\'opening della stagione outdoor di Vision con Ilario Alicante. L\'evento ha segnato il debutto della nuova area outdoor con produzione sonora e visiva di altissimo livello.',photo:'https://images.unsplash.com/photo-1506157786151-b8491531f063?w=900&q=80',tint:'rgba(0,18,8,0.6),rgba(0,64,32,0.4)'},
+  /* 5-8: tech */ {tag:'VST · Sound Design',tagColor:'#5020aa',title:'Transfigure: 120 oscillatori',sub:'Il plugin che trasforma qualsiasi suono.',text:'Transfigure è il nuovo plugin VST basato su un motore di resintesi spettrale con 120 oscillatori. Permette di trasformare in tempo reale qualsiasi suono in texture mai sentite prima, con un XY Pad espressivo per il controllo live.',photo:'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=900&q=80',tint:'rgba(8,0,24,0.6),rgba(32,0,80,0.4)'},
+  {tag:'Hardware · Akai',tagColor:'#004488',title:'Akai MPC Sample 2026',sub:'Beatmaking portatile ridefinito.',text:'Akai presenta l\'MPC Sample 2026: touch capacitivo, USB-C, 16 pad retroilluminati e integrazione cloud nativa. La batteria garantisce 8 ore di utilizzo continuo. Disponibile da maggio 2026 a 299€.',photo:'https://images.unsplash.com/photo-1619983081563-430f63602796?w=900&q=80',tint:'rgba(0,8,15,0.6),rgba(0,32,64,0.4)'},
+  {tag:'AI Plugin · Sonible',tagColor:'#005520',title:'Sonible pure:level',sub:'L\'AI che cambia il modo di mixare.',text:'Sonible lancia pure:level: il plugin AI per il livellamento automatico di tracce e mix. Analizza il contenuto musicale e applica una curva di volume dinamica che segue naturalmente il fraseggio, senza artefatti o pompaggio. A 69€ su sonible.com.',photo:'https://images.unsplash.com/photo-1574169208507-84376144848b?w=900&q=80',tint:'rgba(4,15,0,0.6),rgba(16,64,0,0.4)'},
+  {tag:'DAW · Ableton',tagColor:'#882200',title:'Ableton Live 12.1',sub:'I producer elettronici aspettavano questo.',text:'Ableton rilascia Live 12.1 gratuitamente per tutti gli utenti di Live 12. Novità principali: MIDI Arpeggiator polifonico, Chord Generator con suggerimenti armonici AI, motore audio con latenza ridotta del 20% e supporto nativo MPE.',photo:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80',tint:'rgba(15,4,0,0.6),rgba(58,16,0,0.4)'},
 ];
 
-function openArticle(i){
-  const art=articles[i];
-  document.getElementById('art-modal-tag').textContent=art.tag;
-  document.getElementById('art-modal-title').textContent=art.title;
-  document.getElementById('art-modal-text').textContent=art.text;
-  art.draw('art-modal-canvas');
+/* ── MODAL — si apre IN HOME senza cambiare pagina ── */
+function openHomeArticle(idx) {
+  const art = allArticles[idx];
+  if (!art || !art.title) return;
+  const img = document.getElementById('art-modal-img');
+  const tint = document.getElementById('art-modal-tint');
+  if (art.photo) {
+    img.src = art.photo;
+    img.style.display = 'block';
+    tint.style.background = 'linear-gradient(135deg,' + (art.tint || 'rgba(0,0,0,0.5),rgba(0,0,0,0.3)') + ')';
+    document.querySelector('.art-modal-hero').style.display = 'block';
+  } else {
+    document.querySelector('.art-modal-hero').style.display = 'none';
+  }
+  document.getElementById('art-modal-tag').textContent = art.tag;
+  document.getElementById('art-modal-title').textContent = art.title;
+  document.getElementById('art-modal-text').textContent = art.text;
   document.getElementById('art-modal').classList.add('open');
-  document.body.style.overflow='hidden';
+  document.body.style.overflow = 'hidden';
+  // NON cambia pagina — rimane dove sei
 }
-function closeArticle(e){
-  if(e&&e.target!==document.getElementById('art-modal')&&!e.target.classList.contains('art-close'))return;
-  document.getElementById('art-modal').classList.remove('open');
-  document.body.style.overflow='';
-}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeArticle({target:document.getElementById('art-modal')});});
 
-// ── DISCO CHE STORIA DELLA SETTIMANA ────────────────────────────
+function closeArticle(e) {
+  if (e && e.target !== document.getElementById('art-modal') && !e.target.classList.contains('art-close')) return;
+  document.getElementById('art-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeArticle({target:document.getElementById('art-modal')}); });
+
+/* ── DISCO DELLA SETTIMANA ── */
 const dischi = [
-  {title:"Your Love",artist:"Frankie Knuckles",year:"1987",genre:"Chicago House",
-   desc:"Il brano fondativo dell'house music. Distribuito su cassetta prima ancora di avere un'uscita ufficiale, ha trasformato il Warehouse di Chicago in una cattedrale della danza.",
-   q:"Frankie Knuckles Your Love Jamie Principle"},
-  {title:"Good Life",artist:"Inner City",year:"1988",genre:"Detroit House",
-   desc:"Kevin Saunderson e Paris Grey firmano uno degli inni house più amati della storia. Pura energia utopica di Detroit che ha cambiato il clubbing europeo per sempre.",
-   q:"Inner City Good Life Kevin Saunderson"},
-  {title:"Crispy Bacon",artist:"Laurent Garnier",year:"1997",genre:"French Techno",
-   desc:"Un monolite della techno francese. Il loop ipnotico e la voce campionata hanno riempito i club di tutto il mondo per anni.",
-   q:"Laurent Garnier Crispy Bacon"},
-  {title:"Ride on Time",artist:"Black Box",year:"1989",genre:"Italo House",
-   desc:"Il singolo più venduto in UK nel 1989. Il trio italiano porta l'italodisco nel club londinese e conquista tutto il continente.",
-   q:"Black Box Ride On Time"},
-  {title:"French Kiss",artist:"Lil Louis",year:"1989",genre:"Chicago House",
-   desc:"Controverso, sensuale, rivoluzionario. Il climax lento e progressivo ha ridefinito la narrativa musicale nel clubbing mondiale.",
-   q:"Lil Louis French Kiss"},
-  {title:"Strings of Life",artist:"Rhythim Is Rhythim",year:"1987",genre:"Detroit Techno",
-   desc:"Derrick May firma il brano più influente della musica elettronica. Quelle tastiere dopo il breakdown hanno fatto piangere migliaia di persone in pista.",
-   q:"Rhythim Is Rhythim Strings of Life Derrick May"},
-  {title:"Pacific State",artist:"808 State",year:"1989",genre:"Balearic / Acid House",
-   desc:"Manchester inventa il sound balearico britannico. Un brano che profuma di alba a Ibiza anche nel grigiore di novembre.",
-   q:"808 State Pacific State"},
+  {title:"Your Love",artist:"Frankie Knuckles",year:"1987",genre:"Chicago House",desc:"Il brano fondativo dell'house music. Distribuito su cassetta prima ancora di avere un'uscita ufficiale, ha trasformato il Warehouse di Chicago in una cattedrale della danza.",q:"Frankie Knuckles Your Love Jamie Principle"},
+  {title:"Good Life",artist:"Inner City",year:"1988",genre:"Detroit House",desc:"Kevin Saunderson e Paris Grey firmano uno degli inni house più amati della storia. Pura energia utopica di Detroit che ha cambiato il clubbing europeo per sempre.",q:"Inner City Good Life Kevin Saunderson"},
+  {title:"Crispy Bacon",artist:"Laurent Garnier",year:"1997",genre:"French Techno",desc:"Un monolite della techno francese. Il loop ipnotico e la voce campionata hanno riempito i club di tutto il mondo per anni.",q:"Laurent Garnier Crispy Bacon"},
+  {title:"Ride on Time",artist:"Black Box",year:"1989",genre:"Italo House",desc:"Il singolo più venduto in UK nel 1989. Il trio italiano porta l'italodisco nel club londinese e conquista tutto il continente.",q:"Black Box Ride On Time"},
+  {title:"French Kiss",artist:"Lil Louis",year:"1989",genre:"Chicago House",desc:"Controverso, sensuale, rivoluzionario. Il climax lento e progressivo ha ridefinito la narrativa musicale nel clubbing mondiale.",q:"Lil Louis French Kiss"},
+  {title:"Strings of Life",artist:"Rhythim Is Rhythim",year:"1987",genre:"Detroit Techno",desc:"Derrick May firma il brano più influente della musica elettronica. Quelle tastiere dopo il breakdown hanno fatto piangere migliaia di persone in pista.",q:"Rhythim Is Rhythim Strings of Life Derrick May"},
+  {title:"Pacific State",artist:"808 State",year:"1989",genre:"Balearic / Acid House",desc:"Manchester inventa il sound balearico britannico. Un brano che profuma di alba a Ibiza anche nel grigiore di novembre.",q:"808 State Pacific State"},
 ];
 
-// Seleziona disco in base alla settimana dell'anno (cambia ogni settimana)
-const weekOfYear = Math.floor((new Date() - new Date(new Date().getFullYear(),0,0)) / (86400000 * 7));
+const weekOfYear = Math.floor((new Date() - new Date(new Date().getFullYear(),0,0)) / (86400000*7));
 const disco = dischi[weekOfYear % dischi.length];
-
 document.getElementById('d-title').textContent = disco.title;
 document.getElementById('d-artist').textContent = disco.artist;
 document.getElementById('d-year').textContent = disco.year + ' · ' + disco.genre;
@@ -591,73 +658,57 @@ document.getElementById('d-genre').textContent = disco.genre;
 document.getElementById('pl-title').textContent = disco.title;
 document.getElementById('pl-artist').textContent = disco.artist;
 
-// ── PLAYER PRINCIPALE (Disco del Giorno) ──────────────────────────
 const ARC = 163.4;
 const discoAudio = document.getElementById('disco-audio');
-let discoPlaying = false;
-let discoLoaded = false;
-
-// Disco caricato da initFromContent()
+let discoPlaying = false, discoLoaded = false;
 
 discoAudio.addEventListener('timeupdate', function() {
   if (!discoAudio.duration) return;
   const pct = discoAudio.currentTime / discoAudio.duration;
-  document.getElementById('pl-arc').style.strokeDashoffset = ARC - (ARC * pct);
-  document.getElementById('pl-bar').style.width = (pct * 100) + '%';
-  document.getElementById('pl-cur').textContent = '0:' + String(Math.floor(discoAudio.currentTime)).padStart(2,'0');
-  document.getElementById('pl-dur').textContent = '0:' + String(Math.round(discoAudio.duration)).padStart(2,'0');
+  document.getElementById('pl-arc').style.strokeDashoffset = ARC - (ARC*pct);
+  document.getElementById('pl-bar').style.width = (pct*100)+'%';
+  document.getElementById('pl-cur').textContent = '0:'+String(Math.floor(discoAudio.currentTime)).padStart(2,'0');
+  document.getElementById('pl-dur').textContent = '0:'+String(Math.round(discoAudio.duration)).padStart(2,'0');
 });
-
 discoAudio.addEventListener('ended', function() {
-  discoPlaying = false;
-  document.getElementById('pl-ico-play').style.display = 'block';
-  document.getElementById('pl-ico-pause').style.display = 'none';
+  discoPlaying=false;
+  document.getElementById('pl-ico-play').style.display='block';
+  document.getElementById('pl-ico-pause').style.display='none';
   document.getElementById('pl-ring').classList.remove('playing');
   document.getElementById('d-vinyl').classList.remove('spin');
-  document.getElementById('pl-arc').style.strokeDashoffset = ARC;
-  document.getElementById('pl-bar').style.width = '0%';
-  document.getElementById('pl-cur').textContent = '0:00';
-  document.getElementById('pl-status').textContent = '▶ Premi play';
+  document.getElementById('pl-arc').style.strokeDashoffset=ARC;
+  document.getElementById('pl-bar').style.width='0%';
+  document.getElementById('pl-status').textContent='▶ Premi play';
 });
-
-discoAudio.addEventListener('error', function() {
-  document.getElementById('pl-status').textContent = '— Errore caricamento audio';
-});
+discoAudio.addEventListener('error',function(){document.getElementById('pl-status').textContent='— Errore audio';});
 
 function togglePlayer() {
-  if (!discoLoaded) {
-    document.getElementById('pl-status').textContent = '⟳ Caricamento...';
-    return;
-  }
+  if (!discoLoaded){document.getElementById('pl-status').textContent='⟳ Caricamento...';return;}
   if (discoPlaying) {
-    discoAudio.pause();
-    discoPlaying = false;
-    document.getElementById('pl-ico-play').style.display = 'block';
-    document.getElementById('pl-ico-pause').style.display = 'none';
+    discoAudio.pause();discoPlaying=false;
+    document.getElementById('pl-ico-play').style.display='block';
+    document.getElementById('pl-ico-pause').style.display='none';
     document.getElementById('pl-ring').classList.remove('playing');
     document.getElementById('d-vinyl').classList.remove('spin');
-    document.getElementById('pl-status').textContent = '❚❚ In pausa';
+    document.getElementById('pl-status').textContent='❚❚ In pausa';
   } else {
-    discoAudio.play().then(() => {
-      discoPlaying = true;
-      document.getElementById('pl-ico-play').style.display = 'none';
-      document.getElementById('pl-ico-pause').style.display = 'block';
+    discoAudio.play().then(()=>{
+      discoPlaying=true;
+      document.getElementById('pl-ico-play').style.display='none';
+      document.getElementById('pl-ico-pause').style.display='block';
       document.getElementById('pl-ring').classList.add('playing');
       document.getElementById('d-vinyl').classList.add('spin');
-      document.getElementById('pl-status').textContent = '▶ In riproduzione';
-    }).catch(err => {
-      document.getElementById('pl-status').textContent = '— ' + err.message;
-    });
+      document.getElementById('pl-status').textContent='▶ In riproduzione';
+    }).catch(err=>{document.getElementById('pl-status').textContent='— '+err.message;});
   }
 }
-
 function seekPlayer(e) {
   if (!discoAudio.duration) return;
-  const r = document.getElementById('pl-bar').parentElement.getBoundingClientRect();
-  discoAudio.currentTime = ((e.clientX - r.left) / r.width) * discoAudio.duration;
+  const r=document.getElementById('pl-bar').parentElement.getBoundingClientRect();
+  discoAudio.currentTime=((e.clientX-r.left)/r.width)*discoAudio.duration;
 }
 
-// ── CLASSIFICHE ───────────────────────────────────────────────────
+/* ── CHARTS ── */
 const danceChart = [
   {pos:1,title:'Puff Puff Pass',artist:'Kitty Hall',q:'Kitty Hall Puff Puff Pass'},
   {pos:2,title:'New Religion',artist:'Faithless, Bebe Rexha',q:'Faithless Bebe Rexha New Religion 2026'},
@@ -683,29 +734,18 @@ const mainChart = [
   {pos:10,title:'How Does It Feel',artist:'Fezzo, Dubdogz, Zaark',q:'Dubdogz Fezzo Zaark How Does It Feel'},
 ];
 
-// Variabili chart gestite in toggleChart/stopChart
-
-// Radius del cerchio SVG nei player delle chart (r=18 → circ=2π*18≈113)
 const CRC2 = 113;
-
 function buildChart(containerId, data) {
   const el = document.getElementById(containerId);
-  const prefix = containerId === 'chart-dance' ? 'd' : 'm';
-  data.forEach((t, i) => {
-    // Riga principale
+  const prefix = containerId==='chart-dance'?'d':'m';
+  data.forEach((t,i)=>{
     el.innerHTML += `<div class="chart-row" id="${prefix}-row-${i}" onclick="toggleChart('${prefix}',${i})">
       <div class="cr-num">${t.pos}</div>
       <img class="cr-img" id="${prefix}-img-${i}" src="" alt="">
-      <div class="cr-info">
-        <div class="cr-title">${t.title}</div>
-        <div class="cr-artist">${t.artist}</div>
-      </div>
+      <div class="cr-info"><div class="cr-title">${t.title}</div><div class="cr-artist">${t.artist}</div></div>
       <div class="cr-pw" id="${prefix}-pw-${i}">
         <svg class="cr-svg" viewBox="0 0 46 46"><circle class="cr-tr" cx="23" cy="23" r="18"/><circle class="cr-pr" id="${prefix}-pr-${i}" cx="23" cy="23" r="18" stroke-dasharray="${CRC2}" stroke-dashoffset="${CRC2}"/></svg>
-        <div class="cr-btn">
-          <svg class="cr-ico" width="8" height="9" viewBox="0 0 8 9" fill="white"><polygon points="0,0 8,4.5 0,9"/></svg>
-          <div class="cr-eq"><span></span><span></span><span></span></div>
-        </div>
+        <div class="cr-btn"><svg class="cr-ico" width="8" height="9" viewBox="0 0 8 9" fill="white"><polygon points="0,0 8,4.5 0,9"/></svg><div class="cr-eq"><span></span><span></span><span></span></div></div>
       </div>
       <audio id="${prefix}-a-${i}" preload="none"></audio>
     </div>
@@ -713,526 +753,234 @@ function buildChart(containerId, data) {
       <div class="cr-prog-bar-wrap" onclick="seekChart(event,'${prefix}',${i})"><div class="cr-prog-bar" id="${prefix}-pb-${i}"></div></div>
       <div class="cr-prog-time"><span id="${prefix}-mc-${i}">0:00</span><span id="${prefix}-md-${i}">0:30</span></div>
     </div>`;
-
-    setTimeout(() => {
-      itunesSearch(t.q, function(results) {
-        const imgEl = document.getElementById(prefix+'-img-'+i);
-        if (results && results.length) {
-          if (results[0].artworkUrlSmall && imgEl) imgEl.src = results[0].artworkUrlSmall;
-          if (results[0].previewUrl) {
-            const a = document.getElementById(prefix+'-a-'+i); if (!a) return;
-            a.src = results[0].previewUrl;
-            // Salva dati per bottom player
-            a._title = results[0].trackName || t.title;
-            a._artist = results[0].artistName || t.artist;
-            a._art = results[0].artworkUrlSmall || '';
-            a.addEventListener('timeupdate', () => {
-              if (!a.duration) return;
-              const p = a.currentTime / a.duration;
-              const doff = CRC2 - (CRC2 * p);
-              const prEl = document.getElementById(prefix+'-pr-'+i);
-              if (prEl) prEl.style.strokeDashoffset = doff;
-              const pbEl = document.getElementById(prefix+'-pb-'+i);
-              if (pbEl) pbEl.style.width = (p*100)+'%';
-              const mcEl = document.getElementById(prefix+'-mc-'+i);
-              if (mcEl) mcEl.textContent = '0:'+String(Math.floor(a.currentTime)).padStart(2,'0');
-              const mdEl = document.getElementById(prefix+'-md-'+i);
-              if (mdEl) mdEl.textContent = '0:'+String(Math.round(a.duration)).padStart(2,'0');
-              // Aggiorna bottom player
-              bpUpdate(p, a.currentTime, a.duration);
+    setTimeout(()=>{
+      itunesSearch(t.q,function(results){
+        const imgEl=document.getElementById(prefix+'-img-'+i);
+        if (results&&results.length){
+          if (results[0].artworkUrlSmall&&imgEl) imgEl.src=results[0].artworkUrlSmall;
+          if (results[0].previewUrl){
+            const a=document.getElementById(prefix+'-a-'+i);if(!a)return;
+            a.src=results[0].previewUrl;
+            a._title=results[0].trackName||t.title;
+            a._artist=results[0].artistName||t.artist;
+            a._art=results[0].artworkUrlSmall||'';
+            a.addEventListener('timeupdate',()=>{
+              if(!a.duration)return;
+              const p=a.currentTime/a.duration;
+              const prEl=document.getElementById(prefix+'-pr-'+i);if(prEl)prEl.style.strokeDashoffset=CRC2-(CRC2*p);
+              const pbEl=document.getElementById(prefix+'-pb-'+i);if(pbEl)pbEl.style.width=(p*100)+'%';
+              const mcEl=document.getElementById(prefix+'-mc-'+i);if(mcEl)mcEl.textContent='0:'+String(Math.floor(a.currentTime)).padStart(2,'0');
+              const mdEl=document.getElementById(prefix+'-md-'+i);if(mdEl)mdEl.textContent='0:'+String(Math.round(a.duration)).padStart(2,'0');
+              bpUpdate(p,a.currentTime,a.duration);
             });
-            a.addEventListener('ended', () => stopChart(prefix, i));
+            a.addEventListener('ended',()=>stopChart(prefix,i));
           }
-        } else {
-          if (imgEl) imgEl.src = '/simone-girasole.jpg';
-        }
+        } else { if(imgEl)imgEl.src='/simone-girasole.jpg'; }
       });
-    }, i * 500);
+    },i*500);
   });
 }
 
-// Riferimento all'audio attivo globale
-let activeAudio = null;
-let activePrefix = null;
-let activeIdx = -1;
+let activeAudio=null,activePrefix=null,activeIdx=-1;
 
-function toggleChart(prefix, i) {
-  // Se clicco lo stesso che sta suonando → pausa/ripresa
-  if (activePrefix === prefix && activeIdx === i) {
-    const a = document.getElementById(prefix+'-a-'+i);
-    if (!a) return;
-    if (a.paused) {
-      a.play().catch(()=>{});
-      document.getElementById(prefix+'-pw-'+i).classList.add('active');
-      document.getElementById(prefix+'-row-'+i).classList.add('playing');
-      bpSetPlaying(true);
-    } else {
-      a.pause();
-      document.getElementById(prefix+'-pw-'+i).classList.remove('active');
-      document.getElementById(prefix+'-row-'+i).classList.remove('playing');
-      bpSetPlaying(false);
-    }
+function toggleChart(prefix,i){
+  if(activePrefix===prefix&&activeIdx===i){
+    const a=document.getElementById(prefix+'-a-'+i);if(!a)return;
+    if(a.paused){a.play().catch(()=>{});document.getElementById(prefix+'-pw-'+i).classList.add('active');document.getElementById(prefix+'-row-'+i).classList.add('playing');bpSetPlaying(true);}
+    else{a.pause();document.getElementById(prefix+'-pw-'+i).classList.remove('active');document.getElementById(prefix+'-row-'+i).classList.remove('playing');bpSetPlaying(false);}
     return;
   }
-  // Ferma il precedente
-  if (activePrefix !== null && activeIdx >= 0) stopChart(activePrefix, activeIdx);
-  // Avvia il nuovo
-  activePrefix = prefix; activeIdx = i;
+  if(activePrefix!==null&&activeIdx>=0)stopChart(activePrefix,activeIdx);
+  activePrefix=prefix;activeIdx=i;
   document.getElementById(prefix+'-row-'+i).classList.add('playing');
   document.getElementById(prefix+'-pw-'+i).classList.add('active');
-  const a = document.getElementById(prefix+'-a-'+i);
-  if (!a) return;
-  const doPlay = () => {
-    a.currentTime = 0;
-    a.play().catch(()=>{});
-    // Bottom player
-    bpShow(
-      a._art || '',
-      a._title || '',
-      a._artist || ''
-    );
-  };
-  if (a.src && a.src !== window.location.href) {
-    doPlay();
-  } else {
-    const check = setInterval(() => {
-      if (a.src && a.src !== window.location.href) { clearInterval(check); doPlay(); }
-    }, 200);
-    setTimeout(() => clearInterval(check), 10000);
-  }
-  activeAudio = a;
+  const a=document.getElementById(prefix+'-a-'+i);if(!a)return;
+  const doPlay=()=>{a.currentTime=0;a.play().catch(()=>{});bpShow(a._art||'',a._title||'',a._artist||'');};
+  if(a.src&&a.src!==window.location.href){doPlay();}
+  else{const check=setInterval(()=>{if(a.src&&a.src!==window.location.href){clearInterval(check);doPlay();}},200);setTimeout(()=>clearInterval(check),10000);}
+  activeAudio=a;
 }
-
-function stopChart(prefix, i) {
-  const a = document.getElementById(prefix+'-a-'+i);
-  if (a) { a.pause(); a.currentTime = 0; }
-  const row = document.getElementById(prefix+'-row-'+i);
-  if (row) row.classList.remove('playing');
-  const pw = document.getElementById(prefix+'-pw-'+i);
-  if (pw) pw.classList.remove('active');
-  const pr = document.getElementById(prefix+'-pr-'+i);
-  if (pr) pr.style.strokeDashoffset = CRC2;
-  const pb = document.getElementById(prefix+'-pb-'+i);
-  if (pb) pb.style.width = '0%';
-  const mc = document.getElementById(prefix+'-mc-'+i);
-  if (mc) mc.textContent = '0:00';
-  if (activePrefix === prefix && activeIdx === i) {
-    activePrefix = null; activeIdx = -1; activeAudio = null;
-  }
+function stopChart(prefix,i){
+  const a=document.getElementById(prefix+'-a-'+i);if(a){a.pause();a.currentTime=0;}
+  const row=document.getElementById(prefix+'-row-'+i);if(row)row.classList.remove('playing');
+  const pw=document.getElementById(prefix+'-pw-'+i);if(pw)pw.classList.remove('active');
+  const pr=document.getElementById(prefix+'-pr-'+i);if(pr)pr.style.strokeDashoffset=CRC2;
+  const pb=document.getElementById(prefix+'-pb-'+i);if(pb)pb.style.width='0%';
+  const mc=document.getElementById(prefix+'-mc-'+i);if(mc)mc.textContent='0:00';
+  if(activePrefix===prefix&&activeIdx===i){activePrefix=null;activeIdx=-1;activeAudio=null;}
 }
-
-function seekChart(e, prefix, i) {
+function seekChart(e,prefix,i){
   e.stopPropagation();
-  const a = document.getElementById(prefix+'-a-'+i);
-  if (!a || !a.duration) return;
-  const r = e.currentTarget.getBoundingClientRect();
-  a.currentTime = ((e.clientX - r.left) / r.width) * a.duration;
+  const a=document.getElementById(prefix+'-a-'+i);if(!a||!a.duration)return;
+  const r=e.currentTarget.getBoundingClientRect();
+  a.currentTime=((e.clientX-r.left)/r.width)*a.duration;
 }
 
-// ── BOTTOM PLAYER ─────────────────────────────────────────────────
-function bpShow(art, title, artist) {
-  document.getElementById('bp-art').src = art;
-  document.getElementById('bp-title').textContent = title;
-  document.getElementById('bp-artist').textContent = artist;
+/* ── BOTTOM PLAYER ── */
+function bpShow(art,title,artist){
+  document.getElementById('bp-art').src=art;
+  document.getElementById('bp-title').textContent=title;
+  document.getElementById('bp-artist').textContent=artist;
   document.getElementById('bottom-player').classList.add('visible');
   document.body.classList.add('has-player');
   bpSetPlaying(true);
 }
-function bpSetPlaying(playing) {
-  document.getElementById('bp-ico-play').style.display = playing ? 'none' : 'block';
-  document.getElementById('bp-ico-pause').style.display = playing ? 'block' : 'none';
+function bpSetPlaying(playing){
+  document.getElementById('bp-ico-play').style.display=playing?'none':'block';
+  document.getElementById('bp-ico-pause').style.display=playing?'block':'none';
 }
-function bpUpdate(pct, cur, dur) {
-  document.getElementById('bp-bar').style.width = (pct*100)+'%';
-  document.getElementById('bp-cur').textContent = '0:'+String(Math.floor(cur)).padStart(2,'0');
-  document.getElementById('bp-dur').textContent = '0:'+String(Math.round(dur)).padStart(2,'0');
+function bpUpdate(pct,cur,dur){
+  document.getElementById('bp-bar').style.width=(pct*100)+'%';
+  document.getElementById('bp-cur').textContent='0:'+String(Math.floor(cur)).padStart(2,'0');
+  document.getElementById('bp-dur').textContent='0:'+String(Math.round(dur)).padStart(2,'0');
 }
-function bpToggle() {
-  if (!activeAudio) return;
-  if (activeAudio.paused) {
-    activeAudio.play().catch(()=>{});
-    if (activePrefix !== null && activeIdx >= 0) {
-      document.getElementById(activePrefix+'-row-'+activeIdx).classList.add('playing');
-      document.getElementById(activePrefix+'-pw-'+activeIdx).classList.add('active');
-    }
-    bpSetPlaying(true);
-  } else {
-    activeAudio.pause();
-    if (activePrefix !== null && activeIdx >= 0) {
-      document.getElementById(activePrefix+'-row-'+activeIdx).classList.remove('playing');
-      document.getElementById(activePrefix+'-pw-'+activeIdx).classList.remove('active');
-    }
-    bpSetPlaying(false);
-  }
+function bpToggle(){
+  if(!activeAudio)return;
+  if(activeAudio.paused){activeAudio.play().catch(()=>{});if(activePrefix!==null&&activeIdx>=0){document.getElementById(activePrefix+'-row-'+activeIdx).classList.add('playing');document.getElementById(activePrefix+'-pw-'+activeIdx).classList.add('active');}bpSetPlaying(true);}
+  else{activeAudio.pause();if(activePrefix!==null&&activeIdx>=0){document.getElementById(activePrefix+'-row-'+activeIdx).classList.remove('playing');document.getElementById(activePrefix+'-pw-'+activeIdx).classList.remove('active');}bpSetPlaying(false);}
 }
-function bpSeek(e) {
-  if (!activeAudio || !activeAudio.duration) return;
-  const r = e.currentTarget.getBoundingClientRect();
-  activeAudio.currentTime = ((e.clientX - r.left) / r.width) * activeAudio.duration;
+function bpSeek(e){
+  if(!activeAudio||!activeAudio.duration)return;
+  const r=e.currentTarget.getBoundingClientRect();
+  activeAudio.currentTime=((e.clientX-r.left)/r.width)*activeAudio.duration;
 }
-function bpClose() {
-  if (activeAudio) { activeAudio.pause(); activeAudio.currentTime = 0; }
-  if (activePrefix !== null && activeIdx >= 0) {
-    stopChart(activePrefix, activeIdx);
-  }
+function bpClose(){
+  if(activeAudio){activeAudio.pause();activeAudio.currentTime=0;}
+  if(activePrefix!==null&&activeIdx>=0)stopChart(activePrefix,activeIdx);
   document.getElementById('bottom-player').classList.remove('visible');
   document.body.classList.remove('has-player');
-  document.getElementById('bp-bar').style.width = '0%';
-  document.getElementById('bp-cur').textContent = '0:00';
+  document.getElementById('bp-bar').style.width='0%';
+  document.getElementById('bp-cur').textContent='0:00';
 }
 
-// ── INIT ──────────────────────────────────────────────────────────
-function initMusicPage() {
-  articles.forEach((a,i) => a.draw('mn-c'+i));
-  buildChart('chart-dance', danceChart);
-  buildChart('chart-main', mainChart);
+/* ── MUSIC PAGE — cards con foto reale (stesso stile home) ── */
+function buildMusicNewsGrid() {
+  const grid = document.getElementById('music-news-grid');
+  if (!grid) return;
+  // Usa articoli 1-4 (news) — con stile identico alla home news grid
+  const newsItems = allArticles.slice(1, 5);
+  grid.innerHTML = newsItems.map((art, i) => `
+    <div class="mn-card fi" onclick="openHomeArticle(${i+1})">
+      <div class="mn-img-wrap">
+        <img class="mn-img" src="${art.photo||''}" alt="">
+        <div class="mn-img-tint" style="background:linear-gradient(135deg,${art.tint||'rgba(0,0,0,0.5),rgba(0,0,0,0.3)'});"></div>
+        <div class="mn-img-fade"></div>
+        <div class="mn-img-label">
+          <span class="mn-img-tag" style="background:${art.tagColor||'#7c3aed'};">${art.tag||''}</span>
+          <div class="mn-img-title">${art.title||''}</div>
+        </div>
+      </div>
+      <div class="mn-body">
+        <div class="mn-sub">${art.sub||''}</div>
+        <div class="mn-more">Leggi →</div>
+      </div>
+    </div>`).join('');
 }
 
-// ── NOTIZIE HOME — aggiorna ogni settimana ────────────────────────
-const homeArticles = [
-  {
-    tag:"Clubbing", tagColor:"#7c3aed",
-    title:"Cercle Festival 2026: tre giorni di musica nell'aeroporto storico di Parigi",
-    sub:"Dal 22 al 24 maggio al Musée de l'Air et de l'Espace di Le Bourget.",
-    text:"Il Cercle Festival torna nel 2026 al Musée de l'Air et de l'Espace di Le Bourget, Parigi, dal 22 al 24 maggio. Dopo il successo del 2024 con 24.000 spettatori, quest'anno il festival si estende a tre giorni con 44 artisti su tre palchi unici: lo stage A380 sotto il più grande aereo passeggeri del mondo, l'Ariane stage davanti a un razzo di 54 metri e il Concorde stage tra due aerei supersonici. In lineup Eric Prydz, ARTBAT, Ben Böhmer, Vintage Culture, Adriatique, Kölsch, Monolink e molti altri. Una serata esclusiva alla Tour Eiffel il 21 maggio aprirà le danze con Kölsch, LP Giobbi e Chambord per 200 privilegiati.",
-    photo:"https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=900&q=80",
-    colors:["#04001a","#1a0050","#0d0030"], accent:"rgba(120,40,255,",
-    dest:"musica"
-  },
-  {
-    tag:"Festival · Italia", tagColor:"#1060cc",
-    title:"Gabry Ponte a San Siro: la più grande dancefloor italiana",
-    sub:"70.000 persone il 27 giugno allo Stadio San Siro di Milano.",
-    text:"Il 27 giugno 2026 lo Stadio San Siro di Milano si trasforma nella più grande dancefloor d'Italia con Gabry Ponte come protagonista assoluto. Con oltre 70.000 posti disponibili, l'evento San Siro Dance promette di riscrivere la storia della musica elettronica italiana. Gabry Ponte, il DJ e producer italiano più ascoltato nel mondo, porta finalmente il suo show esplosivo nel tempio del calcio milanese con un live set di produzione scenografica da record. I biglietti sono disponibili su Ticketmaster e nei circuiti abituali.",
-    photo:"https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=900&q=80",
-    colors:["#000a1a","#002060","#001540"], accent:"rgba(0,120,255,",
-    dest:"musica"
-  },
-  {
-    tag:"Ibiza · IMS 2026", tagColor:"#7c1090",
-    title:"IMS Ibiza 2026: Pete Tong, Eliza Rose e Jazzy protagonisti",
-    sub:"L'International Music Summit torna dal 22 al 24 aprile.",
-    text:"L'International Music Summit 2026 si è svolto ad Ibiza dal 22 al 24 aprile con un programma ricco di conferenze, panel e performance dal vivo. Pete Tong ha aperto i lavori con un keynote sull'evoluzione della scena dance globale, mentre Eliza Rose e Jazzy hanno rappresentato la nuova generazione di artiste britanniche che stanno ridisegnando il panorama della musica elettronica. L'IMS è il principale evento professionale del settore dance e attira ogni anno i protagonisti dell'industria musicale globale. Quest'anno ha registrato un record di partecipanti con oltre 3.000 professionisti accreditati.",
-    photo:"https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=900&q=80",
-    colors:["#0d0015","#3d0060","#200040"], accent:"rgba(200,40,255,",
-    dest:"musica"
-  },
-  {
-    tag:"Open Air · Milano", tagColor:"#006630",
-    title:"Vision Open Air: Ilario Alicante apre la stagione all'Ex Macello",
-    sub:"Il 1° maggio a Milano con il format L/NK.",
-    text:"Il 1° maggio 2026 l'Ex Macello di Milano ha ospitato l'opening della stagione outdoor di Vision con Ilario Alicante e il suo format L/NK. L'evento ha segnato il debutto della nuova area outdoor della venue milanese, con una produzione sonora e visiva di altissimo livello. Ilario Alicante, tra i producer techno italiani più apprezzati a livello internazionale, ha proposto un set di oltre quattro ore che ha entusiasmato il pubblico. Vision Open Air tornerà il 16 maggio con Amelie Lens e Nina Kraviz per chiudere la stagione indoor al Fabrique.",
-    photo:"https://images.unsplash.com/photo-1506157786151-b8491531f063?w=900&q=80",
-    colors:["#001208","#004020","#002818"], accent:"rgba(0,180,60,",
-    dest:"musica"
-  },
-  {
-    tag:"Kappa · Torino", tagColor:"#883000",
-    title:"Kappa FuturFestival 2026: Sven Väth e Charlotte de Witte headliner",
-    sub:"Dal 3 al 5 luglio a Torino, il festival techno italiano.",
-    text:"Il Kappa FuturFestival 2026 si terrà dal 3 al 5 luglio a Torino con un lineup che include Sven Väth, Charlotte de Witte e le resident del Berghain in un B2B esclusivo. Giunto alla sua quattordicesima edizione, il Kappa si conferma come il festival di riferimento per la scena techno e house in Italia, con una capacità di oltre 30.000 spettatori al giorno nell'area Parco Dora. Il festival è noto per la qualità del sound system, la cura del booking e l'atmosfera unica che si crea tra i capannoni industriali torinesi trasformati in un tempio della musica elettronica.",
-    photo:"https://images.unsplash.com/photo-1504680177321-2e6a879aac86?w=900&q=80",
-    colors:["#120500","#3d1000","#251000"], accent:"rgba(255,100,0,",
-    dest:"musica"
-  },
-  {
-    tag:"VST · Sound Design", tagColor:"#5020aa",
-    title:"Transfigure: resintesi spettrale a 120 oscillatori per producer",
-    sub:"Il plugin che trasforma qualsiasi suono in texture uniche.",
-    text:"Transfigure è il nuovo plugin VST che sta rivoluzionando il sound design per DJ e producer. Basato su un motore di resintesi spettrale con 120 oscillatori, permette di trasformare in tempo reale qualsiasi suono in texture mai sentite prima. L'interfaccia include un XY Pad espressivo per il controllo live dei parametri, ideale per performance e produzioni in studio. Il plugin è compatibile con tutte le principali DAW in formato VST3, AU e AAX. Disponibile su nueko.net, è già diventato uno strumento essenziale per i producer di musica elettronica che cercano sonorità originali e distintive.",
-    photo:"https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=900&q=80",
-    colors:["#080018","#200050","#100030"], accent:"rgba(120,40,255,",
-    dest:"musica"
-  },
-  {
-    tag:"Hardware · Akai", tagColor:"#004488",
-    title:"Akai MPC Sample 2026: beatmaking portatile ridefinito",
-    sub:"Il nuovo campionatore tascabile con touch e USB-C.",
-    text:"Akai ha presentato l'MPC Sample 2026, il nuovo campionatore portatile che ridefinisce il concetto di beatmaking mobile. Con interfaccia touch capacitiva, connettività USB-C, 16 pad retroilluminati e integrazione cloud nativa, l'MPC Sample permette di creare beat professionali ovunque. La batteria integrata garantisce fino a 8 ore di utilizzo continuo. Il dispositivo si sincronizza automaticamente con Ableton Live, Logic Pro e tutte le principali DAW via USB. Disponibile a partire da maggio 2026 al prezzo di 299€, preordinabile sui principali siti di strumenti musicali.",
-    photo:"https://images.unsplash.com/photo-1619983081563-430f63602796?w=900&q=80",
-    colors:["#00080f","#002040","#001530"], accent:"rgba(0,120,200,",
-    dest:"musica"
-  },
-  {
-    tag:"AI Plugin · Sonible", tagColor:"#005520",
-    title:"Sonible pure:level: l'AI che cambia il modo di mixare",
-    sub:"Level rider intelligente per tracce e mix con precisione naturale.",
-    text:"Sonible ha lanciato pure:level, il nuovo plugin AI per il livellamento automatico di tracce e mix. A differenza dei tradizionali compressori, pure:level analizza il contenuto musicale con intelligenza artificiale e applica una curva di volume dinamica che segue naturalmente il fraseggio musicale, senza artefatti o pompaggio. Il plugin è particolarmente efficace su voci, chitarre acustiche e strumenti a dinamica variabile. Disponibile in formato VST3, AU e AAX, pure:level è in vendita su sonible.com al prezzo di 69€. Audiofader.com ne ha pubblicato una recensione definendolo rivoluzionario per il workflow moderno.",
-    photo:"https://images.unsplash.com/photo-1574169208507-84376144848b?w=900&q=80",
-    colors:["#040f00","#104000","#082800"], accent:"rgba(0,180,40,",
-    dest:"musica"
-  },
-  {
-    tag:"DAW · Ableton", tagColor:"#882200",
-    title:"Ableton Live 12.1: nuovi dispositivi MIDI e workflow ottimizzato",
-    sub:"L'aggiornamento che i producer elettronici aspettavano.",
-    text:"Ableton ha rilasciato Live 12.1, aggiornamento gratuito per tutti gli utenti di Live 12 che introduce nuovi dispositivi MIDI nativi, miglioramenti al routing e nuove funzionalità per i producer di musica elettronica. Tra le novità principali: il nuovo MIDI Arpeggiator polifonico, il Chord Generator con suggerimenti armonici AI, e il miglioramento del motore audio con latenza ridotta del 20%. L'aggiornamento ottimizza anche l'integrazione con Push 3 e introduce il supporto nativo per i controller MPE. Disponibile gratis via Ableton.com per tutti i possessori di licenza Suite o Standard.",
-    photo:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80",
-    colors:["#0f0400","#3a1000","#250a00"], accent:"rgba(255,80,0,",
-    dest:"musica"
-  }
-];
-
-// Funzione canvas retrowave 3D
-function drawRW(id, colors, accentRgb, label1, label2, isWide) {
-  const c = document.getElementById(id); if(!c) return;
-  const ctx = c.getContext('2d'), W = c.width, H = c.height;
-  // Background gradient
-  const bg = ctx.createLinearGradient(0,0,W,H);
-  bg.addColorStop(0, colors[0]); bg.addColorStop(.5, colors[1]); bg.addColorStop(1, colors[2]);
-  ctx.fillStyle = bg; ctx.fillRect(0,0,W,H);
-  // Griglia prospettica
-  const vx=W/2, vy=H*(isWide?.38:.42);
-  ctx.lineWidth=.8;
-  for(let i=0;i<=16;i++){
-    const x=W*i/16;
-    ctx.strokeStyle=accentRgb+'0.2)';
-    ctx.beginPath(); ctx.moveTo(x,H); ctx.lineTo(vx,vy); ctx.stroke();
-  }
-  for(let j=1;j<=8;j++){
-    const t=Math.pow(j/8,1.4);
-    const y=vy+(H-vy)*t;
-    const spread=1-Math.pow(1-t,.6);
-    ctx.strokeStyle=accentRgb+(0.15*(1-t*.5))+')';
-    ctx.beginPath(); ctx.moveTo(vx-vx*spread,y); ctx.lineTo(vx+(W-vx)*spread,y); ctx.stroke();
-  }
-  // Stelle
-  for(let s=0;s<(isWide?20:40);s++){
-    const sx=Math.random()*W, sy=Math.random()*vy*.9;
-    ctx.beginPath(); ctx.arc(sx,sy,Math.random()*1.5+.5,0,Math.PI*2);
-    ctx.fillStyle=`rgba(255,255,255,${Math.random()*.8+.2})`; ctx.fill();
-  }
-  // Cerchi concentrici
-  for(let r=1;r<=4;r++){
-    ctx.beginPath();
-    ctx.ellipse(vx, vy, W*.12*r, H*.06*r, 0, 0, Math.PI*2);
-    ctx.strokeStyle=accentRgb+(0.3-r*.05)+')'; ctx.lineWidth=1; ctx.stroke();
-  }
-  // Raggi di luce
-  [[0,H*.3,W*.55,0],[W,H*.25,W*.45,0],[W*.5,0,0,H*.5]].forEach(([x1,y1,x2,y2])=>{
-    const g=ctx.createLinearGradient(x1,y1,x2,y2);
-    g.addColorStop(0,'transparent'); g.addColorStop(.5,accentRgb+'0.2)'); g.addColorStop(1,'transparent');
-    ctx.strokeStyle=g; ctx.lineWidth=1.2;
-    ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke();
-  });
-  // Fade bottom
-  const fade=ctx.createLinearGradient(0,H*.5,0,H);
-  fade.addColorStop(0,'transparent'); fade.addColorStop(1,'rgba(0,0,0,0.8)');
-  ctx.fillStyle=fade; ctx.fillRect(0,0,W,H);
-  // Testo
-  ctx.textAlign='center';
-  if(label1){
-    ctx.font=`bold ${isWide?H*.28:H*.22}px Bebas Neue, Arial Black, sans-serif`;
-    ctx.fillStyle='rgba(255,255,255,0.08)';
-    ctx.fillText(label1,W/2,H*.55);
-    ctx.strokeStyle=accentRgb+'0.6)'; ctx.lineWidth=.8;
-    ctx.strokeText(label1,W/2,H*.55);
-  }
-  if(label2){
-    ctx.font=`bold ${isWide?H*.18:H*.14}px Bebas Neue, Arial Black, sans-serif`;
-    ctx.fillStyle='rgba(255,255,255,0.9)';
-    ctx.fillText(label2,W/2,H*.75);
-  }
-}
-
-// Tech canvas stile PCB/circuito
-function drawTech(id, colors, accentRgb, label1, label2) {
-  const c = document.getElementById(id); if(!c) return;
-  const ctx = c.getContext('2d'), W = c.width, H = c.height;
-  const bg = ctx.createLinearGradient(0,0,W,H);
-  bg.addColorStop(0,colors[0]); bg.addColorStop(1,colors[1]);
-  ctx.fillStyle=bg; ctx.fillRect(0,0,W,H);
-  // Grid PCB
-  ctx.strokeStyle=accentRgb+'0.1)'; ctx.lineWidth=.6;
-  for(let x=0;x<W;x+=28){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();}
-  for(let y=0;y<H;y+=28){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}
-  // Nodi
-  [[W*.2,H*.3],[W*.5,H*.2],[W*.75,H*.4],[W*.35,H*.55],[W*.65,H*.3]].forEach(([nx,ny])=>{
-    ctx.beginPath(); ctx.arc(nx,ny,3.5,0,Math.PI*2);
-    ctx.fillStyle=accentRgb+'0.8)'; ctx.fill();
-    ctx.beginPath(); ctx.arc(nx,ny,9,0,Math.PI*2);
-    ctx.strokeStyle=accentRgb+'0.25)'; ctx.lineWidth=1; ctx.stroke();
-  });
-  // Barre EQ 3D
-  const bars=20, bw=W/bars*.72, by=H*.78;
-  const heights=[.35,.52,.45,.68,.82,.75,.6,.88,.72,.55,.9,.65,.48,.7,.85,.6,.42,.75,.58,.4];
-  for(let i=0;i<bars;i++){
-    const bh=H*heights[i]*.32, x=W*.05+i*(W*.9/bars);
-    const alpha=.5+.4*(1-Math.abs(i-bars/2)/(bars/2));
-    ctx.fillStyle=accentRgb+alpha+')'; ctx.fillRect(x,by-bh,bw*.75,bh);
-    ctx.fillStyle=accentRgb+(alpha*.6)+')';
-    ctx.beginPath(); ctx.moveTo(x,by-bh); ctx.lineTo(x+bw*.75,by-bh);
-    ctx.lineTo(x+bw*.75+5,by-bh-4); ctx.lineTo(x+5,by-bh-4); ctx.closePath(); ctx.fill();
-  }
-  const fade=ctx.createLinearGradient(0,H*.45,0,H);
-  fade.addColorStop(0,'transparent'); fade.addColorStop(1,'rgba(0,0,0,0.85)');
-  ctx.fillStyle=fade; ctx.fillRect(0,0,W,H);
-  ctx.textAlign='center';
-  ctx.font=`bold ${H*.22}px Bebas Neue, Arial Black, sans-serif`;
-  ctx.fillStyle='rgba(255,255,255,0.9)'; ctx.fillText(label1,W/2,H*.45);
-  ctx.font=`bold ${H*.14}px Bebas Neue, Arial Black, sans-serif`;
-  ctx.fillStyle=accentRgb+'0.8)'; ctx.fillText(label2,W/2,H*.62);
-}
-
-// Apri articolo dalla home → va in musica e mostra il modale
-function openHomeArticle(idx) {
-  const art = homeArticles[idx];
-  if (!art) return;
-  showPage('musica', document.querySelector('.nav-links a[onclick*="musica"]'));
-  setTimeout(() => {
-    document.getElementById('art-modal-tag').textContent = art.tag;
-    document.getElementById('art-modal-title').textContent = art.title;
-    document.getElementById('art-modal-text').textContent = art.text;
-    // Disegna copertina nel modal
-    const mc = document.getElementById('art-modal-canvas');
-    if (mc) {
-      if (idx < 5) drawRW('art-modal-canvas', art.colors, art.accent, art.title.split(':')[0].split(' ').slice(-1)[0].toUpperCase(), art.tag.split('·')[0].trim().toUpperCase(), true);
-      else drawTech('art-modal-canvas', art.colors, art.accent, art.title.split(':')[0].toUpperCase().substring(0,12), art.tag.split('·')[0].trim().toUpperCase());
-    }
-    document.getElementById('art-modal').classList.add('open');
-    document.body.style.overflow='hidden';
-  }, 120);
-}
-
-// ── INIZIALIZZA DA WEEKLY_CONTENT (content.js) ────────────────
+/* ── INIT DA WEEKLY_CONTENT ── */
 function initFromContent() {
   if (typeof WEEKLY_CONTENT === 'undefined') return;
   const W = WEEKLY_CONTENT;
 
-  // Ticker
-  const ticker = document.getElementById('site-ticker');
-  if (ticker && W.ticker) ticker.innerHTML = W.ticker;
+  if (W.ticker) { const t=document.getElementById('site-ticker');if(t)t.innerHTML=W.ticker; }
 
-  // Hero
-  const hero = W.hero;
-  if (hero) {
-    document.getElementById('home-hero-img').src = hero.photo || '';
-    document.getElementById('home-hero-tint').style.background = 'linear-gradient(135deg,' + (hero.tint || 'rgba(4,0,26,0.6),rgba(26,0,80,0.4)') + ')';
-    document.getElementById('hero-tag').textContent = hero.tag || '';
-    document.getElementById('hero-title').textContent = hero.title || '';
-    document.getElementById('hero-sub').textContent = hero.sub || '';
+  if (W.hero) {
+    const h=W.hero;
+    document.getElementById('home-hero-img').src=h.photo||'';
+    document.getElementById('home-hero-tint').style.background='linear-gradient(135deg,'+(h.tint||'rgba(4,0,26,0.6),rgba(26,0,80,0.4)')+')';
+    document.getElementById('hero-tag').textContent=h.tag||'';
+    document.getElementById('hero-title').textContent=h.title||'';
+    document.getElementById('hero-sub').textContent=h.sub||'';
+    allArticles[0]={tag:h.tag,tagColor:'#7c3aed',title:h.title,sub:h.sub||'',text:h.text||'',photo:h.photo||'',tint:h.tint||'rgba(4,0,26,0.6),rgba(26,0,80,0.4)'};
   }
 
-  // 4 News clubbing
-  const newsGrid = document.getElementById('home-news-grid');
-  if (newsGrid && W.news) {
-    newsGrid.innerHTML = W.news.map((n, i) => `
+  if (W.news) {
+    const ng=document.getElementById('home-news-grid');
+    if(ng) ng.innerHTML=W.news.map((n,i)=>`
       <div class="hn-card" onclick="openHomeArticle(${i+1})">
         <div class="hn-img-wrap">
-          <img class="hn-img" src="${n.photo || ''}" alt="">
-          <div class="hn-img-tint" style="background:linear-gradient(135deg,${n.tint || 'rgba(0,0,0,0.6),rgba(0,0,0,0.4)'});"></div>
+          <img class="hn-img" src="${n.photo||''}" alt="">
+          <div class="hn-img-tint" style="background:linear-gradient(135deg,${n.tint||'rgba(0,0,0,0.5),rgba(0,0,0,0.3)'});"></div>
           <div class="hn-img-fade"></div>
           <div class="hn-img-label">
-            <span class="hn-img-tag" style="background:${n.tagColor || '#7c3aed'};">${n.tag || ''}</span>
-            <div class="hn-img-title">${n.title || ''}</div>
+            <span class="hn-img-tag" style="background:${n.tagColor||'#7c3aed'};">${n.tag||''}</span>
+            <div class="hn-img-title">${n.title||''}</div>
           </div>
         </div>
-        <div class="hn-body">
-          <div class="hn-sub">${n.sub || ''}</div>
-          <div class="hn-more">Leggi →</div>
-        </div>
+        <div class="hn-body"><div class="hn-sub">${n.sub||''}</div><div class="hn-more">Leggi →</div></div>
       </div>`).join('');
+    W.news.forEach((n,i)=>{allArticles[i+1]={tag:n.tag,tagColor:n.tagColor||'#7c3aed',title:n.title,sub:n.sub||'',text:n.text||'',photo:n.photo||'',tint:n.tint||'rgba(0,0,0,0.5),rgba(0,0,0,0.3)'};});
   }
 
-  // 4 Tech & Gear
-  const techGrid = document.getElementById('home-tech-grid');
-  if (techGrid && W.tech) {
-    techGrid.innerHTML = W.tech.map((t, i) => `
+  if (W.tech) {
+    const tg=document.getElementById('home-tech-grid');
+    if(tg) tg.innerHTML=W.tech.map((t,i)=>`
       <div class="ht-card" onclick="openHomeArticle(${i+5})">
         <div class="ht-img-wrap">
-          <img class="ht-img" src="${t.photo || ''}" alt="">
-          <div class="ht-img-tint" style="background:linear-gradient(135deg,${t.tint || 'rgba(0,0,0,0.6),rgba(0,0,0,0.4)'});"></div>
+          <img class="ht-img" src="${t.photo||''}" alt="">
+          <div class="ht-img-tint" style="background:linear-gradient(135deg,${t.tint||'rgba(0,0,0,0.5),rgba(0,0,0,0.3)'});"></div>
           <div class="ht-img-fade"></div>
           <div class="ht-img-label">
-            <span class="ht-img-tag" style="background:${t.tagColor || '#7c3aed'};">${t.tag || ''}</span>
-            <div class="ht-img-title">${t.title || ''}</div>
+            <span class="ht-img-tag" style="background:${t.tagColor||'#7c3aed'};">${t.tag||''}</span>
+            <div class="ht-img-title">${t.title||''}</div>
           </div>
         </div>
-        <div class="ht-body">
-          <div class="ht-sub">${t.sub || ''}</div>
-          <div class="ht-more">Leggi →</div>
-        </div>
+        <div class="ht-body"><div class="ht-sub">${t.sub||''}</div><div class="ht-more">Leggi →</div></div>
       </div>`).join('');
+    W.tech.forEach((t,i)=>{allArticles[i+5]={tag:t.tag,tagColor:t.tagColor||'#7c3aed',title:t.title,sub:t.sub||'',text:t.text||'',photo:t.photo||'',tint:t.tint||'rgba(0,0,0,0.5),rgba(0,0,0,0.3)'};});
   }
 
-  // Disco della settimana
-  const d = W.disco;
-  if (d) {
-    document.getElementById('d-title').textContent = d.title || '';
-    document.getElementById('d-artist').textContent = d.artist || '';
-    document.getElementById('d-year').textContent = (d.year || '') + ' · ' + (d.genre || '');
-    document.getElementById('d-desc').textContent = d.desc || '';
-    document.getElementById('d-genre').textContent = d.genre || '';
-    document.getElementById('pl-title').textContent = d.title || '';
-    document.getElementById('pl-artist').textContent = d.artist || '';
+  if (W.disco) {
+    const d=W.disco;
+    document.getElementById('d-title').textContent=d.title||'';
+    document.getElementById('d-artist').textContent=d.artist||'';
+    document.getElementById('d-year').textContent=(d.year||'')+' · '+(d.genre||'');
+    document.getElementById('d-desc').textContent=d.desc||'';
+    document.getElementById('d-genre').textContent=d.genre||'';
+    document.getElementById('pl-title').textContent=d.title||'';
+    document.getElementById('pl-artist').textContent=d.artist||'';
     if (d.q) {
-      itunesSearch(d.q, function(results) {
-        if (results && results.length) {
-          const t = results[0];
-          if (t.artworkUrl) { const i=document.getElementById('d-img'); i.src=t.artworkUrl; i.style.display='block'; document.getElementById('d-ph').style.display='none'; }
-          if (t.artworkUrlSmall) { const i=document.getElementById('pl-art'); i.src=t.artworkUrlSmall; i.style.display='block'; document.getElementById('pl-art-ph').style.display='none'; }
-          if (t.previewUrl) { discoAudio.src=t.previewUrl; discoLoaded=true; document.getElementById('pl-status').textContent='▶ Premi play'; }
+      itunesSearch(d.q,function(results){
+        if(results&&results.length){
+          const t=results[0];
+          if(t.artworkUrl){const i=document.getElementById('d-img');i.src=t.artworkUrl;i.style.display='block';document.getElementById('d-ph').style.display='none';}
+          if(t.artworkUrlSmall){const i=document.getElementById('pl-art');i.src=t.artworkUrlSmall;i.style.display='block';document.getElementById('pl-art-ph').style.display='none';}
+          if(t.previewUrl){discoAudio.src=t.previewUrl;discoLoaded=true;document.getElementById('pl-status').textContent='▶ Premi play';}
         }
       });
     }
   }
 
-  // Aggiorna homeArticles con i dati di WEEKLY_CONTENT per i modali
-  if (W.hero) homeArticles[0] = { tag: W.hero.tag, title: W.hero.title, sub: W.hero.sub, text: W.hero.text, colors: ['#04001a','#1a0050','#0d0030'], accent: 'rgba(120,40,255,', dest: 'musica' };
-  if (W.news) W.news.forEach((n,i) => { homeArticles[i+1] = { tag: n.tag, title: n.title, sub: n.sub, text: n.text, colors: ['#04001a','#1a0050','#0d0030'], accent: 'rgba(120,40,255,', dest: 'musica' }; });
-  if (W.tech) W.tech.forEach((t,i) => { homeArticles[i+5] = { tag: t.tag, title: t.title, sub: t.sub, text: t.text, colors: ['#04001a','#1a0050','#0d0030'], accent: 'rgba(120,40,255,', dest: 'musica' }; });
-
-  // Classifiche da WEEKLY_CONTENT se presenti
-  if (W.danceChart) { danceChart.length=0; W.danceChart.forEach(t=>danceChart.push(t)); }
-  if (W.mainChart) { mainChart.length=0; W.mainChart.forEach(t=>mainChart.push(t)); }
+  if (W.danceChart){danceChart.length=0;W.danceChart.forEach(t=>danceChart.push(t));}
+  if (W.mainChart){mainChart.length=0;W.mainChart.forEach(t=>mainChart.push(t));}
 }
 
-window.addEventListener('load', () => {
-  // Inizializza da content.js
+window.addEventListener('load',()=>{
   initFromContent();
-  // News clubbing
-  drawRW('hn-c0', homeArticles[1].colors, homeArticles[1].accent, 'SAN SIRO', 'DANCE', false);
-  drawRW('hn-c1', homeArticles[2].colors, homeArticles[2].accent, 'IMS', 'IBIZA', false);
-  drawRW('hn-c2', homeArticles[3].colors, homeArticles[3].accent, 'VISION', 'OPEN AIR', false);
-  drawRW('hn-c3', homeArticles[4].colors, homeArticles[4].accent, 'KAPPA', 'TORINO', false);
-  // Tech covers
-  drawTech('ht-c0', homeArticles[5].colors, homeArticles[5].accent, 'TRANSFIGURE', 'VST');
-  drawTech('ht-c1', homeArticles[6].colors, homeArticles[6].accent, 'AKAI MPC', 'HARDWARE');
-  drawTech('ht-c2', homeArticles[7].colors, homeArticles[7].accent, 'PURE:LEVEL', 'AI PLUGIN');
-  drawTech('ht-c3', homeArticles[8].colors, homeArticles[8].accent, 'ABLETON', 'LIVE 12.1');
-  // Musica page canvas (già esistenti)
-  articles.forEach((a,i) => a.draw('mn-c'+i));
 });
 
-// ── NAV ───────────────────────────────────────────────────────────
-let musicPageInited = false;
-function showPage(name, el) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+/* ── NAV ── */
+let musicPageInited=false;
+function showPage(name,el){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
   document.getElementById('page-'+name).classList.add('active');
-  if(el) el.classList.add('active');
+  if(el)el.classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
-  setTimeout(() => {
+  setTimeout(()=>{
     initFadeIns();
-    // home usa img, nessun canvas da ridisegnare
-    if(name==='musica') {
-      if(!musicPageInited) { musicPageInited=true; initMusicPage(); }
-      articles.forEach((a,i) => a.draw('mn-c'+i));
+    if(name==='musica'&&!musicPageInited){
+      musicPageInited=true;
+      buildMusicNewsGrid();
+      buildChart('chart-dance',danceChart);
+      buildChart('chart-main',mainChart);
     }
-  }, 50);
+  },50);
 }
 
-// ── UTILS ─────────────────────────────────────────────────────────
-function toggleLike(btn) {
-  const liked = btn.dataset.liked==='1';
-  const n = parseInt(btn.textContent.match(/\d+/)[0]);
-  btn.style.color = liked ? 'var(--gray)' : 'var(--pl)';
-  btn.dataset.liked = liked ? '0' : '1';
-  btn.innerHTML = btn.innerHTML.replace(/\d+/, liked ? n-1 : n+1);
-}
-
-const fiObs = new IntersectionObserver(entries => {
-  entries.forEach((e,i) => { if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),i*70);fiObs.unobserve(e.target);}});
+/* ── FADE IN ── */
+const fiObs=new IntersectionObserver(entries=>{
+  entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),i*70);fiObs.unobserve(e.target);}});
 },{threshold:.1});
 function initFadeIns(){document.querySelectorAll('.fi:not(.in)').forEach(el=>fiObs.observe(el));}
 initFadeIns();
