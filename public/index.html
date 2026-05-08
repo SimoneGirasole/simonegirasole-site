@@ -81,6 +81,22 @@ nav{position:sticky;top:0;z-index:200;background:var(--black);border-bottom:1px 
 .ht-sub{font-size:.88rem;color:var(--gray);line-height:1.5;}
 .ht-more{font-size:.72rem;color:var(--purple);margin-top:.45rem;letter-spacing:.08em;text-transform:uppercase;}
 
+/* ── AI GRID 2 ── */
+.home-ai-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);padding-bottom:2.5rem;}
+.hai-card{background:var(--black);cursor:pointer;transition:transform .2s;}
+.hai-card:hover{transform:translateY(-3px);}
+.hai-img-wrap{position:relative;width:100%;aspect-ratio:16/7;overflow:hidden;}
+.hai-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45;transition:opacity .3s;}
+.hai-card:hover .hai-img{opacity:.65;}
+.hai-img-tint{position:absolute;inset:0;}
+.hai-img-fade{position:absolute;inset:0;background:linear-gradient(transparent 25%,rgba(0,0,0,.88));}
+.hai-img-label{position:absolute;bottom:0;left:0;right:0;padding:.75rem 1rem;}
+.hai-img-tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.2rem .5rem;border-radius:2px;color:white;margin-bottom:.25rem;}
+.hai-img-title{font-family:'Bebas Neue',sans-serif;font-size:1.15rem;line-height:1.25;color:white;}
+.hai-body{padding:.8rem 1rem .95rem;}
+.hai-sub{font-size:.88rem;color:var(--gray);line-height:1.5;}
+.hai-more{font-size:.72rem;color:var(--purple);margin-top:.45rem;letter-spacing:.08em;text-transform:uppercase;}
+
 /* ── DISCO ── */
 .disco-sec{background:var(--dark);padding:2.8rem;border-bottom:1px solid var(--border);}
 .disco-inner{display:grid;grid-template-columns:220px 1fr;gap:3.5rem;align-items:start;}
@@ -286,6 +302,13 @@ footer p{font-size:.78rem;color:var(--gray);font-family:'Space Mono',monospace;}
   .ht-img-tag{font-size:.72rem;padding:.28rem .75rem;} /* ← COME HERO TAG */
   .ht-sub{font-size:.88rem;} /* ← COME HERO */
 
+  /* AI GRID: 1 colonna su mobile — PROPORZIONI HERO */
+  .home-ai-grid{grid-template-columns:1fr;}
+  .hai-img-wrap{aspect-ratio:16/6;}
+  .hai-img-title{font-size:2.2rem;} /* ← COME HERO */
+  .hai-img-tag{font-size:.72rem;padding:.28rem .75rem;} /* ← COME HERO TAG */
+  .hai-sub{font-size:.88rem;} /* ← COME HERO */
+
   /* DISCO — PROPORZIONI HERO */
   .disco-sec{padding:1.5rem;}
   .disco-inner{grid-template-columns:1fr;gap:1.5rem;}
@@ -357,6 +380,7 @@ footer p{font-size:.78rem;color:var(--gray);font-family:'Space Mono',monospace;}
   .logo-name{font-size:1.2rem;}
   .hn-img-title{font-size:1.9rem;} /* ← sincronizzato con hero */
   .ht-img-title{font-size:1.9rem;} /* ← sincronizzato con hero */
+  .hai-img-title{font-size:1.9rem;} /* ← sincronizzato con hero */
   .disco-title{font-size:1.9rem;} /* ← sincronizzato con hero */
   .mn-img-title{font-size:1.9rem;} /* ← sincronizzato con hero */
 }
@@ -407,6 +431,11 @@ footer p{font-size:.78rem;color:var(--gray);font-family:'Space Mono',monospace;}
     <div class="sec-hdr"><div class="sec-title">TECH &amp; GEAR</div><div class="sec-line"></div></div>
   </div>
   <div class="home-tech-grid" id="home-tech-grid" style="background:var(--dark);padding-bottom:2.5rem;"></div>
+
+  <div class="sec" style="padding:2rem 2.5rem 0;">
+    <div class="sec-hdr"><div class="sec-title">ABLETON AI</div><div class="sec-line"></div></div>
+  </div>
+  <div class="home-ai-grid" id="home-ai-grid"></div>
 
   <div class="disco-sec">
     <div class="sec-hdr"><div class="sec-title">DISCO CHE STORIA DELLA SETTIMANA</div><div class="sec-line"></div></div>
@@ -939,6 +968,24 @@ function initFromContent() {
         <div class="ht-body"><div class="ht-sub">${t.sub||''}</div><div class="ht-more">Leggi →</div></div>
       </div>`).join('');
     W.tech.forEach((t,i)=>{allArticles[i+5]={tag:t.tag,tagColor:t.tagColor||'#7c3aed',title:t.title,sub:t.sub||'',text:t.text||'',photo:t.photo||'',tint:t.tint||'rgba(0,0,0,0.5),rgba(0,0,0,0.3)'};});
+  }
+
+  if (W.ai) {
+    const aig=document.getElementById('home-ai-grid');
+    if(aig) aig.innerHTML=W.ai.map((a,i)=>`
+      <div class="hai-card" onclick="openHomeArticle(${i+9})">
+        <div class="hai-img-wrap">
+          <img class="hai-img" src="${a.photo||''}" alt="">
+          <div class="hai-img-tint" style="background:linear-gradient(135deg,${a.tint||'rgba(0,0,0,0.5),rgba(0,0,0,0.3)'});"></div>
+          <div class="hai-img-fade"></div>
+          <div class="hai-img-label">
+            <span class="hai-img-tag" style="background:${a.tagColor||'#00b4d8'};">${a.tag||''}</span>
+            <div class="hai-img-title">${a.title||''}</div>
+          </div>
+        </div>
+        <div class="hai-body"><div class="hai-sub">${a.sub||''}</div><div class="hai-more">Leggi →</div></div>
+      </div>`).join('');
+    W.ai.forEach((a,i)=>{allArticles[i+9]={tag:a.tag,tagColor:a.tagColor||'#00b4d8',title:a.title,sub:a.sub||'',text:a.text||'',photo:a.photo||'',tint:a.tint||'rgba(0,0,0,0.5),rgba(0,0,0,0.3)'};});
   }
 
   if (W.disco) {
