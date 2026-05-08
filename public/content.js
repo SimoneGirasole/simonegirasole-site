@@ -113,27 +113,27 @@ const WEEKLY_CONTENT = {
     }
   ],
   danceChart: [
-    {pos:1, title:"Release The Pressure", artist:"Calvin Harris, Kasabian", q:"Calvin Harris Kasabian Release The Pressure"},
-    {pos:2, title:"GrooveJet (If This Ain't Love)", artist:"Spiller, Sophie Ellis-Bextor", q:"Spiller Sophie Ellis-Bextor GrooveJet"},
-    {pos:3, title:"Morning Coffee", artist:"Jitwam, GUDFELLA", q:"Jitwam GUDFELLA Morning Coffee"},
-    {pos:4, title:"Jamaican (Bam Bam)", artist:"Hugel, SOLTO", q:"Hugel SOLTO Jamaican Bam Bam"},
-    {pos:5, title:"Silence", artist:"Delerium, Sarah McLachlan, John Summit", q:"Delerium Sarah McLachlan John Summit Silence"},
-    {pos:6, title:"It Gets Better", artist:"Kettama", q:"Kettama It Gets Better Forever Mix"},
-    {pos:7, title:"Delilah (pull me out of this)", artist:"Delilah Montagu, Fred again..", q:"Delilah Montagu Fred again pull me out of this"},
-    {pos:8, title:"Better", artist:"Baauer", q:"Baauer Better Extended Mix"},
-    {pos:9, title:"Deep Inside", artist:"Job De Jong, Kepler", q:"Job De Jong Kepler Deep Inside"},
-    {pos:10, title:"Opalite", artist:"Rüfüs Du Sol, Chris Lake", q:"Rufus Du Sol Chris Lake Opalite Remix"}
+    {pos:1, title:"Loco Loco", artist:"Reiner Zonneveld, Gordo", q:"Reiner Zonneveld Gordo Loco Loco"},
+    {pos:2, title:"Magnetic", artist:"The Bauaa", q:"The Bauaa Magnetic Extended"},
+    {pos:3, title:"DON'T BELIEVE IT", artist:"Absolutely, John Summit", q:"Absolutely John Summit Don't Believe It"},
+    {pos:4, title:"Closure", artist:"D.O.D, Hayley May", q:"D.O.D Hayley May Closure Extended"},
+    {pos:5, title:"The Way I Are (Max Dean Remix)", artist:"Timbaland, Ken Hilson, D.O.E, Max Dean", q:"Timbaland Max Dean The Way I Are Remix"},
+    {pos:6, title:"Just The Way You Are (David Guetta Remix)", artist:"David Guetta, Milky", q:"David Guetta Milky Just The Way You Are"},
+    {pos:7, title:"In Love", artist:"Gwen Guthrie, Rafael, JØRD", q:"Gwen Guthrie Rafael JORD In Love"},
+    {pos:8, title:"Favour", artist:"FiSHER (OZ), Tones and I", q:"FiSHER Tones and I Favour"},
+    {pos:9, title:"Lady Hear Me Tonight", artist:"Modjo", q:"Modjo Lady Hear Me Tonight"},
+    {pos:10, title:"New Religion", artist:"Faithless, Bebe Rexha", q:"Faithless Bebe Rexha New Religion"}
   ],
   mainChart: [
-    {pos:1, title:"Release The Pressure", artist:"Calvin Harris, Kasabian", q:"Calvin Harris Kasabian Release The Pressure mainstage"},
-    {pos:2, title:"Won't Be Possible", artist:"Tiesto, Odd Mob, Goodboys", q:"Tiesto Odd Mob Goodboys Won't Be Possible"},
-    {pos:3, title:"Summer", artist:"Calvin Harris", q:"Calvin Harris Summer"},
-    {pos:4, title:"Pump Up The Jam", artist:"Technotronic", q:"Technotronic Pump Up The Jam"},
-    {pos:5, title:"Like A Child", artist:"Armin van Buuren", q:"Armin van Buuren Like A Child"},
-    {pos:6, title:"Man With a Second Face", artist:"Kettama", q:"Kettama Man With a Second Face"},
-    {pos:7, title:"GrooveJet (If This Ain't Love)", artist:"Spiller, Sophie Ellis-Bextor", q:"Spiller Sophie Ellis-Bextor GrooveJet mainstage"},
-    {pos:8, title:"Don't Stop", artist:"Prospa", q:"Prospa Don't Stop Extended Mix"},
-    {pos:9, title:"Love Songs", artist:"Prospa, Kosmo Kint", q:"Prospa Kosmo Kint Love Songs"},
-    {pos:10, title:"Jamaican (Bam Bam)", artist:"Hugel, SOLTO", q:"Hugel SOLTO Jamaican Bam Bam mainstage"}
+    {pos:1, title:"Free Your Mind", artist:"Cloonee, Prospa", q:"Cloonee Prospa Free Your Mind Extended"},
+    {pos:2, title:"HOTS 4 U", artist:"Chris Lorenzo, aMo (un)", q:"Chris Lorenzo aMo HOTS 4 U"},
+    {pos:3, title:"Talk To You", artist:"ANÖTR, S4 Ultra", q:"ANOTR S4 Ultra Talk To You Extended"},
+    {pos:4, title:"GrooveJet (If This Ain't Love)", artist:"Spiller, Sophie Ellis-Bextor, William Kiss, Jordan Brando", q:"Spiller Sophie Ellis-Bextor GrooveJet"},
+    {pos:5, title:"How Does It Feel", artist:"Fezzo, Dubdogz, Zaark", q:"Fezzo Dubdogz Zaark How Does It Feel"},
+    {pos:6, title:"Shinjuku", artist:"Franky Rizardo", q:"Franky Rizardo Shinjuku Extended"},
+    {pos:7, title:"Actin' Tough", artist:"Dean Turnley", q:"Dean Turnley Actin Tough Original"},
+    {pos:8, title:"Freaky !", artist:"All Love, Vintage Culture, Max Styler", q:"All Love Vintage Culture Max Styler Freaky"},
+    {pos:9, title:"One Question", artist:"Groove Theory, Cloonee", q:"Groove Theory Cloonee One Question"},
+    {pos:10, title:"Make You Fight", artist:"Chris Lake, ATRIP", q:"Chris Lake ATRIP Make You Fight"}
   ]
 };
