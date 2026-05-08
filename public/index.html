@@ -272,33 +272,36 @@ footer p{font-size:.78rem;color:var(--gray);font-family:'Space Mono',monospace;}
   .sec-title{font-size:1.5rem;}
   .sec-hdr{margin-bottom:1.2rem;}
 
-  /* NEWS GRID: 2 colonne su mobile */
+  /* NEWS GRID: 2 colonne su mobile — PROPORZIONI HERO */
   .home-news-grid{grid-template-columns:1fr 1fr;}
-  .hn-img-title{font-size:.95rem;}
+  .hn-img-title{font-size:2.2rem;} /* ← COME HERO */
   .hn-img-tag{font-size:.6rem;}
   .hn-body{padding:.6rem .75rem .8rem;}
-  .hn-sub{font-size:.8rem;}
+  .hn-sub{font-size:.88rem;} /* ← COME HERO */
 
-  /* TECH GRID: 1 colonna su mobile */
+  /* TECH GRID: 1 colonna su mobile — PROPORZIONI HERO */
   .home-tech-grid{grid-template-columns:1fr;}
   .ht-img-wrap{aspect-ratio:16/6;}
+  .ht-img-title{font-size:2.2rem;} /* ← COME HERO */
+  .ht-sub{font-size:.88rem;} /* ← COME HERO */
 
-  /* DISCO */
+  /* DISCO — PROPORZIONI HERO */
   .disco-sec{padding:1.5rem;}
   .disco-inner{grid-template-columns:1fr;gap:1.5rem;}
   .disco-cover-wrap{width:140px;height:140px;margin:0 auto;}
   .disco-cover{width:140px;height:140px;}
   .disco-ph{width:140px;height:140px;}
   .vinyl{right:-30px;width:130px;height:130px;}
-  .disco-title{font-size:2.2rem;}
+  .disco-title{font-size:2.2rem;} /* ← COME HERO */
   .disco-artist{font-size:1rem;}
-  .disco-desc{font-size:.9rem;}
+  .disco-desc{font-size:.88rem;} /* ← COME HERO */
   .player-wrap{max-width:100%;}
 
-  /* MUSIC PAGE */
+  /* MUSIC PAGE — PROPORZIONI HERO */
   .music-news-grid{grid-template-columns:1fr;}
   .mn-img-wrap{aspect-ratio:16/8;}
-  .mn-img-title{font-size:1.1rem;}
+  .mn-img-title{font-size:2.2rem;} /* ← COME HERO */
+  .mn-sub{font-size:.88rem;} /* ← COME HERO */
 
   /* CHARTS */
   .charts-two-col{grid-template-columns:1fr;gap:0;}
@@ -349,6 +352,10 @@ footer p{font-size:.78rem;color:var(--gray);font-family:'Space Mono',monospace;}
   .home-hero-title{font-size:1.9rem;}
   .home-hero{height:320px;}
   .logo-name{font-size:1.2rem;}
+  .hn-img-title{font-size:1.9rem;} /* ← sincronizzato con hero */
+  .ht-img-title{font-size:1.9rem;} /* ← sincronizzato con hero */
+  .disco-title{font-size:1.9rem;} /* ← sincronizzato con hero */
+  .mn-img-title{font-size:1.9rem;} /* ← sincronizzato con hero */
 }
 <link rel="stylesheet" href="/typography.css">
 </style>
@@ -888,7 +895,7 @@ function initFromContent() {
   if (W.hero) {
     const h=W.hero;
     document.getElementById('home-hero-img').src=h.photo||'';
-    document.getElementById('home-hero-tint').style.background='linear-gradient(135deg,'+(h.tint||'rgba(4,0,26,0.6),rgba(26,0,80,0.4)')+')';
+    document.getElementById('home-hero-tint').style.background='linear-gradient(135deg,'+(h.tint||'rgba(4,0,26,0.6),rgba(26,0,80,0.4)')+')'
     document.getElementById('hero-tag').textContent=h.tag||'';
     document.getElementById('hero-title').textContent=h.title||'';
     document.getElementById('hero-sub').textContent=h.sub||'';
