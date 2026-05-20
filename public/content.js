@@ -12,7 +12,7 @@ const WEEKLY_CONTENT = {
     tag: "Festival · Italia",
     title: "Nameless 2026 torna al Lago di Como",
     sub: "Dal 30 maggio al 1° giugno al Bione di Lecco. Calvin Harris, Fisher e John Summit headliner. 100.000 spettatori attesi.",
-    text: "Il Nameless Festival 2026 torna alla sua location storica: il Bione di Lecco, affacciato sul Lago di Como. Dal 30 maggio al 1° giugno, tre giorni di musica elettronica e urban con una lineup di altissimo livello. Calvin Harris apre il festival il 30 maggio, affiancato da Sonny Fodera, Andy C, Hybrid Minds e Netsky. Il 31 maggio è la giornata di John Summit, con HALÕ, Pendulum dj set, Goodboys e The Shapeshifters. Il 1° giugno chiude Fisher, accompagnato da HoneyLuv, Luuk Van Dijk e Nic Fanciulli per il palco Defected. Confermati anche il format Glitterbox con CINTHIE, Mousse T. e Todd Terry, e il mystery artist 'Less Names' ogni giorno. L'edizione 2026 elimina il sistema token e introduce acqua gratuita. Attesi 100.000 spettatori da tutto il mondo.",
+    text: "Il Nameless Festival 2026 torna alla sua location storica: il Bione di Lecco, affacciato sul Lago di Como. Dal 30 maggio al 1° giugno, tre giorni di musica elettronica e urban con una lineup di altissimo livello. Calvin Harris apre il festival il 30 maggio, affiancato da Sonny Fodera, Andy C, Hybrid Minds e Netsky. Il 31 maggio è la giornata di John Summit, con HALÕ, Pendulum dj set, Goodboys e The Shapeshifters. Il 1° giugno chiude Fisher, accompagnato da HoneyLuv, Luuk Van Dijk e Nic Fanciulli per il palco Defected. Confermati anche il format Glitterbox con CINTHIE, Mousse T. e Todd Terry, e il mystery artist \"Less Names\" ogni giorno. L'edizione 2026 elimina il sistema token e introduce acqua gratuita. Attesi 100.000 spettatori da tutto il mondo.",
     photo: "/images/nameless.jpg",
     tint: "rgba(10,0,30,0.55),rgba(40,0,80,0.35)"
   },
@@ -31,7 +31,7 @@ const WEEKLY_CONTENT = {
       tagColor: "#cc0055",
       title: "Primavera Sound: The Cure, Gorillaz e Massive Attack",
       sub: "4-6 giugno al Parc del Fòrum. Opening gratuito il 3 giugno, chiusura elettronica il 7.",
-      text: "Primavera Sound Barcelona 2026 si svolge dal 4 al 6 giugno al Parc del Fòrum. Tre giornate principali con headliner d'eccezione: Doja Cat e Massive Attack il 4 giugno, The Cure e Addison Rae il 5, The xx e Gorillaz il 6. Mercoledì 3 giugno opening day gratuito con Wet Leg, Guitarricadelafuente e Yard Act. Domenica 7 la chiusura elettronica Primavera Bits sul mare. In lineup anche Skrillex, Peggy Gou, Overmono, Little Simz, PinkPantheress, Kneecap e oltre 150 artisti totali. Una delle edizioni più ambiziose nella storia del festival catalano.",
+      text: "Primavera Sound Barcelona 2026 si svolge dal 4 al 6 giugno al Parc del Fòrum. Nelle tre giornate principali ci saranno headliner d'eccezione: Doja Cat e Massive Attack il 4 giugno, The Cure e Addison Rae il 5, The xx e Gorillaz il 6. Mercoledì 3 giugno opening day gratuito con Wet Leg, Guitarricadelafuente e Yard Act. Domenica 7 la chiusura con Primavera Bits e una stupenda vista sul mare. Con oltre 150 artisti totali, in lineup anche Skrillex, Peggy Gou, Overmono, Little Simz, PinkPantheress, Kneecap. Una delle edizioni più ambiziose nella storia del festival catalano.",
       photo: "/images/primavera.jpg",
       tint: "rgba(10,0,20,0.55),rgba(50,0,80,0.35)"
     },
@@ -40,7 +40,7 @@ const WEEKLY_CONTENT = {
       tagColor: "#0077cc",
       title: "Sea Star Festival: il primo stop estivo sull'Adriatico",
       sub: "28-31 maggio a Umag, Croazia. Quattro giorni tra musica elettronica e mare.",
-      text: "Il Sea Star Festival 2026 torna a Stella Maris, Umag, dal 28 al 31 maggio. Quattro giorni affacciati sull'Adriatico con una lineup che attraversa house, techno e melodic electronic. Una delle prime grandi tappe stagionali per chi vuole iniziare l'estate con il ritmo giusto. Il festival croato è diventato negli anni un punto di riferimento per la scena elettronica dell'Europa orientale, con una produzione scenica di alto livello e un'atmosfera unica che unisce spiaggia, tramonto e dancefloor.",
+      text: "Il Sea Star Festival 2026 torna a Stella Maris, Umag, dal 28 al 31 maggio. Quattro giorni affacciati sull'Adriatico con una lineup che attraversa house, techno e melodic electronic. Una delle prime grandi tappe stagionali per chi vuole iniziare l'estate con il ritmo giusto. Il festival croato è diventato negli anni un punto di riferimento per la scena elettronica dell'Europa orientale, con una scenografia spettacolare e un'atmosfera unica che unisce spiaggia, tramonto e ottima musica.",
       photo: "/images/seastar.jpg",
       tint: "rgba(0,10,30,0.55),rgba(0,30,80,0.35)"
     },
@@ -49,7 +49,7 @@ const WEEKLY_CONTENT = {
       tagColor: "#e04000",
       title: "Spring Attitude XV: 15 anni alla Nuvola dell'EUR",
       sub: "29-30 maggio a Roma. Nu Genea, Nathy Peluso, Dov'è Liana. Day 1 sold out.",
-      text: "Spring Attitude Festival celebra i suoi 15 anni tornando alla Nuvola dell'EUR il 29 e 30 maggio 2026. Venerdì 29 maggio con Nu Genea e il loro tour 'People Of The Moon', Lamante, Birthh, okgiorgio e Parisi. Sabato 30 in modalità club con Nathy Peluso in DJ set — unica data italiana del progetto CLUB GRASA — Dov'è Liana, Mind Enterprises, ¥ØU$UK€ ¥UK1MAT$U, Altea, Emma Nolde e Gaia Banfi. I biglietti del Day 1 e i Full Pass sono sold out: disponibili solo i ticket per il 30 maggio su Dice.",
+      text: "Spring Attitude Festival celebra i suoi 15 anni tornando alla Nuvola dell'EUR il 29 e 30 maggio 2026. Venerdì 29 maggio con Nu Genea e il loro tour \"People Of The Moon\", Lamante, Birthh, okgiorgio e Parisi. Sabato 30 in modalità club con il dj set di Nathy Peluso — unica data italiana del progetto CLUB GRASA — Dov'è Liana, Mind Enterprises, ¥ØU$UK€ ¥UK1MAT$U, Altea, Emma Nolde e Gaia Banfi. I biglietti del Day 1 e i Full Pass sono sold out: disponibili solo i ticket per il 30 maggio su Dice.",
       photo: "/images/springattitude.jpg",
       tint: "rgba(15,5,0,0.55),rgba(60,15,0,0.35)"
     }
@@ -69,7 +69,7 @@ const WEEKLY_CONTENT = {
       tagColor: "#1a1a1a",
       title: "Polyend Drums: la sfidante della TR-1000",
       sub: "Presentata a Superbooth 2026. Ibrida analogica/digitale, 8 tracce. Pre-order a $2.699.",
-      text: "Polyend ha presentato Drums a Superbooth 2026: una drum machine ibrida che combina 4 voci analogiche basate su chip SSI, sintesi digitale, sample playback e un sequencer avanzato con probabilità, micro-timing, parameter locks e generative tools. 8 tracce, 64 pattern, 64 kit, 48 song. X/Y fader per morphing in tempo reale, effetti in catena send/insert/master e connettività completa: uscite individuali, MIDI, USB-C. Il CEO Piotr Raczyński: 'Volevamo costruire la drum machine che avremmo voluto usare noi stessi.' Pre-order con deposito rimborsabile $500. Prezzo finale $2.699.",
+      text: "Polyend ha presentato Drums a Superbooth 2026: una drum machine ibrida che combina 4 voci analogiche basate su chip SSI, sintesi digitale, sample playback e un sequencer avanzato con probabilità, micro-timing, parameter locks e generative tools. 8 tracce, 64 pattern, 64 kit, 48 song. X/Y fader per morphing in tempo reale, effetti in catena send/insert/master e connettività completa: uscite individuali, MIDI, USB-C. Il CEO Piotr Raczyński: \"Volevamo costruire la drum machine che avremmo voluto usare noi stessi.\" Pre-order con deposito rimborsabile $500. Prezzo finale $2.699.",
       photo: "/images/polyend_drums.jpg",
       tint: "rgba(5,5,5,0.65),rgba(20,20,20,0.45)"
     },
@@ -107,7 +107,7 @@ const WEEKLY_CONTENT = {
       tagColor: "#00b4d8",
       title: "Suno Studio: il primo DAW generativo al mondo",
       sub: "Multitrack, stems, MIDI export. La produzione musicale entra in una nuova era.",
-      text: "Suno lancia Suno Studio, descritto come il primo DAW generativo al mondo. Unisce le funzioni generative di Suno con un editor multitrack professionale: timeline audio, controllo BPM, volume e pitch, generazione illimitata di stem (vocals, drums, synths), export audio e MIDI per continuare il lavoro nella propria DAW. Il CEO: 'Studio è stato costruito per espandere il toolkit dei musicisti, non per prescrivere workflow.' I produttori possono caricare propri sample, generare variazioni e costruire arrangiamenti complessi. Disponibile su suno.com.",
+      text: "Suno lancia Suno Studio, descritto come il primo DAW generativo al mondo. Unisce le funzioni generative di Suno con un editor multitrack professionale: timeline audio, controllo BPM, volume e pitch, generazione illimitata di stem (vocals, drums, synths), export audio e MIDI per continuare il lavoro nella propria DAW. Il CEO: \"Studio è stato costruito per espandere il toolkit dei musicisti, non per prescrivere workflow.\" I produttori possono caricare propri sample, generare variazioni e costruire arrangiamenti complessi. Disponibile su suno.com.",
       photo: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=900&q=80",
       tint: "rgba(0,15,20,0.6),rgba(0,48,64,0.4)"
     }
