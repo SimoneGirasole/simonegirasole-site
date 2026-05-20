@@ -1,139 +1,139 @@
 const WEEKLY_CONTENT = {
   disco: {
-    title: "Born Slippy .NUXX",
-    artist: "Underworld",
-    year: "1995",
-    genre: "Progressive House / Big Beat",
-    desc: "L'inno che ha definito una generazione. Karl Hyde e Rick Smith firmano il brano simbolo di Trainspotting (1996) trasformando un B-side in uno dei pezzi più iconici della club culture britannica. Quel synth in 4/4 e il mantra 'lager lager lager' hanno acceso i rave del Regno Unito per oltre tre decenni — e ancora oggi gira fortissimo nei set di Carl Cox, Sasha e ogni grande festival.",
-    q: "Underworld Born Slippy Nuxx"
+    title: "Seven Days and One Week",
+    artist: "B.B.E.",
+    year: "1996",
+    genre: "Dream House / Trance",
+    desc: "Progetto italo-francese formato da Bruno Sanchioni, Bruno Quartier ed Emmanuel Top. Uscito su Triangle Records nel luglio 1996, divenne top 10 mondiale raggiungendo il n°1 in Spagna, il n°2 in Italia e il n°3 in UK e Germania. Uno dei brani simbolo dell'era dream house europea, con quel piano ipnotico che riempiva i club da Ibiza a Milano.",
+    q: "BBE Seven Days and One Week"
   },
-  ticker: "★ Nameless Festival 30 maggio-1 giugno: Calvin Harris, Fisher, John Summit al Bione Lecco   ★ Cercle Festival Parigi 22-24 maggio: Adriatique, Michael Bibi, Vintage Culture   ★ Spring Attitude Roma 29-30 maggio: Nu Genea, Nathy Peluso alla Nuvola EUR   ★ Claude AI ora integrato in Ableton Live   ★ Beatport Top 1: 'Satisfy' di Jazzy & Calvin Harris   ★ Nameless: 100mila spettatori attesi al Lago di Como   ★",
+  ticker: "★ Nameless Festival Lecco 30 maggio-1 giugno · Calvin Harris, Fisher, John Summit   ★ Kappa FuturFestival Torino 3-5 luglio · Solomun, Four Tet, Chris Lake   ★ Primavera Sound Barcellona 4-6 giugno · The Cure, Gorillaz, Massive Attack   ★ Sea Star Festival Umag 28-31 maggio   ★ Polyend Drums: la nuova drum machine ibrida da Superbooth 2026   ★ BPB Saturator Plus: saturazione analogica gratuita   ★",
   hero: {
-    tag: "Festival · Lecco",
-    title: "Nameless 2026: Calvin Harris, Fisher e John Summit al Bione",
-    sub: "Dal 30 maggio al 1° giugno torna al Lago di Como il più grande festival elettronico italiano: 100.000 persone, tre giorni, tre headliner mondiali.",
-    text: "Il Nameless Festival 2026 torna nella sua casa originale al Bione di Lecco dal 30 maggio al 1° giugno. Un ritorno simbolico nella location dove tutto è iniziato nel 2013, con oltre 100.000 spettatori attesi da tutto il mondo. La line-up scolpisce nella pietra l'intera evoluzione della club culture contemporanea: il 30 maggio si apre con Calvin Harris come headliner del suo ritorno italiano dopo tredici anni, accompagnato da Sonny Fodera, Andy C e Netsky. Sabato 31 maggio è il giorno di John Summit, che guida una giornata interamente dedicata alla house e tech-house, con Pendulum (DJ set), Todd Terry, Mousse T. e TonyPitony. Domenica 1° giugno chiude Fisher, tra i DJ più influenti della scena globale, insieme a Chris Lorenzo, SVDDEN DEATH e Nic Fanciulli. Spazio anche al pop italiano con Clara, Sarah Toscano e Il Pagante. Il Nameless si conferma il festival che riesce a tenere insieme con eleganza l'energia EDM dei grandi headliner e l'attitude underground del clubbing internazionale, in una cornice naturale che pochi festival al mondo possono offrire.",
-    photo: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=900&q=80",
-    tint: "rgba(4,0,26,0.6),rgba(26,0,80,0.4)"
+    tag: "Festival · Italia",
+    title: "Nameless 2026 torna al Lago di Como",
+    sub: "Dal 30 maggio al 1° giugno al Bione di Lecco. Calvin Harris, Fisher e John Summit headliner. 100.000 spettatori attesi.",
+    text: "Il Nameless Festival 2026 torna alla sua location storica: il Bione di Lecco, affacciato sul Lago di Como. Dal 30 maggio al 1° giugno, tre giorni di musica elettronica e urban con una lineup di altissimo livello. Calvin Harris apre il festival il 30 maggio, affiancato da Sonny Fodera, Andy C, Hybrid Minds e Netsky. Il 31 maggio è la giornata di John Summit, con HALÕ, Pendulum dj set, Goodboys e The Shapeshifters. Il 1° giugno chiude Fisher, accompagnato da HoneyLuv, Luuk Van Dijk e Nic Fanciulli per il palco Defected. Confermati anche il format Glitterbox con CINTHIE, Mousse T. e Todd Terry, e il mystery artist 'Less Names' ogni giorno. L'edizione 2026 elimina il sistema token e introduce acqua gratuita. Attesi 100.000 spettatori da tutto il mondo.",
+    photo: "/images/nameless.jpg",
+    tint: "rgba(10,0,30,0.55),rgba(40,0,80,0.35)"
   },
   news: [
     {
-      tag: "Festival · Francia",
+      tag: "Festival · Italia",
       tagColor: "#7c3aed",
-      title: "Cercle Festival a Le Bourget: Adriatique e Vintage Culture",
-      sub: "Dal 22 al 24 maggio nell'aeroporto storico di Parigi. Three stage, 44 artisti.",
-      text: "Il Cercle Festival 2026 torna al Musée de l'Air et de l'Espace di Le Bourget dal 22 al 24 maggio. L'ex aeroporto parigino si trasforma in un palcoscenico a cielo aperto con i tre stage iconici: A380, Ariane e Concorde. 44 artisti internazionali per tre giorni di musica elettronica immersiva. In lineup confermata Adriatique, Michael Bibi e Vintage Culture, con un comparto visivo che da sempre rende ogni set Cercle un'esperienza audiovisiva totale. Il festival francese chiude idealmente il primo blocco della stagione festival europea, prima del grande salto verso Ibiza e l'estate.",
-      photo: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=900&q=80",
+      title: "Kappa FuturFestival 2026: lineup monumentale a Torino",
+      sub: "3-5 luglio al Parco Dora. 120+ artisti: Solomun, Four Tet, Chris Lake, Maceo Plex, Seth Troxler.",
+      text: "La XIII edizione del Kappa FuturFestival si preannuncia come la più forte di sempre. Dal 3 al 5 luglio 2026 al Parco Dora di Torino, con oltre 120 artisti internazionali. La lineup completa include Solomun, Four Tet, Chris Lake, Maceo Plex, Seth Troxler, Peggy Gou, Richie Hawtin, Armin van Buuren, Amelie Lens, Charlotte de Witte, Floating Points, Jazzy e il B2B Four Tet x Skrillex. Sesto festival al mondo per DJ Mag 2025. Forte enfasi sui set back to back come spazio di dialogo artistico. Contestualmente annunciata la prima espansione internazionale in Messico.",
+      photo: "/images/kappa.jpg",
       tint: "rgba(4,0,26,0.6),rgba(26,0,80,0.4)"
     },
     {
+      tag: "Festival · Barcellona",
+      tagColor: "#cc0055",
+      title: "Primavera Sound: The Cure, Gorillaz e Massive Attack",
+      sub: "4-6 giugno al Parc del Fòrum. Opening gratuito il 3 giugno, chiusura elettronica il 7.",
+      text: "Primavera Sound Barcelona 2026 si svolge dal 4 al 6 giugno al Parc del Fòrum. Tre giornate principali con headliner d'eccezione: Doja Cat e Massive Attack il 4 giugno, The Cure e Addison Rae il 5, The xx e Gorillaz il 6. Mercoledì 3 giugno opening day gratuito con Wet Leg, Guitarricadelafuente e Yard Act. Domenica 7 la chiusura elettronica Primavera Bits sul mare. In lineup anche Skrillex, Peggy Gou, Overmono, Little Simz, PinkPantheress, Kneecap e oltre 150 artisti totali. Una delle edizioni più ambiziose nella storia del festival catalano.",
+      photo: "/images/primavera.jpg",
+      tint: "rgba(10,0,20,0.55),rgba(50,0,80,0.35)"
+    },
+    {
+      tag: "Festival · Croazia",
+      tagColor: "#0077cc",
+      title: "Sea Star Festival: il primo stop estivo sull'Adriatico",
+      sub: "28-31 maggio a Umag, Croazia. Quattro giorni tra musica elettronica e mare.",
+      text: "Il Sea Star Festival 2026 torna a Stella Maris, Umag, dal 28 al 31 maggio. Quattro giorni affacciati sull'Adriatico con una lineup che attraversa house, techno e melodic electronic. Una delle prime grandi tappe stagionali per chi vuole iniziare l'estate con il ritmo giusto. Il festival croato è diventato negli anni un punto di riferimento per la scena elettronica dell'Europa orientale, con una produzione scenica di alto livello e un'atmosfera unica che unisce spiaggia, tramonto e dancefloor.",
+      photo: "/images/seastar.jpg",
+      tint: "rgba(0,10,30,0.55),rgba(0,30,80,0.35)"
+    },
+    {
       tag: "Festival · Roma",
-      tagColor: "#1060cc",
-      title: "Spring Attitude XV: Nu Genea e Nathy Peluso alla Nuvola",
-      sub: "Il 29 e 30 maggio quindicesima edizione del festival romano all'EUR.",
-      text: "Spring Attitude Festival celebra la quindicesima edizione tornando alla Nuvola dell'EUR il 29 e 30 maggio 2026. Due giorni che intrecciano songwriting contemporaneo e cultura club: venerdì 29 con Nu Genea che presentano 'People Of The Moon', Lamante, Birthh e okgiorgio; sabato 30 in modalità club-oriented con Nathy Peluso in DJ set (unica data italiana del progetto CLUB GRASA), ¥ØU$UK€ ¥UK1MAT$U, Dov'è Liana, Mind Enterprises e il contributo di Motta con 'La fine dei vent'anni'. Il festival romano conferma la sua capacità di tenere insieme nuove generazioni e figure di riferimento della scena internazionale dopo 15 anni di attività. I full pass e i ticket del 29 sono sold out, restano disponibili solo i biglietti per il 30 maggio.",
-      photo: "https://images.unsplash.com/photo-1506157786151-b8491531f063?w=900&q=80",
-      tint: "rgba(0,10,26,0.6),rgba(0,32,96,0.4)"
-    },
-    {
-      tag: "Open Air · Milano",
-      tagColor: "#006630",
-      title: "Vision Open Air: Max Dean e Mochakk all'Ex Macello",
-      sub: "Il 16 maggio seconda data della stagione outdoor milanese.",
-      text: "Vision Open Air torna all'Ex Macello di Milano il 16 maggio con Max Dean e Mochakk in headline. La seconda data della stagione outdoor 2026 — dopo l'opening del 1° maggio con Ilario Alicante — conferma Vision come uno dei riferimenti italiani per house e tech-house underground. Il setup audio-visivo è stato completamente rinnovato per la stagione outdoor, con un sound system progettato per l'ambiente all'aperto e una scenografia che gioca con le strutture industriali dell'ex macello milanese. Ingresso prevendita disponibile sui canali Vision.",
-      photo: "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=900&q=80",
-      tint: "rgba(0,18,8,0.6),rgba(0,64,32,0.4)"
-    },
-    {
-      tag: "Croazia · Spring",
-      tagColor: "#882200",
-      title: "Sea Star Festival a Umag: party adriatico 28-31 maggio",
-      sub: "Quattro giorni sull'Adriatico croato per aprire la stagione estiva.",
-      text: "Il Sea Star Festival apre la stagione estiva croata dal 28 al 31 maggio 2026 a Umag, sull'Adriatico settentrionale. Quattro giorni di musica elettronica direttamente sulla spiaggia che da anni rappresentano l'apertura naturale della stagione festival adriatica per migliaia di clubber italiani che attraversano il confine. Lineup internazionale con focus su house, techno e bass music, con artisti dalla scena EXIT Festival serba (di cui Sea Star è cugino diretto). L'evento combina perfettamente vacanza, beach club culture e festival in un'unica esperienza, anticipando di poche settimane il grande blocco di luglio con Hideout, Sonus e Love International.",
-      photo: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=900&q=80",
-      tint: "rgba(15,4,0,0.6),rgba(58,16,0,0.4)"
+      tagColor: "#e04000",
+      title: "Spring Attitude XV: 15 anni alla Nuvola dell'EUR",
+      sub: "29-30 maggio a Roma. Nu Genea, Nathy Peluso, Dov'è Liana. Day 1 sold out.",
+      text: "Spring Attitude Festival celebra i suoi 15 anni tornando alla Nuvola dell'EUR il 29 e 30 maggio 2026. Venerdì 29 maggio con Nu Genea e il loro tour 'People Of The Moon', Lamante, Birthh, okgiorgio e Parisi. Sabato 30 in modalità club con Nathy Peluso in DJ set — unica data italiana del progetto CLUB GRASA — Dov'è Liana, Mind Enterprises, ¥ØU$UK€ ¥UK1MAT$U, Altea, Emma Nolde e Gaia Banfi. I biglietti del Day 1 e i Full Pass sono sold out: disponibili solo i ticket per il 30 maggio su Dice.",
+      photo: "/images/springattitude.jpg",
+      tint: "rgba(15,5,0,0.55),rgba(60,15,0,0.35)"
     }
   ],
   tech: [
     {
-      tag: "Synth · Pistil",
+      tag: "Plugin · EQ",
       tagColor: "#5020aa",
-      title: "Pistil: la versione software di Orchid (Tame Impala)",
-      sub: "Tre engine, 70 preset esclusivi e bidirezionalità con l'hardware. £99.",
-      text: "Esce dalla beta Pistil, la controparte software di Orchid — il quirky chord-generating synth firmato Kevin Parker dei Tame Impala. Il plugin riprende i tre engine custom dell'hardware originale: un sub-synth virtual analog polifonico, un FM synth e un piano elettrico vintage. La main view offre controllo immediato di effetti e filtri tramite 70 preset esclusivi, mentre la deep edit page permette di scolpire suoni completamente nuovi. Per chi possiede sia Orchid che Pistil, c'è il controllo bidirezionale tra hardware e software. Disponibile su Telepathic Instruments a £99.",
-      photo: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=900&q=80",
-      tint: "rgba(8,0,24,0.6),rgba(32,0,80,0.4)"
+      title: "Acustica Audio Rust 2: passive EQ con carattere",
+      sub: "Emulazione hardware vintage con risposta non lineare. Appena uscito per macOS e Windows.",
+      text: "Acustica Audio lancia Rust 2, un passive EQ plugin che replica il comportamento non lineare dei circuiti hardware vintage. L'algoritmo di convoluzione di Acustica è noto per la sua precisione nell'emulazione analogica. Rust 2 è pensato per chi cerca colorazione timbrica autentica su mix bus, master e singole tracce. Disponibile per macOS e Windows in VST3 e AU. La precedente versione Rust è stata tra i plugin più apprezzati del catalogo Acustica per la sua capacità di aggiungere calore senza artefatti digitali.",
+      photo: "/images/acustica_rust2.jpg",
+      tint: "rgba(20,10,0,0.6),rgba(70,30,0,0.4)"
     },
     {
-      tag: "Compressor · Iconic",
-      tagColor: "#004488",
-      title: "Iconic Model 660 X: il Fairchild rivisitato",
-      sub: "Compressore vari-mu con sezione Excite per parallel compression. $59 intro.",
-      text: "Iconic Instruments rilascia il Model 660 X Exciting Compressor, emulazione del leggendario Fairchild 660 — il compressore vari-mu a valvole che ha definito il suono del mastering degli ultimi 60 anni. La novità è la sezione 'Excite' integrata, basata sulla tecnica di Lawrence Horn che boosta tra 5–6 kHz, comprime pesantemente e blenda in parallelo col segnale clean per aggiungere brillantezza e punch. Boost fino a 12dB tra 1 e 10 kHz, controlli Knee e Drive per flessibilità tonale aggiuntiva. Prezzo intro $59 (poi $79) su iconic-instruments.com.",
-      photo: "https://images.unsplash.com/photo-1619983081563-430f63602796?w=900&q=80",
-      tint: "rgba(0,8,15,0.6),rgba(0,32,64,0.4)"
+      tag: "Hardware · Drum Machine",
+      tagColor: "#1a1a1a",
+      title: "Polyend Drums: la sfidante della TR-1000",
+      sub: "Presentata a Superbooth 2026. Ibrida analogica/digitale, 8 tracce. Pre-order a $2.699.",
+      text: "Polyend ha presentato Drums a Superbooth 2026: una drum machine ibrida che combina 4 voci analogiche basate su chip SSI, sintesi digitale, sample playback e un sequencer avanzato con probabilità, micro-timing, parameter locks e generative tools. 8 tracce, 64 pattern, 64 kit, 48 song. X/Y fader per morphing in tempo reale, effetti in catena send/insert/master e connettività completa: uscite individuali, MIDI, USB-C. Il CEO Piotr Raczyński: 'Volevamo costruire la drum machine che avremmo voluto usare noi stessi.' Pre-order con deposito rimborsabile $500. Prezzo finale $2.699.",
+      photo: "/images/polyend_drums.jpg",
+      tint: "rgba(5,5,5,0.65),rgba(20,20,20,0.45)"
     },
     {
-      tag: "AI Mastering · Guetta",
-      tagColor: "#005520",
-      title: "Faster Master: David Guetta firma l'AI mastering",
-      sub: "Plugin di Mastering The Mix sviluppato con Guetta e Nicky Romero.",
-      text: "Faster Master è il nuovo plugin AI di Mastering The Mix sviluppato in collaborazione con David Guetta e Nicky Romero. Il workflow è veloce: il plugin analizza la traccia e propone dieci starting point custom per raggiungere bilanciamento spettrale, range dinamico e loudness target. Lo standout feature è il level-matching automatico per evitare il classico bias del 'più forte è meglio'. Pensato per producer EDM e dance che vogliono un finalizzatore veloce senza giri lunghi nel mastering chain. Prova gratuita disponibile su masteringthemix.com.",
-      photo: "https://images.unsplash.com/photo-1574169208507-84376144848b?w=900&q=80",
-      tint: "rgba(4,15,0,0.6),rgba(16,64,0,0.4)"
+      tag: "Plugin · Free",
+      tagColor: "#006688",
+      title: "BPB Saturator Plus: saturazione analogica gratis",
+      sub: "Tube, Tape e nuova modalità Diode. Mix control, filtri HPF/LPF. VST3/AU gratuito.",
+      text: "Bedroom Producers Blog aggiorna il popolare BPB Saturator con la versione Plus. La novità principale è la modalità Diode, un terzo tipo di saturazione dal carattere più morbido rispetto a Tube e Tape, ideale per aggiungere peso armonico senza aggressività. Aggiunti anche il controllo Mix per il parallel processing e ottimizzazioni DSP per ridurre il carico CPU. GUI ridimensionabile con supporto 4K. Completamente gratuito in VST3 e AU per Windows e macOS a 64-bit. Scaricabile direttamente da bedroomproducersblog.com.",
+      photo: "/images/bpb_saturator.jpg",
+      tint: "rgba(0,15,25,0.6),rgba(0,50,70,0.4)"
     },
     {
-      tag: "Filter · Spectral",
+      tag: "Plugin · Free",
       tagColor: "#882200",
-      title: "Fine Increments: spectral filter ispirato all'acqua",
-      sub: "Il primo plugin della startup audio gioca con wavetable e convolution.",
-      text: "Fine Increments lancia il suo primo plugin omonimo: uno spectral filter unico nel suo genere progettato per modulare continuamente il filtro in modi complessi che ricordano la superficie dell'acqua. Una proposizione affascinante per i sound designer più sperimentali. Il plugin usa wavetable per filtrare l'audio creando di tutto: dall'EQ pulito a effetti di convolution drammatici che evolvono nel tempo. Ideale per pad ambient, transizioni cinematiche e texture in continua trasformazione. Disponibile su fineincrements.com con audio demo che fanno capire subito il potenziale.",
-      photo: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80",
-      tint: "rgba(15,4,0,0.6),rgba(58,16,0,0.4)"
+      title: "Unfiltered Audio BattleFX: delay e reverb creativi",
+      sub: "Shatter Delay + Headspace Reverb gratuiti dal Battalion Universe.",
+      text: "Unfiltered Audio rilascia BattleFX, un plugin gratuito che combina due effetti creativi: Shatter Delay, un delay con glitch e ducking controllabile, e Headspace Reverb, un riverbero con decay fino a 11 secondi e EQ integrato a tre bande. Entrambi i motori hanno controlli S.Rate, Rate, Nudge e Feedback Tilt per sound design estremo. Il plugin fa parte del Battalion Universe di Unfiltered Audio ed è disponibile gratuitamente in VST3 e AU per Windows e macOS. Perfetto per texture, pad atmosferici e sound design cinematografico.",
+      photo: "/images/battlefx.jpg",
+      tint: "rgba(15,5,0,0.6),rgba(50,15,0,0.4)"
     }
   ],
   ai: [
     {
-      tag: "AI · Anthropic",
+      tag: "AI · Ableton",
       tagColor: "#00b4d8",
-      title: "Claude AI ora dentro Ableton Live: la rivoluzione è qui",
-      sub: "Anthropic lancia il connettore ufficiale che collega Claude direttamente al DAW.",
-      text: "Anthropic ha annunciato a fine aprile 2026 il connettore ufficiale che integra Claude direttamente in Ableton Live. Non si tratta del solito chatbot esterno: questo connettore lega le risposte di Claude alla documentazione ufficiale di Ableton per Live e Push, trasformando l’AI in un assistente capace di capire il contesto e di integrarsi davvero nel flusso di lavoro di produzione. In pratica, Claude può diventare un tutor sempre disponibile su Live e Push, aiutare a scrivere script Max for Live e plugin generativi, gestire routing complessi e rispondere a domande sui Sampler senza costringerti a uscire dal DAW. Splice è incluso nel programma con accesso diretto al catalogo di sample dentro Claude, mentre Adobe, Affinity e Blender completano il primo gruppo di partner. Per chi produce musica, è uno dei miglioramenti di workflow più importanti degli ultimi anni.",
+      title: "Yuma: controlla Ableton Live con il linguaggio naturale",
+      sub: "L'assistente AI che produce musica conversando. $39 in beta per macOS e Windows.",
+      text: "Yuma è il nuovo assistente AI che permette di controllare Ableton Live attraverso il linguaggio naturale. Crea progressioni di accordi, melodie e tracce complete semplicemente conversando. Funziona anche con Logic, FL Studio e qualsiasi DAW grazie alla generazione MIDI e audio. L'app desktop nativa per macOS e Windows offre generazione MIDI, creazione di vocal e audio da prompt testuale, integrazione diretta con Ableton Live per creare tracce, aggiungere effetti e automazioni. In beta a $39 una tantum con 3.900 crediti che non scadono mai.",
       photo: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=900&q=80",
       tint: "rgba(0,15,20,0.6),rgba(0,48,64,0.4)"
     },
     {
-      tag: "AI · Max for Live",
+      tag: "AI · DAW",
       tagColor: "#00b4d8",
-      title: "J74 MIDI Assistant: prompt AI dentro Ableton a 12€",
-      sub: "Fabrizio Poce porta ChatGPT, Gemini e Claude dentro Live via copy-paste.",
-      text: "Fabrizio Poce rilascia J74 MIDI Assistant, un device Max for Live che permette lo scambio MIDI bidirezionale tra Ableton Live e qualunque AI web (ChatGPT, Gemini, Claude, Co-Pilot). Il workflow è zero-setup: copi un MIDI clip da Live, lo incolli nell'AI con un prompt, e l'AI ti restituisce il MIDI generato che incolli direttamente come nuovo clip. L'AI viene automaticamente istruita all'avvio e si comporta come producer assistant esperto di armonia, melodia, ritmo e song structure. Esiste anche la versione Developers Tools (24€) con automazioni avanzate via Google Gemini CLI. Richiede Live Suite/Standard con Max for Live installato. A 12€ è probabilmente il modo più economico per portare AI dentro Ableton oggi.",
+      title: "Suno Studio: il primo DAW generativo al mondo",
+      sub: "Multitrack, stems, MIDI export. La produzione musicale entra in una nuova era.",
+      text: "Suno lancia Suno Studio, descritto come il primo DAW generativo al mondo. Unisce le funzioni generative di Suno con un editor multitrack professionale: timeline audio, controllo BPM, volume e pitch, generazione illimitata di stem (vocals, drums, synths), export audio e MIDI per continuare il lavoro nella propria DAW. Il CEO: 'Studio è stato costruito per espandere il toolkit dei musicisti, non per prescrivere workflow.' I produttori possono caricare propri sample, generare variazioni e costruire arrangiamenti complessi. Disponibile su suno.com.",
       photo: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=900&q=80",
       tint: "rgba(0,15,20,0.6),rgba(0,48,64,0.4)"
     }
   ],
   danceChart: [
-    {pos:1, title:"Satisfy", artist:"Jazzy, Calvin Harris", q:"Jazzy Calvin Harris Satisfy"},
-    {pos:2, title:"Magnetic", artist:"The Bausa", q:"The Bausa Magnetic Extended"},
-    {pos:3, title:"Loco Loco", artist:"Reinier Zonneveld, Gordo", q:"Reinier Zonneveld Gordo Loco Loco"},
-    {pos:4, title:"Just The Way You Are (Guetta Remix)", artist:"David Guetta, Milky", q:"David Guetta Milky Just The Way You Are"},
-    {pos:5, title:"Magnetic (Samm Remix)", artist:"The Bausa, Samm", q:"The Bausa Samm Magnetic Remix"},
-    {pos:6, title:"Buttons", artist:"The Pussycat Dolls, GUDFELLA", q:"Pussycat Dolls GUDFELLA Buttons"},
-    {pos:7, title:"Superstar", artist:"Sasson, Jamy Nox", q:"Sasson Jamy Nox Superstar"},
-    {pos:8, title:"Meet Again", artist:"Kaskade, Layton Giordani, Natalie Jane", q:"Kaskade Layton Giordani Meet Again"},
-    {pos:9, title:"DON'T BELIEVE IT", artist:"Absolutely, John Summit", q:"Absolutely John Summit Don't Believe It"},
-    {pos:10, title:"The Way I Are (Max Dean Remix)", artist:"Timbaland, Keri Hilson, Max Dean", q:"Timbaland Max Dean Way I Are Remix"}
+    {pos:1, title:"Loco Loco", artist:"Reinier Zonneveld, Gordo", q:"Reinier Zonneveld Gordo Loco Loco"},
+    {pos:2, title:"New Religion", artist:"Faithless, Bebe Rexha", q:"Faithless Bebe Rexha New Religion"},
+    {pos:3, title:"DON'T BELIEVE IT", artist:"Absolutely, John Summit", q:"Absolutely John Summit Don't Believe It"},
+    {pos:4, title:"Closure", artist:"D.O.D, Hayley May", q:"D.O.D Hayley May Closure Extended"},
+    {pos:5, title:"The Way I Are", artist:"Timbaland, Max Dean", q:"Timbaland Max Dean The Way I Are Remix"},
+    {pos:6, title:"Favour", artist:"FiSHER, Tones and I", q:"FiSHER Tones and I Favour"},
+    {pos:7, title:"Puff Puff Pass", artist:"Kitty Hall", q:"Kitty Hall Puff Puff Pass"},
+    {pos:8, title:"Surrender", artist:"Westend, Lizzy Land", q:"Westend Lizzy Land Surrender"},
+    {pos:9, title:"No Broke Boys", artist:"Tinashe, Disco Lines", q:"Disco Lines Tinashe No Broke Boys"},
+    {pos:10, title:"Blessings", artist:"Calvin Harris, Clementine Douglas", q:"Calvin Harris Clementine Douglas Blessings"}
   ],
   mainChart: [
-    {pos:1, title:"Baby", artist:"Prospa, Murda Beatz", q:"Prospa Murda Beatz Baby Extended"},
-    {pos:2, title:"Free Your Mind", artist:"Cloonee, Prospa", q:"Cloonee Prospa Free Your Mind Extended"},
-    {pos:3, title:"GrooveJet (If This Ain't Love)", artist:"Spiller, Sophie Ellis-Bextor", q:"Spiller Sophie Ellis-Bextor GrooveJet"},
-    {pos:4, title:"Talk To You", artist:"ANOTR", q:"ANOTR Talk To You Extended"},
-    {pos:5, title:"HOTS 4 U", artist:"Chris Lorenzo, aMo", q:"Chris Lorenzo aMo HOTS 4 U"},
-    {pos:6, title:"My Life Is A Disco", artist:"MIXMASTERS, Mellizos", q:"MIXMASTERS Mellizos My Life Is A Disco"},
-    {pos:7, title:"How Does It Feel", artist:"Fezzo, Dubdogz, Zaark", q:"Fezzo Dubdogz Zaark How Does It Feel"},
-    {pos:8, title:"Shinjuku", artist:"Franky Rizardo", q:"Franky Rizardo Shinjuku Extended"},
-    {pos:9, title:"One Question", artist:"Groove Theory, Cloonee", q:"Groove Theory Cloonee One Question"},
-    {pos:10, title:"Actin' Tough", artist:"Dean Turnley", q:"Dean Turnley Actin Tough Original"}
+    {pos:1, title:"Surrender", artist:"Westend, Lizzy Land", q:"Westend Surrender mainstage 2026"},
+    {pos:2, title:"Désenchantée 3000", artist:"Kate Ryan, Blasterjaxx", q:"Blasterjaxx Kate Ryan Desenchantee 3000"},
+    {pos:3, title:"Vem Comigo", artist:"Armin van Buuren", q:"Armin van Buuren Vem Comigo"},
+    {pos:4, title:"Caramelle", artist:"Mesto", q:"Mesto Caramelle"},
+    {pos:5, title:"Science", artist:"deadmau5, Stevie Appleton", q:"deadmau5 Stevie Appleton Science"},
+    {pos:6, title:"Bigger Than Techno", artist:"Lilly Palmer, Armin van Buuren", q:"Lilly Palmer Bigger Than Techno"},
+    {pos:7, title:"Makina Time", artist:"Dimitri Vegas & Like Mike", q:"Dimitri Vegas Like Mike Makina Time"},
+    {pos:8, title:"Be The One", artist:"Adam Port, SG Lewis", q:"Adam Port SG Lewis Keinemusik Be The One"},
+    {pos:9, title:"How Does It Feel", artist:"Fezzo, Dubdogz, Zaark", q:"Dubdogz Fezzo Zaark How Does It Feel"},
+    {pos:10, title:"Free Your Mind", artist:"Cloonee, Prospa", q:"Cloonee Prospa Free Your Mind Extended"}
   ]
 };
