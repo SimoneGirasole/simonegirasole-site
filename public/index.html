@@ -102,8 +102,8 @@ nav{position:sticky;top:0;z-index:200;background:var(--black);border-bottom:1px 
 .disco-inner{display:grid;grid-template-columns:220px 1fr;gap:3.5rem;align-items:start;}
 .disco-text-player{display:flex;gap:2.5rem;align-items:flex-start;}
 .disco-text-col{flex:1;min-width:0;}
-.disco-player-col{flex-shrink:0;width:320px;}
-@media(max-width:900px){.disco-text-player{flex-direction:column;}.disco-player-col{width:100%;}}
+.disco-player-col{flex-shrink:0;width:320px;height:200px;}
+@media(max-width:900px){.disco-text-player{flex-direction:column;}.disco-player-col{width:100%;height:auto;}}
 .disco-cover-wrap{position:relative;width:200px;height:200px;}
 .disco-cover{width:200px;height:200px;object-fit:cover;display:block;box-shadow:0 20px 50px rgba(0,0,0,.6),0 0 0 1px var(--border);}
 .disco-ph{width:200px;height:200px;background:#1a1a1a;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;}
@@ -119,7 +119,7 @@ nav{position:sticky;top:0;z-index:200;background:var(--black);border-bottom:1px 
 .disco-desc{font-size:.88rem;color:var(--gl);line-height:1.75;max-width:520px;margin-bottom:1.4rem;}
 
 /* ── PLAYER ── */
-.player-wrap{display:flex;flex-direction:column;gap:1.2rem;background:rgba(255,255,255,.03);border:1px solid var(--border);padding:1.6rem;width:100%;box-sizing:border-box;}
+.player-wrap{display:flex;flex-direction:column;gap:0.75rem;background:rgba(255,255,255,.03);border:1px solid var(--border);padding:0.8rem 1.4rem;width:100%;height:100%;box-sizing:border-box;overflow:hidden;}
 .pl-top-row{display:flex;align-items:center;gap:1.4rem;}
 .pl-art{width:90px;height:90px;object-fit:cover;flex-shrink:0;box-shadow:0 4px 12px rgba(0,0,0,.5);}
 .pl-art-ph{width:58px;height:58px;flex-shrink:0;background:#1a1a1a;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;}
@@ -325,7 +325,8 @@ footer p{font-size:.78rem;color:var(--gray);font-family:'Space Mono',monospace;}
   .disco-artist{font-size:1rem;}
   .disco-desc{font-size:.88rem;} /* ← COME HERO */
   .disco-badge{font-size:.72rem;padding:.28rem .8rem;} /* ← COME HERO TAG */
-  .player-wrap{max-width:100%;}
+  .disco-player-col{height:auto;}
+  .player-wrap{max-width:100%;height:auto;}
 
   /* MUSIC PAGE — PROPORZIONI HERO */
   .music-news-grid{grid-template-columns:1fr;}
@@ -450,13 +451,12 @@ footer p{font-size:.78rem;color:var(--gray);font-family:'Space Mono',monospace;}
         <div class="disco-ph" id="d-ph"><svg width="40" height="40" fill="none" stroke="var(--gray)" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div>
         <div class="vinyl" id="d-vinyl"></div>
       </div>
-      <div>
-        <div class="disco-badge"><div class="disco-dot"></div> Disco Che Storia della Settimana</div>
-        <div class="disco-title" id="d-title">—</div>
-        <div class="disco-artist" id="d-artist"></div>
-        <div class="disco-year" id="d-year"></div>
-        <div class="disco-text-player">
+      <div class="disco-text-player">
           <div class="disco-text-col">
+            <div class="disco-badge"><div class="disco-dot"></div> Disco Che Storia della Settimana</div>
+            <div class="disco-title" id="d-title">—</div>
+            <div class="disco-artist" id="d-artist"></div>
+            <div class="disco-year" id="d-year"></div>
             <p class="disco-desc" id="d-desc"></p>
             <div class="tag" id="d-genre" style="cursor:default;margin-bottom:1.4rem;"></div>
           </div>
@@ -483,10 +483,9 @@ footer p{font-size:.78rem;color:var(--gray);font-family:'Space Mono',monospace;}
         </div><!-- /player-wrap -->
           </div><!-- /disco-player-col -->
         </div><!-- /disco-text-player -->
-        <audio id="disco-audio" preload="none"></audio>
-      </div>
-    </div>
-  </div>
+    </div><!-- /disco-inner -->
+    <audio id="disco-audio" preload="none"></audio>
+  </div><!-- /disco-sec -->
 </div>
 
 <!-- ═══ BIO ═══ -->
