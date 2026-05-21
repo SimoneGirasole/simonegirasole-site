@@ -1009,6 +1009,9 @@ function initFromContent() {
     }
   }
 
+  // Pre-build music grid so it's ready on first visit
+  buildMusicNewsGrid();
+
   if (W.danceChart){danceChart.length=0;W.danceChart.forEach(t=>danceChart.push(t));}
   if (W.mainChart){mainChart.length=0;W.mainChart.forEach(t=>mainChart.push(t));}
 }
