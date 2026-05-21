@@ -282,6 +282,16 @@ Webhook (5) → Instagram CreatePostPhoto (1) → Facebook CreatePostWithPhotos 
 
 4. **Se un'esecuzione ha meno operazioni del previsto** (es. 2 invece di 4) significa che si è bloccata a metà catena — leggere il campo `error.causeModule` per sapere dove.
 
+### ⚠️ REGOLA ASSOLUTA — PUBBLICAZIONE SOCIAL
+**MAI fare più di un tentativo di pubblicazione senza conferma esplicita dell'utente.**
+- Ogni invio al webhook è un post REALE visibile ai follower della pagina ufficiale
+- Se un test fallisce, analizzare i log Make PRIMA di riprovare
+- NON chiamare il webhook ripetutamente per debug — ogni chiamata pubblica un post
+- I test vanno discussi con l'utente prima di eseguirli
+- In caso di dubbio: FERMARSI e chiedere, non provare
+
+
+
 ---
 
 ## ERRORI COMUNI E SOLUZIONI
