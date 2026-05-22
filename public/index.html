@@ -99,11 +99,10 @@ nav{position:sticky;top:0;z-index:200;background:var(--black);border-bottom:1px 
 
 /* ── DISCO ── */
 .disco-sec{background:var(--dark);padding:2.8rem;border-bottom:1px solid var(--border);}
-.disco-inner{display:grid;grid-template-columns:220px 1fr;gap:3.5rem;align-items:start;}
-.disco-text-player{display:flex;gap:2.5rem;align-items:flex-start;}
-.disco-text-col{flex:1;min-width:0;}
-.disco-player-col{flex-shrink:0;width:320px;height:200px;}
-@media(max-width:900px){.disco-text-player{flex-direction:column;}.disco-player-col{width:100%;height:auto;}}
+.disco-inner{display:grid;grid-template-columns:220px auto 1fr;gap:2rem 3rem;align-items:start;}
+.disco-text-col{min-width:0;}
+.disco-player-col{height:200px;}
+@media(max-width:900px){.disco-inner{grid-template-columns:1fr;gap:1.5rem;}.disco-player-col{height:auto;}}
 .disco-cover-wrap{position:relative;width:200px;height:200px;}
 .disco-cover{width:200px;height:200px;object-fit:cover;display:block;box-shadow:0 20px 50px rgba(0,0,0,.6),0 0 0 1px var(--border);}
 .disco-ph{width:200px;height:200px;background:#1a1a1a;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;}
@@ -124,7 +123,7 @@ nav{position:sticky;top:0;z-index:200;background:var(--black);border-bottom:1px 
 .pl-art{width:90px;height:90px;object-fit:cover;flex-shrink:0;box-shadow:0 4px 12px rgba(0,0,0,.5);}
 .pl-art-ph{width:58px;height:58px;flex-shrink:0;background:#1a1a1a;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;}
 .pl-ring-wrap{position:relative;width:90px;height:90px;flex-shrink:0;cursor:pointer;}
-.pl-svg{width:60px;height:60px;transform:rotate(-90deg);position:absolute;top:0;left:0;pointer-events:none;}
+.pl-svg{width:90px;height:90px;transform:rotate(-90deg);position:absolute;top:0;left:0;pointer-events:none;}
 .pl-track{fill:none;stroke:rgba(255,255,255,.08);stroke-width:4;}
 .pl-arc{fill:none;stroke:var(--pink);stroke-width:4;stroke-linecap:round;stroke-dasharray:163.4;stroke-dashoffset:163.4;transition:stroke-dashoffset .1s linear;}
 .pl-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:42px;height:42px;border-radius:50%;background:var(--purple);display:flex;align-items:center;justify-content:center;transition:background .2s,transform .1s;box-shadow:0 3px 14px rgba(124,58,237,.5);}
@@ -451,16 +450,15 @@ footer p{font-size:.78rem;color:var(--gray);font-family:'Space Mono',monospace;}
         <div class="disco-ph" id="d-ph"><svg width="40" height="40" fill="none" stroke="var(--gray)" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div>
         <div class="vinyl" id="d-vinyl"></div>
       </div>
-      <div class="disco-text-player">
-          <div class="disco-text-col">
-            <div class="disco-badge"><div class="disco-dot"></div> Disco Che Storia della Settimana</div>
-            <div class="disco-title" id="d-title">—</div>
-            <div class="disco-artist" id="d-artist"></div>
-            <div class="disco-year" id="d-year"></div>
-            <p class="disco-desc" id="d-desc"></p>
-            <div class="tag" id="d-genre" style="cursor:default;margin-bottom:1.4rem;"></div>
-          </div>
-          <div class="disco-player-col">
+      <div class="disco-text-col">
+        <div class="disco-badge"><div class="disco-dot"></div> Disco Che Storia della Settimana</div>
+        <div class="disco-title" id="d-title">—</div>
+        <div class="disco-artist" id="d-artist"></div>
+        <div class="disco-year" id="d-year"></div>
+        <p class="disco-desc" id="d-desc"></p>
+        <div class="tag" id="d-genre" style="cursor:default;margin-bottom:1.4rem;"></div>
+      </div>
+      <div class="disco-player-col">
         <div class="player-wrap">
           <div class="pl-top-row">
           <img class="pl-art" id="pl-art" src="" alt="" style="display:none;" onerror="this.style.display='none';document.getElementById('pl-art-ph').style.display='flex';">
@@ -481,8 +479,7 @@ footer p{font-size:.78rem;color:var(--gray);font-family:'Space Mono',monospace;}
             <div class="pl-status" id="pl-status">▶ Premi play</div>
           </div>
         </div><!-- /player-wrap -->
-          </div><!-- /disco-player-col -->
-        </div><!-- /disco-text-player -->
+      </div><!-- /disco-player-col -->
     </div><!-- /disco-inner -->
     <audio id="disco-audio" preload="none"></audio>
   </div><!-- /disco-sec -->
