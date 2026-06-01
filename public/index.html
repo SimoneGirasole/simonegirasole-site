@@ -697,7 +697,7 @@ function togglePlayer() {
     document.getElementById('pl-status').textContent='❚❚ In pausa';
   } else {
     // Ferma il player della classifica se attivo
-    if(activeAudio&&!activeAudio.paused){
+    if(activeAudio){
       activeAudio.pause();activeAudio.currentTime=0;
       if(activePrefix!==null&&activeIdx>=0){
         document.getElementById(activePrefix+'-pw-'+activeIdx).classList.remove('active');
@@ -806,7 +806,7 @@ function toggleChart(prefix,i){
     return;
   }
   // Ferma il disco della settimana se attivo
-  if(discoPlaying){
+  if(!discoAudio.paused){
     discoAudio.pause();discoPlaying=false;
     document.getElementById('pl-ico-play').style.display='block';
     document.getElementById('pl-ico-pause').style.display='none';
