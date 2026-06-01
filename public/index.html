@@ -696,6 +696,17 @@ function togglePlayer() {
     document.getElementById('d-vinyl').classList.remove('spin');
     document.getElementById('pl-status').textContent='❚❚ In pausa';
   } else {
+    // Ferma il player della classifica se attivo
+    if(activeAudio&&!activeAudio.paused){
+      activeAudio.pause();activeAudio.currentTime=0;
+      if(activePrefix!==null&&activeIdx>=0){
+        document.getElementById(activePrefix+'-pw-'+activeIdx).classList.remove('active');
+        document.getElementById(activePrefix+'-row-'+activeIdx).classList.remove('playing');
+      }
+      activeAudio=null;activePrefix=null;activeIdx=-1;
+      document.getElementById('bottom-player').classList.remove('visible');
+      document.body.classList.remove('has-player');
+    }
     discoAudio.play().then(()=>{
       discoPlaying=true;
       document.getElementById('pl-ico-play').style.display='none';
@@ -793,6 +804,15 @@ function toggleChart(prefix,i){
     if(a.paused){a.play().catch(()=>{});document.getElementById(prefix+'-pw-'+i).classList.add('active');document.getElementById(prefix+'-row-'+i).classList.add('playing');bpSetPlaying(true);}
     else{a.pause();document.getElementById(prefix+'-pw-'+i).classList.remove('active');document.getElementById(prefix+'-row-'+i).classList.remove('playing');bpSetPlaying(false);}
     return;
+  }
+  // Ferma il disco della settimana se attivo
+  if(discoPlaying){
+    discoAudio.pause();discoPlaying=false;
+    document.getElementById('pl-ico-play').style.display='block';
+    document.getElementById('pl-ico-pause').style.display='none';
+    document.getElementById('pl-ring').classList.remove('playing');
+    document.getElementById('d-vinyl').classList.remove('spin');
+    document.getElementById('pl-status').textContent='❚❚ In pausa';
   }
   // Ferma e pulisce TUTTE le righe attive (non solo activePrefix/activeIdx)
   document.querySelectorAll('.chart-row.playing').forEach(r=>{
