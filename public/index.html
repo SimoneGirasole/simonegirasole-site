@@ -163,7 +163,7 @@ nav{position:sticky;top:0;z-index:200;background:var(--black);border-bottom:1px 
 .cr-eq span:nth-child(2){animation-delay:.15s;}.cr-eq span:nth-child(3){animation-delay:.3s;}
 .cr-pw.active .cr-eq{display:flex;}.cr-pw.active .cr-ico{display:none;}
 .cr-prog-row{display:none;background:var(--purple);padding:.35rem calc(.8rem + 64px + 54px) .45rem calc(54px + 64px + .8rem);}
-.chart-row.playing ~ .cr-prog-row{display:block;}
+.chart-row.playing + .cr-prog-row{display:block;}
 .cr-prog-bar-wrap{width:100%;height:3px;background:rgba(255,255,255,.25);border-radius:2px;cursor:pointer;}
 .cr-prog-bar{height:100%;background:white;border-radius:2px;width:0%;transition:width .1s linear;}
 .cr-prog-time{display:flex;justify-content:space-between;font-family:'Space Mono',monospace;font-size:.55rem;color:rgba(255,255,255,.7);margin-top:.25rem;}
@@ -661,15 +661,6 @@ const dischi = [
   {title:"Pacific State",artist:"808 State",year:"1989",genre:"Balearic / Acid House",desc:"Manchester inventa il sound balearico britannico. Un brano che profuma di alba a Ibiza anche nel grigiore di novembre.",q:"808 State Pacific State"},
 ];
 
-const weekOfYear = Math.floor((new Date() - new Date(new Date().getFullYear(),0,0)) / (86400000*7));
-const disco = dischi[weekOfYear % dischi.length];
-document.getElementById('d-title').textContent = disco.title;
-document.getElementById('d-artist').textContent = disco.artist;
-document.getElementById('d-year').textContent = disco.year + ' · ' + disco.genre;
-document.getElementById('d-desc').textContent = disco.desc;
-document.getElementById('d-genre').textContent = disco.genre;
-document.getElementById('pl-title').textContent = disco.title;
-document.getElementById('pl-artist').textContent = disco.artist;
 
 const ARC = 163.4;
 const discoAudio = document.getElementById('disco-audio');
@@ -974,6 +965,7 @@ window.addEventListener('load',()=>{
   buildMusicNewsGrid();
   buildChart('chart-dance',danceChart);
   buildChart('chart-main',mainChart);
+   initFadeIns();
 });
 
 /* ── NAV ── */
