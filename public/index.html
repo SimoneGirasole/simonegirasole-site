@@ -664,7 +664,15 @@ const dischi = [
 
 const ARC = 163.4;
 const discoAudio = document.getElementById('disco-audio');
-let discoPlaying = false, discoLoaded = false;
+let discoLoaded = false;
+
+function resetDiscoUI() {
+  document.getElementById('pl-ico-play').style.display='block';
+  document.getElementById('pl-ico-pause').style.display='none';
+  document.getElementById('pl-ring').classList.remove('playing');
+  document.getElementById('d-vinyl').classList.remove('spin');
+  document.getElementById('pl-status').textContent='❚❚ In pausa';
+}
 
 discoAudio.addEventListener('timeupdate', function() {
   if (!discoAudio.duration) return;
@@ -675,57 +683,48 @@ discoAudio.addEventListener('timeupdate', function() {
   document.getElementById('pl-dur').textContent = '0:'+String(Math.round(discoAudio.duration)).padStart(2,'0');
 });
 discoAudio.addEventListener('ended', function() {
-  discoPlaying=false;
-  document.getElementById('pl-ico-play').style.display='block';
-  document.getElementById('pl-ico-pause').style.display='none';
-  document.getElementById('pl-ring').classList.remove('playing');
-  document.getElementById('d-vinyl').classList.remove('spin');
+  resetDiscoUI();
+  activeAudio=null;activePrefix=null;activeIdx=-1;
   document.getElementById('pl-arc').style.strokeDashoffset=ARC;
   document.getElementById('pl-bar').style.width='0%';
   document.getElementById('pl-status').textContent='▶ Premi play';
 });
 discoAudio.addEventListener('error',function(){document.getElementById('pl-status').textContent='— Errore audio';});
-discoAudio.addEventListener('play',function(){
-  if(activeAudio&&!activeAudio.paused){activeAudio.pause();activeAudio.currentTime=0;}
-  if(activePrefix!==null&&activeIdx>=0){
-    const pw=document.getElementById(activePrefix+'-pw-'+activeIdx);if(pw)pw.classList.remove('active');
-    const row=document.getElementById(activePrefix+'-row-'+activeIdx);if(row)row.classList.remove('playing');
-  }
-  activeAudio=null;activePrefix=null;activeIdx=-1;
-  document.getElementById('bottom-player').classList.remove('visible');
-  document.body.classList.remove('has-player');
-});
 
 function togglePlayer() {
   if (!discoLoaded){document.getElementById('pl-status').textContent='⟳ Caricamento...';return;}
-  if (discoPlaying) {
-    discoAudio.pause();discoPlaying=false;
-    document.getElementById('pl-ico-play').style.display='block';
-    document.getElementById('pl-ico-pause').style.display='none';
-    document.getElementById('pl-ring').classList.remove('playing');
-    document.getElementById('d-vinyl').classList.remove('spin');
-    document.getElementById('pl-status').textContent='❚❚ In pausa';
-  } else {
-    // Ferma il player della classifica se attivo
-    if(activeAudio){
-      activeAudio.pause();activeAudio.currentTime=0;
-      if(activePrefix!==null&&activeIdx>=0){
-        document.getElementById(activePrefix+'-pw-'+activeIdx).classList.remove('active');
-        document.getElementById(activePrefix+'-row-'+activeIdx).classList.remove('playing');
-      }
-      activeAudio=null;activePrefix=null;activeIdx=-1;
-      document.getElementById('bottom-player').classList.remove('visible');
-      document.body.classList.remove('has-player');
+  if (activeAudio===discoAudio) {
+    if (!discoAudio.paused) {
+      discoAudio.pause(); resetDiscoUI();
+    } else {
+      discoAudio.play().then(()=>{
+        document.getElementById('pl-ico-play').style.display='none';
+        document.getElementById('pl-ico-pause').style.display='block';
+        document.getElementById('pl-ring').classList.add('playing');
+        document.getElementById('d-vinyl').classList.add('spin');
+        document.getElementById('pl-status').textContent='▶ In riproduzione';
+      }).catch(err=>{document.getElementById('pl-status').textContent='— '+err.message;});
     }
-    discoAudio.play().then(()=>{
-      discoPlaying=true;
-      document.getElementById('pl-ico-play').style.display='none';
-      document.getElementById('pl-ico-pause').style.display='block';
-      document.getElementById('pl-ring').classList.add('playing');
-      document.getElementById('d-vinyl').classList.add('spin');
-      document.getElementById('pl-status').textContent='▶ In riproduzione';
-    }).catch(err=>{document.getElementById('pl-status').textContent='— '+err.message;});
+    return;
   }
+  // Ferma la classifica se attiva
+  if(activeAudio){
+    activeAudio.pause();activeAudio.currentTime=0;
+    if(activePrefix!==null&&activeIdx>=0){
+      const pw=document.getElementById(activePrefix+'-pw-'+activeIdx);if(pw)pw.classList.remove('active');
+      const row=document.getElementById(activePrefix+'-row-'+activeIdx);if(row)row.classList.remove('playing');
+    }
+    document.getElementById('bottom-player').classList.remove('visible');
+    document.body.classList.remove('has-player');
+  }
+  activeAudio=discoAudio; activePrefix=null; activeIdx=-1;
+  discoAudio.play().then(()=>{
+    document.getElementById('pl-ico-play').style.display='none';
+    document.getElementById('pl-ico-pause').style.display='block';
+    document.getElementById('pl-ring').classList.add('playing');
+    document.getElementById('d-vinyl').classList.add('spin');
+    document.getElementById('pl-status').textContent='▶ In riproduzione';
+  }).catch(err=>{document.getElementById('pl-status').textContent='— '+err.message;});
 }
 function seekPlayer(e) {
   if (!discoAudio.duration) return;
@@ -789,16 +788,6 @@ function buildChart(containerId, data) {
             a._title=results[0].trackName||t.title;
             a._artist=results[0].artistName||t.artist;
             a._art=results[0].artworkUrlSmall||'';
-            a.addEventListener('play',function(){
-              if(!discoAudio.paused){
-                discoAudio.pause();discoPlaying=false;
-                document.getElementById('pl-ico-play').style.display='block';
-                document.getElementById('pl-ico-pause').style.display='none';
-                document.getElementById('pl-ring').classList.remove('playing');
-                document.getElementById('d-vinyl').classList.remove('spin');
-                document.getElementById('pl-status').textContent='❚❚ In pausa';
-              }
-            });
             a.addEventListener('timeupdate',()=>{
               if(!a.duration)return;
               const p=a.currentTime/a.duration;
@@ -825,15 +814,8 @@ function toggleChart(prefix,i){
     else{a.pause();document.getElementById(prefix+'-pw-'+i).classList.remove('active');document.getElementById(prefix+'-row-'+i).classList.remove('playing');bpSetPlaying(false);}
     return;
   }
-  // Ferma il disco della settimana se attivo
-  if(!discoAudio.paused){
-    discoAudio.pause();discoPlaying=false;
-    document.getElementById('pl-ico-play').style.display='block';
-    document.getElementById('pl-ico-pause').style.display='none';
-    document.getElementById('pl-ring').classList.remove('playing');
-    document.getElementById('d-vinyl').classList.remove('spin');
-    document.getElementById('pl-status').textContent='❚❚ In pausa';
-  }
+  // Se il disco della settimana è quello attivo nel sistema unificato, fermalo
+  if(activeAudio===discoAudio){resetDiscoUI();activeAudio=null;}
   // Ferma e pulisce TUTTE le righe attive (non solo activePrefix/activeIdx)
   document.querySelectorAll('.chart-row.playing').forEach(r=>{
     const m=r.id.match(/^([a-z])-row-(\d+)$/);
