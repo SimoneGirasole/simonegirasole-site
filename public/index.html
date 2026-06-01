@@ -81,28 +81,11 @@ nav{position:sticky;top:0;z-index:200;background:var(--black);border-bottom:1px 
 .ht-sub{font-size:.88rem;color:var(--gray);line-height:1.5;}
 .ht-more{font-size:.72rem;color:var(--purple);margin-top:.45rem;letter-spacing:.08em;text-transform:uppercase;}
 
-/* ── AI GRID 2 ── */
-.home-ai-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);padding-bottom:2.5rem;}
-.hai-card{background:var(--black);cursor:pointer;transition:transform .2s;}
-.hai-card:hover{transform:translateY(-3px);}
-.hai-img-wrap{position:relative;width:100%;aspect-ratio:16/7;overflow:hidden;}
-.hai-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45;transition:opacity .3s;}
-.hai-card:hover .hai-img{opacity:.65;}
-.hai-img-tint{position:absolute;inset:0;}
-.hai-img-fade{position:absolute;inset:0;background:linear-gradient(transparent 25%,rgba(0,0,0,.88));}
-.hai-img-label{position:absolute;bottom:0;left:0;right:0;padding:.75rem 1rem;}
-.hai-img-tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.28rem .75rem;border-radius:2px;color:white;margin-bottom:.25rem;}
-.hai-img-title{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;line-height:1.25;color:white;}
-.hai-body{padding:.8rem 1rem .95rem;}
-.hai-sub{font-size:.88rem;color:var(--gray);line-height:1.5;}
-.hai-more{font-size:.72rem;color:var(--purple);margin-top:.45rem;letter-spacing:.08em;text-transform:uppercase;}
+
 
 /* ── DISCO ── */
 .disco-sec{background:var(--dark);padding:2.8rem;border-bottom:1px solid var(--border);}
-.disco-inner{display:grid;grid-template-columns:220px auto 1fr;gap:2rem 3rem;align-items:start;}
-.disco-text-col{min-width:0;}
-.disco-player-col{height:200px;}
-@media(max-width:900px){.disco-inner{grid-template-columns:1fr;gap:1.5rem;}.disco-player-col{height:auto;}}
+.disco-inner{display:grid;grid-template-columns:220px 1fr;gap:3.5rem;align-items:start;}
 .disco-cover-wrap{position:relative;width:200px;height:200px;}
 .disco-cover{width:200px;height:200px;object-fit:cover;display:block;box-shadow:0 20px 50px rgba(0,0,0,.6),0 0 0 1px var(--border);}
 .disco-ph{width:200px;height:200px;background:#1a1a1a;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;}
@@ -118,22 +101,20 @@ nav{position:sticky;top:0;z-index:200;background:var(--black);border-bottom:1px 
 .disco-desc{font-size:.88rem;color:var(--gl);line-height:1.75;max-width:520px;margin-bottom:1.4rem;}
 
 /* ── PLAYER ── */
-.player-wrap{display:flex;flex-direction:column;gap:0.75rem;background:rgba(255,255,255,.03);border:1px solid var(--border);padding:0.8rem 1.4rem;width:100%;height:100%;box-sizing:border-box;}
-.pl-top-row{display:flex;align-items:center;gap:1.4rem;}
-.pl-art{width:90px;height:90px;object-fit:cover;flex-shrink:0;box-shadow:0 4px 12px rgba(0,0,0,.5);}
+.player-wrap{display:flex;align-items:center;gap:1.2rem;background:rgba(255,255,255,.03);border:1px solid var(--border);padding:1rem 1.2rem;max-width:440px;}
+.pl-art{width:58px;height:58px;object-fit:cover;flex-shrink:0;box-shadow:0 4px 12px rgba(0,0,0,.5);}
 .pl-art-ph{width:58px;height:58px;flex-shrink:0;background:#1a1a1a;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;}
-.pl-track-info{flex:1;min-width:0;}
-.pl-ring-wrap{position:relative;width:90px;height:90px;flex-shrink:0;cursor:pointer;}
-.pl-svg{width:90px;height:90px;transform:rotate(-90deg);position:absolute;top:0;left:0;pointer-events:none;}
+.pl-ring-wrap{position:relative;width:60px;height:60px;flex-shrink:0;cursor:pointer;}
+.pl-svg{width:60px;height:60px;transform:rotate(-90deg);position:absolute;top:0;left:0;pointer-events:none;}
 .pl-track{fill:none;stroke:rgba(255,255,255,.08);stroke-width:4;}
 .pl-arc{fill:none;stroke:var(--pink);stroke-width:4;stroke-linecap:round;stroke-dasharray:163.4;stroke-dashoffset:163.4;transition:stroke-dashoffset .1s linear;}
 .pl-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:42px;height:42px;border-radius:50%;background:var(--purple);display:flex;align-items:center;justify-content:center;transition:background .2s,transform .1s;box-shadow:0 3px 14px rgba(124,58,237,.5);}
 .pl-ring-wrap:hover .pl-btn{background:var(--pl);transform:translate(-50%,-50%) scale(1.07);}
 .pl-ico-play{margin-left:3px;}
-.pl-info{min-width:0;}
+.pl-info{flex:1;min-width:0;}
 .pl-title{font-family:'Bebas Neue',sans-serif;font-size:1.05rem;letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.pl-artist{font-size:.8rem;color:var(--gray);margin-bottom:.3rem;}
-.pl-bar-wrap{width:100%;height:4px;background:var(--border);border-radius:2px;cursor:pointer;}
+.pl-artist{font-size:.8rem;color:var(--gray);margin-bottom:.45rem;}
+.pl-bar-wrap{width:100%;height:3px;background:var(--border);border-radius:2px;cursor:pointer;}
 .pl-bar{height:100%;background:var(--pink);border-radius:2px;width:0%;transition:width .1s linear;}
 .pl-times{display:flex;justify-content:space-between;font-family:'Space Mono',monospace;font-size:.68rem;color:var(--gray);margin-top:.2rem;}
 .pl-status{font-family:'Space Mono',monospace;font-size:.68rem;color:var(--pink);letter-spacing:.1em;text-transform:uppercase;margin-top:.3rem;}
@@ -182,7 +163,7 @@ nav{position:sticky;top:0;z-index:200;background:var(--black);border-bottom:1px 
 .cr-eq span:nth-child(2){animation-delay:.15s;}.cr-eq span:nth-child(3){animation-delay:.3s;}
 .cr-pw.active .cr-eq{display:flex;}.cr-pw.active .cr-ico{display:none;}
 .cr-prog-row{display:none;background:var(--purple);padding:.35rem calc(.8rem + 64px + 54px) .45rem calc(54px + 64px + .8rem);}
-.chart-row.playing + .cr-prog-row{display:block;}
+.chart-row.playing ~ .cr-prog-row{display:block;}
 .cr-prog-bar-wrap{width:100%;height:3px;background:rgba(255,255,255,.25);border-radius:2px;cursor:pointer;}
 .cr-prog-bar{height:100%;background:white;border-radius:2px;width:0%;transition:width .1s linear;}
 .cr-prog-time{display:flex;justify-content:space-between;font-family:'Space Mono',monospace;font-size:.55rem;color:rgba(255,255,255,.7);margin-top:.25rem;}
@@ -307,13 +288,6 @@ footer p{font-size:.78rem;color:var(--gray);font-family:'Space Mono',monospace;}
   .ht-img-tag{font-size:.72rem;padding:.28rem .75rem;} /* ← COME HERO TAG */
   .ht-sub{font-size:.88rem;} /* ← COME HERO */
 
-  /* AI GRID: 1 colonna su mobile — PROPORZIONI HERO */
-  .home-ai-grid{grid-template-columns:1fr;}
-  .hai-img-wrap{aspect-ratio:16/6;}
-  .hai-img-title{font-size:2.2rem;} /* ← COME HERO */
-  .hai-img-tag{font-size:.72rem;padding:.28rem .75rem;} /* ← COME HERO TAG */
-  .hai-sub{font-size:.88rem;} /* ← COME HERO */
-
   /* DISCO — PROPORZIONI HERO */
   .disco-sec{padding:1.5rem;}
   .disco-inner{grid-template-columns:1fr;gap:1.5rem;}
@@ -325,14 +299,7 @@ footer p{font-size:.78rem;color:var(--gray);font-family:'Space Mono',monospace;}
   .disco-artist{font-size:1rem;}
   .disco-desc{font-size:.88rem;} /* ← COME HERO */
   .disco-badge{font-size:.72rem;padding:.28rem .8rem;} /* ← COME HERO TAG */
-  .disco-player-col{height:auto;}
-  .player-wrap{max-width:100%;height:auto;}
-  .pl-top-row{flex-wrap:wrap;justify-content:center;gap:1rem;}
-  .pl-art,.pl-art-ph{order:1;}
-  .pl-ring-wrap{order:2;}
-  .pl-track-info{order:3;width:100%;flex:none;text-align:center;}
-  .pl-title{font-size:1rem;}
-  .pl-artist{font-size:.78rem;}
+  .player-wrap{max-width:100%;}
 
   /* MUSIC PAGE — PROPORZIONI HERO */
   .music-news-grid{grid-template-columns:1fr;}
@@ -392,7 +359,6 @@ footer p{font-size:.78rem;color:var(--gray);font-family:'Space Mono',monospace;}
   .logo-name{font-size:1.2rem;}
   .hn-img-title{font-size:1.9rem;} /* ← sincronizzato con hero */
   .ht-img-title{font-size:1.9rem;} /* ← sincronizzato con hero */
-  .hai-img-title{font-size:1.9rem;} /* ← sincronizzato con hero */
   .disco-title{font-size:1.9rem;} /* ← sincronizzato con hero */
   .mn-img-title{font-size:1.9rem;} /* ← sincronizzato con hero */
 }
@@ -444,11 +410,6 @@ footer p{font-size:.78rem;color:var(--gray);font-family:'Space Mono',monospace;}
   </div>
   <div class="home-tech-grid" id="home-tech-grid" style="background:var(--dark);padding-bottom:2.5rem;"></div>
 
-  <div class="sec" style="padding:2rem 2.5rem 0;">
-    <div class="sec-hdr"><div class="sec-title">ABLETON AI</div><div class="sec-line"></div></div>
-  </div>
-  <div class="home-ai-grid" id="home-ai-grid"></div>
-
   <div class="disco-sec">
     <div class="sec-hdr"><div class="sec-title">DISCO CHE STORIA DELLA SETTIMANA</div><div class="sec-line"></div></div>
     <div class="disco-inner">
@@ -457,41 +418,35 @@ footer p{font-size:.78rem;color:var(--gray);font-family:'Space Mono',monospace;}
         <div class="disco-ph" id="d-ph"><svg width="40" height="40" fill="none" stroke="var(--gray)" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div>
         <div class="vinyl" id="d-vinyl"></div>
       </div>
-      <div class="disco-text-col">
+      <div>
         <div class="disco-badge"><div class="disco-dot"></div> Disco Che Storia della Settimana</div>
         <div class="disco-title" id="d-title">—</div>
         <div class="disco-artist" id="d-artist"></div>
         <div class="disco-year" id="d-year"></div>
         <p class="disco-desc" id="d-desc"></p>
         <div class="tag" id="d-genre" style="cursor:default;margin-bottom:1.4rem;"></div>
-      </div>
-      <div class="disco-player-col">
         <div class="player-wrap">
-          <div class="pl-top-row">
-            <img class="pl-art" id="pl-art" src="" alt="" style="display:none;" onerror="this.style.display='none';document.getElementById('pl-art-ph').style.display='flex';">
-            <div class="pl-art-ph" id="pl-art-ph"><svg width="18" height="18" fill="none" stroke="var(--gray)" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div>
-            <div class="pl-track-info">
-              <div class="pl-title" id="pl-title">Caricamento...</div>
-              <div class="pl-artist" id="pl-artist">—</div>
+          <img class="pl-art" id="pl-art" src="" alt="" style="display:none;" onerror="this.style.display='none';document.getElementById('pl-art-ph').style.display='flex';">
+          <div class="pl-art-ph" id="pl-art-ph"><svg width="18" height="18" fill="none" stroke="var(--gray)" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <div class="pl-ring-wrap" id="pl-ring" onclick="togglePlayer()">
+            <svg class="pl-svg" viewBox="0 0 60 60"><circle class="pl-track" cx="30" cy="30" r="26"/><circle class="pl-arc" id="pl-arc" cx="30" cy="30" r="26"/></svg>
+            <div class="pl-btn">
+              <svg id="pl-ico-play" class="pl-ico-play" width="14" height="16" viewBox="0 0 14 16" fill="white"><polygon points="1,0 14,8 1,16"/></svg>
+              <svg id="pl-ico-pause" width="14" height="16" viewBox="0 0 14 16" fill="white" style="display:none;"><rect x="0" y="0" width="5" height="16" rx="1"/><rect x="9" y="0" width="5" height="16" rx="1"/></svg>
             </div>
-            <div class="pl-ring-wrap" id="pl-ring" onclick="togglePlayer()">
-              <svg class="pl-svg" viewBox="0 0 60 60"><circle class="pl-track" cx="30" cy="30" r="26"/><circle class="pl-arc" id="pl-arc" cx="30" cy="30" r="26"/></svg>
-              <div class="pl-btn">
-                <svg id="pl-ico-play" class="pl-ico-play" width="14" height="16" viewBox="0 0 14 16" fill="white"><polygon points="1,0 14,8 1,16"/></svg>
-                <svg id="pl-ico-pause" width="14" height="16" viewBox="0 0 14 16" fill="white" style="display:none;"><rect x="0" y="0" width="5" height="16" rx="1"/><rect x="9" y="0" width="5" height="16" rx="1"/></svg>
-              </div>
-            </div>
-          </div><!-- /pl-top-row -->
+          </div>
           <div class="pl-info">
+            <div class="pl-title" id="pl-title">Caricamento...</div>
+            <div class="pl-artist" id="pl-artist">—</div>
             <div class="pl-bar-wrap" onclick="seekPlayer(event)"><div class="pl-bar" id="pl-bar"></div></div>
             <div class="pl-times"><span id="pl-cur">0:00</span><span id="pl-dur">0:30</span></div>
             <div class="pl-status" id="pl-status">▶ Premi play</div>
           </div>
-        </div><!-- /player-wrap -->
-      </div><!-- /disco-player-col -->
-    </div><!-- /disco-inner -->
-    <audio id="disco-audio" preload="none"></audio>
-  </div><!-- /disco-sec -->
+        </div>
+        <audio id="disco-audio" preload="none"></audio>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- ═══ BIO ═══ -->
@@ -499,6 +454,7 @@ footer p{font-size:.78rem;color:var(--gray);font-family:'Space Mono',monospace;}
   <div class="bio-layout">
     <div class="bio-img-wrap fi">
       <img class="bio-img" src="/simone-girasole.jpg" alt="Simone Girasole DJ">
+      <div class="bio-img-caption">Simone Girasole · DJ · Producer · Radio Host</div>
     </div>
     <div class="bio-content fi">
       <h1>Simone Girasole</h1>
@@ -987,23 +943,6 @@ function initFromContent() {
     W.tech.forEach((t,i)=>{allArticles[i+5]={tag:t.tag,tagColor:t.tagColor||'#7c3aed',title:t.title,sub:t.sub||'',text:t.text||'',photo:t.photo||'',tint:t.tint||'rgba(0,0,0,0.5),rgba(0,0,0,0.3)'};});
   }
 
-  if (W.ai) {
-    const aig=document.getElementById('home-ai-grid');
-    if(aig) aig.innerHTML=W.ai.map((a,i)=>`
-      <div class="hai-card" onclick="openHomeArticle(${i+9})">
-        <div class="hai-img-wrap">
-          <img class="hai-img" src="${a.photo||''}" alt="">
-          <div class="hai-img-tint" style="background:linear-gradient(135deg,${a.tint||'rgba(0,0,0,0.5),rgba(0,0,0,0.3)'});"></div>
-          <div class="hai-img-fade"></div>
-          <div class="hai-img-label">
-            <span class="hai-img-tag" style="background:${a.tagColor||'#00b4d8'};">${a.tag||''}</span>
-            <div class="hai-img-title">${a.title||''}</div>
-          </div>
-        </div>
-        <div class="hai-body"><div class="hai-sub">${a.sub||''}</div><div class="hai-more">Leggi →</div></div>
-      </div>`).join('');
-    W.ai.forEach((a,i)=>{allArticles[i+9]={tag:a.tag,tagColor:a.tagColor||'#00b4d8',title:a.title,sub:a.sub||'',text:a.text||'',photo:a.photo||'',tint:a.tint||'rgba(0,0,0,0.5),rgba(0,0,0,0.3)'};});
-  }
 
   if (W.disco) {
     const d=W.disco;
@@ -1026,13 +965,8 @@ function initFromContent() {
     }
   }
 
-  // Pre-build music page so it's ready on first visit
   if (W.danceChart){danceChart.length=0;W.danceChart.forEach(t=>danceChart.push(t));}
   if (W.mainChart){mainChart.length=0;W.mainChart.forEach(t=>mainChart.push(t));}
-  buildMusicNewsGrid();
-  buildChart('chart-dance',danceChart);
-  buildChart('chart-main',mainChart);
-  musicPageInited=true;
 }
 
 window.addEventListener('load',()=>{
