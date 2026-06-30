@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin · Simone Girasole</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root{
+    --black:#0a0a0a; --dark:#111; --border:#222;
+    --purple:#7c3aed; --pl:#a855f7; --pink:#e040fb;
+    --white:#f5f5f5; --gray:#888; --gl:#ccc;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--black); color:var(--white);
+    font-family:'DM Sans', Arial, sans-serif; padding:24px;
+  }
+  h1{font-family:'Bebas Neue', Arial, sans-serif; letter-spacing:1px; font-size:32px; margin:0 0 4px;}
+  .sub{color:var(--gray); margin-bottom:24px; font-size:14px;}
+  .panel{
+    background:var(--dark); border:1px solid var(--border); border-radius:10px;
+    padding:20px; margin-bottom:18px;
+  }
+  .panel h2{font-size:15px; text-transform:uppercase; letter-spacing:1px; color:var(--pl); margin:0 0 14px;}
+  label{display:block; font-size:12px; color:var(--gray); margin:10px 0 4px;}
+  input[type=text], input[type=number], input[type=password], textarea{
+    width:100%; background:#0d0d0d; border:1px solid var(--border); color:var(--white);
+    padding:9px 10px; border-radius:6px; font-size:14px; font-family:inherit;
+  }
+  textarea{min-height:70px; resize:vertical;}
+  input:focus, textarea:focus{outline:none; border-color:var(--pl);}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:0 16px;}
+  .card{
+    border:1px solid var(--border); border-radius:8px; padding:14px;
+    margin-bottom:12px; background:#0c0c0c; position:relative;
+  }
+  .card .tag{display:inline-block; font-size:11px; color:var(--pink); margin-bottom:6px;}
+  .photo-row{display:flex; gap:12px; align-items:center; margin-top:8px;}
+  .photo-row img{width:64px; height:64px; object-fit:cover; border-radius:6px; border:1px solid var(--border);}
+  .btn{
+    background:linear-gradient(135deg, var(--purple), var(--pink));
+    border:none; color:#fff; padding:10px 18px; border-radius:6px;
+    font-size:14px; font-weight:600; cursor:pointer;
+  }
+  .btn:hover{filter:brightness(1.1);}
+  .btn.secondary{background:#1a1a1a; border:1px solid var(--border);}
+  .btn:disabled{opacity:.5; cursor:not-allowed;}
+  .row{display:flex; gap:10px; align-items:center; flex-wrap:wrap;}
+  .status{font-size:13px; padding:8px 12px; border-radius:6px; margin-top:10px; display:none;}
+  .status.ok{display:block; background:#0d2e1c; color:#5ee08a; border:1px solid #1a5c33;}
+  .status.err{display:block; background:#3a0d0d; color:#ff8989; border:1px solid #5c1a1a;}
+  .status.info{display:block; background:#10182e; color:#8ab4ff; border:1px solid #1a2a5c;}
+  #login{max-width:340px; margin:80px auto;}
+  .file-btn{
+    display:inline-block; background:#1a1a1a; border:1px solid var(--border);
+    padding:8px 12px; border-radius:6px; font-size:13px; cursor:pointer; color:var(--gl);
+  }
+  .file-btn input{display:none;}
+  .savebar{
+    position:sticky; bottom:0; background:var(--black); border-top:1px solid var(--border);
+    padding:14px 0; margin-top:20px; display:flex; gap:10px; align-items:center;
+  }
+  .small{font-size:12px; color:var(--gray);}
+  .chart-row{display:grid; grid-template-columns:36px 1fr 1fr 1fr; gap:8px; align-items:center; margin-bottom:6px;}
+</style>
+</head>
+<body>
+
+<div id="login">
+  <h1>SIMONE<span style="color:var(--pink)">GIRASOLE</span></h1>
+  <div class="sub">Dashboard admin</div>
+  <div class="panel">
+    <label>Password</label>
+    <input type="password" id="pw" placeholder="••••••••">
+    <div style="margin-top:14px;"><button class="btn" onclick="login()">Accedi</button></div>
+    <div class="status err" id="loginErr"></div>
+  </div>
+</div>
+
+<div id="app" style="display:none; max-width:880px; margin:0 auto;">
+  <h1>Admin Dashboard</h1>
+  <div class="sub">Modifica i contenuti del sito e salva direttamente su GitHub</div>
+
+  <div class="panel">
+    <h2>Ticker / Disco della settimana</h2>
+    <label>Ticker (testo scorrevole)</label>
+    <textarea id="f_ticker"></textarea>
+    <div class="grid2">
+      <div><label>Artista</label><input type="text" id="f_disco_artist"></div>
+      <div><label>Anno</label><input type="text" id="f_disco_year"></div>
+    </div>
+    <label>Titolo disco</label>
+    <input type="text" id="f_disco_title">
+    <label>Genere</label>
+    <input type="text" id="f_disco_genre">
+    <label>Descrizione</label>
+    <textarea id="f_disco_desc"></textarea>
+    <label>Query iTunes (per ascolto)</label>
+    <input type="text" id="f_disco_q">
+  </div>
+
+  <div class="panel">
+    <h2>Hero (home)</h2>
+    <div class="grid2">
+      <div><label>Tag</label><input type="text" id="f_hero_tag"></div>
+      <div></div>
+    </div>
+    <label>Titolo</label>
+    <input type="text" id="f_hero_title">
+    <label>Sottotitolo</label>
+    <input type="text" id="f_hero_sub">
+    <label>Testo</label>
+    <textarea id="f_hero_text"></textarea>
+    <div class="photo-row">
+      <img id="f_hero_preview" src="" onerror="this.style.opacity=0">
+      <div>
+        <label class="file-btn">Carica foto<input type="file" accept="image/*" onchange="uploadImage(event,'hero')"></label>
+        <div class="small" id="f_hero_photo"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>News clubbing (4)</h2>
+    <div id="news_cards"></div>
+  </div>
+
+  <div class="panel">
+    <h2>Tech & Gear (4)</h2>
+    <div id="tech_cards"></div>
+  </div>
+
+  <div class="panel">
+    <h2>Top 10 Dance Chart</h2>
+    <div id="dance_chart"></div>
+  </div>
+
+  <div class="panel">
+    <h2>Top 10 Mainstream Chart</h2>
+    <div id="main_chart"></div>
+  </div>
+
+  <div class="savebar">
+    <button class="btn" onclick="saveAll()" id="saveBtn">Salva e pubblica su GitHub</button>
+    <button class="btn secondary" onclick="loadContent()">Ricarica dal sito</button>
+    <span class="small" id="lastSaved"></span>
+  </div>
+  <div class="status" id="status"></div>
+</div>
+
+<script>
+let DATA = null;
+let CONTENT_SHA = null;
+
+function pw(){ return sessionStorage.getItem('adminPass') || ''; }
+
+async function login(){
+  const p = document.getElementById('pw').value;
+  if(!p){ return; }
+  sessionStorage.setItem('adminPass', p);
+  document.getElementById('loginErr').style.display='none';
+  try{
+    await loadContent();
+    document.getElementById('login').style.display='none';
+    document.getElementById('app').style.display='block';
+  }catch(e){
+    sessionStorage.removeItem('adminPass');
+    const el = document.getElementById('loginErr');
+    el.textContent = 'Password errata o errore di connessione.';
+    el.style.display='block';
+  }
+}
+
+async function api(action, path, content, message, sha){
+  const res = await fetch('/api/admin', {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({ password: pw(), action, path, content, message, sha })
+  });
+  const data = await res.json();
+  if(!res.ok) throw new Error(data.error || 'Errore API');
+  return data;
+}
+
+function b64ToUtf8(b64){
+  const clean = b64.replace(/\n/g,'');
+  const binary = atob(clean);
+  const bytes = new Uint8Array(binary.length);
+  for(let i=0;i<binary.length;i++) bytes[i] = binary.charCodeAt(i);
+  return new TextDecoder('utf-8').decode(bytes);
+}
+
+function utf8ToB64(str){
+  const bytes = new TextEncoder().encode(str);
+  let binary = '';
+  bytes.forEach(b => binary += String.fromCharCode(b));
+  return btoa(binary);
+}
+
+async function loadContent(){
+  showStatus('info', 'Carico content.js da GitHub...');
+  const res = await api('get', 'public/content.js');
+  if(res.notFound) throw new Error('public/content.js non trovato nel repo');
+  CONTENT_SHA = res.sha;
+  const text = b64ToUtf8(res.content);
+  // valuta il file (è codice JS fidato del nostro repo) per estrarre l'oggetto WEEKLY_CONTENT
+  const fn = new Function(text + '\nreturn WEEKLY_CONTENT;');
+  DATA = fn();
+  renderAll();
+  showStatus('ok', 'Contenuti caricati.');
+}
+
+function renderAll(){
+  document.getElementById('f_ticker').value = DATA.ticker || '';
+  const d = DATA.disco || {};
+  document.getElementById('f_disco_artist').value = d.artist || '';
+  document.getElementById('f_disco_year').value = d.year || '';
+  document.getElementById('f_disco_title').value = d.title || '';
+  document.getElementById('f_disco_genre').value = d.genre || '';
+  document.getElementById('f_disco_desc').value = d.desc || '';
+  document.getElementById('f_disco_q').value = d.q || '';
+
+  const h = DATA.hero || {};
+  document.getElementById('f_hero_tag').value = h.tag || '';
+  document.getElementById('f_hero_title').value = h.title || '';
+  document.getElementById('f_hero_sub').value = h.sub || '';
+  document.getElementById('f_hero_text').value = h.text || '';
+  document.getElementById('f_hero_photo').textContent = h.photo || '(nessuna foto)';
+  document.getElementById('f_hero_preview').src = h.photo || '';
+
+  renderCards('news_cards', DATA.news || [], 'news');
+  renderCards('tech_cards', DATA.tech || [], 'tech');
+  renderChart('dance_chart', DATA.danceChart || [], 'danceChart');
+  renderChart('main_chart', DATA.mainChart || [], 'mainChart');
+}
+
+function renderCards(containerId, arr, key){
+  const c = document.getElementById(containerId);
+  c.innerHTML = '';
+  arr.forEach((item, i) => {
+    const div = document.createElement('div');
+    div.className = 'card';
+    div.innerHTML = `
+      <div class="tag">#${i+1}</div>
+      <label>Tag</label>
+      <input type="text" value="${esc(item.tag)}" onchange="DATA.${key}[${i}].tag=this.value">
+      <label>Colore tag (hex)</label>
+      <input type="text" value="${esc(item.tagColor)}" onchange="DATA.${key}[${i}].tagColor=this.value">
+      <label>Titolo</label>
+      <input type="text" value="${esc(item.title)}" onchange="DATA.${key}[${i}].title=this.value">
+      <label>Sommario</label>
+      <input type="text" value="${esc(item.sub)}" onchange="DATA.${key}[${i}].sub=this.value">
+      <label>Testo</label>
+      <textarea onchange="DATA.${key}[${i}].text=this.value">${esc(item.text)}</textarea>
+      <label>Tint (overlay)</label>
+      <input type="text" value="${esc(item.tint)}" onchange="DATA.${key}[${i}].tint=this.value">
+      <div class="photo-row">
+        <img src="${esc(item.photo)}" onerror="this.style.opacity=0">
+        <div>
+          <label class="file-btn">Carica foto<input type="file" accept="image/*" onchange="uploadImage(event,'${key}',${i})"></label>
+          <div class="small">${esc(item.photo) || '(nessuna foto)'}</div>
+        </div>
+      </div>
+    `;
+    c.appendChild(div);
+  });
+}
+
+function renderChart(containerId, arr, key){
+  const c = document.getElementById(containerId);
+  c.innerHTML = '<div class="chart-row small"><span>Pos</span><span>Titolo</span><span>Artista</span><span>Query iTunes</span></div>';
+  arr.forEach((item, i) => {
+    const row = document.createElement('div');
+    row.className = 'chart-row';
+    row.innerHTML = `
+      <input type="number" value="${item.pos}" onchange="DATA.${key}[${i}].pos=parseInt(this.value)">
+      <input type="text" value="${esc(item.title)}" onchange="DATA.${key}[${i}].title=this.value">
+      <input type="text" value="${esc(item.artist)}" onchange="DATA.${key}[${i}].artist=this.value">
+      <input type="text" value="${esc(item.q)}" onchange="DATA.${key}[${i}].q=this.value">
+    `;
+    c.appendChild(row);
+  });
+}
+
+function esc(v){
+  if(v === undefined || v === null) return '';
+  return String(v).replace(/"/g,'&quot;');
+}
+
+// legge campi semplici (ticker, hero, disco) prima del salvataggio
+function syncSimpleFields(){
+  DATA.ticker = document.getElementById('f_ticker').value;
+  DATA.disco = DATA.disco || {};
+  DATA.disco.artist = document.getElementById('f_disco_artist').value;
+  DATA.disco.year = document.getElementById('f_disco_year').value;
+  DATA.disco.title = document.getElementById('f_disco_title').value;
+  DATA.disco.genre = document.getElementById('f_disco_genre').value;
+  DATA.disco.desc = document.getElementById('f_disco_desc').value;
+  DATA.disco.q = document.getElementById('f_disco_q').value;
+
+  DATA.hero = DATA.hero || {};
+  DATA.hero.tag = document.getElementById('f_hero_tag').value;
+  DATA.hero.title = document.getElementById('f_hero_title').value;
+  DATA.hero.sub = document.getElementById('f_hero_sub').value;
+  DATA.hero.text = document.getElementById('f_hero_text').value;
+}
+
+async function uploadImage(ev, key, index){
+  const file = ev.target.files[0];
+  if(!file) return;
+  showStatus('info', 'Carico immagine su GitHub...');
+  try{
+    const buf = await file.arrayBuffer();
+    const bytes = new Uint8Array(buf);
+    let binary = '';
+    bytes.forEach(b => binary += String.fromCharCode(b));
+    const b64 = btoa(binary);
+
+    const safeName = file.name.toLowerCase().replace(/[^a-z0-9.\-]/g,'-');
+    const ts = Date.now();
+    const filename = ts + '-' + safeName;
+    const path = 'public/images/' + filename;
+
+    // controlla se esiste già un file con lo stesso nome (improbabile col timestamp, ma per sicurezza)
+    let sha = null;
+    try{
+      const existing = await api('get', path);
+      if(!existing.notFound) sha = existing.sha;
+    }catch(e){ /* ignora, procediamo come nuovo file */ }
+
+    await api('put', path, b64, 'Upload immagine: ' + filename, sha);
+
+    const publicPath = '/images/' + filename;
+    if(key === 'hero'){
+      DATA.hero.photo = publicPath;
+      document.getElementById('f_hero_photo').textContent = publicPath;
+      document.getElementById('f_hero_preview').src = publicPath;
+    } else {
+      DATA[key][index].photo = publicPath;
+      renderCards(key === 'news' ? 'news_cards' : 'tech_cards', DATA[key], key);
+    }
+    showStatus('ok', 'Immagine caricata: ' + publicPath);
+  }catch(e){
+    showStatus('err', 'Errore upload immagine: ' + e.message);
+  }
+}
+
+async function saveAll(){
+  syncSimpleFields();
+  const btn = document.getElementById('saveBtn');
+  btn.disabled = true;
+  showStatus('info', 'Salvo su GitHub...');
+  try{
+    const text = 'const WEEKLY_CONTENT = ' + JSON.stringify(DATA, null, 2) + ';\n';
+    const b64 = utf8ToB64(text);
+    const res = await api('put', 'public/content.js', b64, 'Aggiornamento contenuti da dashboard admin', CONTENT_SHA);
+    CONTENT_SHA = res.sha;
+    document.getElementById('lastSaved').textContent = 'Salvato alle ' + new Date().toLocaleTimeString('it-IT');
+    showStatus('ok', 'Pubblicato. Vercel sta facendo il deploy automatico (1-2 minuti).');
+  }catch(e){
+    showStatus('err', 'Errore salvataggio: ' + e.message);
+  }
+  btn.disabled = false;
+}
+
+function showStatus(type, msg){
+  const el = document.getElementById('status');
+  el.className = 'status ' + type;
+  el.textContent = msg;
+}
+
+// auto-login se la password è già in sessione
+if(pw()){
+  loadContent().then(()=>{
+    document.getElementById('login').style.display='none';
+    document.getElementById('app').style.display='block';
+  }).catch(()=>{
+    sessionStorage.removeItem('adminPass');
+  });
+}
+</script>
+</body>
+</html>
