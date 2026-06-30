@@ -501,10 +501,6 @@ footer p{font-size:.78rem;color:var(--gray);font-family:'Space Mono',monospace;}
 
 <!-- ═══ MUSICA ═══ -->
 <div class="page" id="page-musica">
-  <div class="sec">
-    <div class="sec-hdr"><div class="sec-title">NOTIZIE DAL MONDO</div><div class="sec-line"></div></div>
-    <div class="music-news-grid" id="music-news-grid"></div>
-  </div>
   <div class="sec" style="background:var(--dark);">
     <div class="charts-two-col">
       <div>
@@ -1024,7 +1020,6 @@ function showPage(name,el){
     initFadeIns();
     if(name==='musica'&&!musicPageInited){
       musicPageInited=true;
-      buildMusicNewsGrid();
       buildChart('chart-dance',danceChart);
       buildChart('chart-main',mainChart);
     }
