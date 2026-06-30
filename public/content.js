@@ -50,6 +50,16 @@ const WEEKLY_CONTENT = {
       photo: "/images/news-hideout.jpg",
       photoSource: "Foto fornita dalla redazione",
       tint: "rgba(10,0,30,0.6),rgba(40,0,90,0.4)"
+    },
+    {
+      tag: "Festival · Piemonte",
+      tagColor: "#e040fb",
+      title: "Collisioni Festival, Alba: musica e cultura tra le colline del Barolo",
+      sub: "Tra le vigne delle Langhe, il festival che unisce grandi nomi della musica a incontri letterari e degustazioni",
+      text: "Giunto a una nuova edizione, Collisioni resta un format unico nel panorama italiano: concerti di richiamo nazionale e internazionale si alternano a talk e degustazioni enogastronomiche nel cuore delle Langhe, patrimonio UNESCO. Un appuntamento che negli anni ha saputo intercettare anche il pubblico più legato a sonorità elettroniche e contemporanee, confermandosi crocevia tra musica, territorio e cultura.",
+      photo: "/images/news-collisioni-festival.webp",
+      photoSource: "Foto fornita dalla redazione",
+      tint: "rgba(4,0,26,0.6),rgba(26,0,80,0.4)"
     }
   ],
   tech: [
