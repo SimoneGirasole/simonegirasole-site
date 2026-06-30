@@ -1,148 +1,121 @@
 const WEEKLY_CONTENT = {
-
-  /* ─────────────────────────────────────────
-     DISCO CHE STORIA DELLA SETTIMANA
-  ───────────────────────────────────────── */
   disco: {
-    title: "Show Me Love",
-    artist: "Robin S",
-    year: "1993",
-    genre: "Deep House / Dance",
-    desc: "Uno dei brani house più iconici degli anni '90. Prodotto da Allen George e Fred McFarlane, Show Me Love esplode nel 1993 trasformando Robin S in una delle voci simbolo della dance internazionale. Il giro di piano, il basso pulsante e quella voce potente e graffiante hanno conquistato le classifiche di mezzo mondo e ancora oggi fanno muovere qualsiasi dancefloor. Un classico senza tempo della club culture.",
-    q: "Robin S Show Me Love"
+    title: "Children",
+    artist: "Robert Miles",
+    year: "1995",
+    genre: "Dream House",
+    desc: "Trent'anni fa un producer italiano cambiava per sempre il suono della club culture europea. \"Children\" nasce come reazione ai rave illegali e agli incidenti stradali legati all'eccesso di hard techno nelle notti riminesi: Robert Miles voleva un brano da ascoltare nel viaggio di ritorno a casa, capace di far scendere l'adrenalina senza spegnere l'emozione. Il risultato è la nascita ufficiale del dream house, un genere che fonde melodia pianistica, atmosfere ambient e cassa dance in un equilibrio mai più eguagliato. Il brano resta tuttora il singolo dance italiano più venduto di sempre, con oltre 5 milioni di copie e 12 settimane consecutive al numero uno della classifica DF Italia. La sua eredità si sente ancora oggi in ogni piano break da club, dal melodic techno contemporaneo alla progressive house.",
+    photo: "/image/disco-storico-robert-miles-children.jpg",
+    photoSource: "Discogs — Robert Miles, Children (CD Maxi-Single)",
+    q: "Robert Miles Children"
   },
-
-  /* ─────────────────────────────────────────
-     TICKER
-  ───────────────────────────────────────── */
-  ticker: "★ Nameless Festival 2026: Calvin Harris, Fisher e John Summit — 90.000 presenze a Lecco   ★ Kappa FuturFestival 3-5 luglio Torino: Solomun, Four Tet, Chris Lake — biglietti esauriti   ★ Centrale Elettronica Festival: 27-28 giugno Brescia — Goodboys, A-Trak, Ferreck Dawn   ★ Electropark Genova: 5 giugno-5 luglio, 50 artisti da 25 paesi   ★ Ibiza 2026: stagione aperta — Ushuaïa, DC-10 e Hi Ibiza annunciano le lineup   ★ Serum 2: aggiornamento gratuito per tutti i possessori del synth originale   ★ Beatport: Tech House e Mainstage dominano le chart di giugno   ★",
-
-  /* ─────────────────────────────────────────
-     HERO
-  ───────────────────────────────────────── */
+  ticker: "★ Kappa FuturFestival, Torino: dal 3 al 5 luglio i top DJ mondiali al Parco Dora &nbsp;&nbsp;&nbsp; ★ Ultra Europe Spalato: Calvin Harris, Martin Garrix e Afrojack dal 10 al 12 luglio &nbsp;&nbsp;&nbsp; ★ Hideout Festival, Zrce Beach: si parte oggi 30 giugno &nbsp;&nbsp;&nbsp; ★ Il Cocoricò di Riccione riapre con Sara Landry e Ilario Alicante &nbsp;&nbsp;&nbsp; ★ Disco storico della settimana: Children di Robert Miles",
   hero: {
-    tag: "Festival · Lecco",
-    title: "Nameless 2026: Calvin Harris, Fisher e John Summit riscrivono la storia",
-    sub: "90.000 presenze al Bione di Lecco, 5 palchi e il ritorno di Calvin Harris in Italia dopo 13 anni. Il festival è già leggendario.",
-    text: "Il Nameless Festival 2026 ha chiuso la sua edizione più ambiziosa di sempre. Dal 30 maggio al 1° giugno, il Centro Sportivo Bione di Lecco — con il Lago di Como come sfondo naturale — ha ospitato oltre 90.000 persone in tre giorni di musica non-stop. Calvin Harris ha aperto i giochi venerdì 30 maggio con un set che ha riportato in Italia uno degli artisti più attesi degli ultimi tredici anni, scatenando un'emozione collettiva raramente vista su un palco italiano. John Summit ha dominato il sabato con il suo tech house fluido e ipnotico, mentre FISHER ha chiuso domenica con l'energia brutale e ironica che lo ha reso uno dei DJ più amati del pianeta. Cinque palchi — tra cui la Nameless Tent dedicata a bass e drum & bass con Andy C e Netsky, e la Red Bull Energy Zone con Todd Terry e HoneyLuv — hanno garantito un'esperienza totale e trasversale. Il Nameless 2026 entra di diritto nella storia dei grandi festival europei.",
-    photo: "/images/Nameless_2026.png",
-    tint: "rgba(0,8,20,0.55),rgba(0,30,80,0.35)"
+    tag: "Festival · Torino",
+    tagColor: "#1060cc",
+    title: "Kappa FuturFestival 2026: la XIII edizione riunisce i top DJ del mondo al Parco Dora",
+    sub: "Dal 3 al 5 luglio Armin van Buuren, Skrillex, Charlotte de Witte, Sven Väth e il B2B Ben Klock/Marcel Dettmann sul palco del festival numero uno in Italia",
+    text: "Il più grande festival open air italiano torna al Parco Dora di Torino per la sua tredicesima edizione, con oltre 120 artisti su sei palchi e il sesto posto nella classifica mondiale di DJ Mag. Un cartellone che mette insieme leggende come Sven Väth, pioniere del clubbing europeo, e figure di punta della scena contemporanea come Charlotte de Witte, Solomun, Four Tet, Disclosure, Sebastian Ingrosso e Skrillex. Attesissimo il B2B tra Ben Klock e Marcel Dettmann, storici resident del Berghain, per un incontro che mette a confronto profondità ipnotica e potenza da dancefloor. Tre giorni che confermano Torino come crocevia internazionale della scena techno e house più influente d'Europa.",
+    photo: "/image/hero-kappa-futurfestival.jpg",
+    photoSource: "kappafuturfestival.it — visual ufficiale lineup 2026",
+    tint: "rgba(10,0,30,0.65),rgba(40,0,90,0.45)"
   },
-
-  /* ─────────────────────────────────────────
-     NEWS CLUBBING — 4 articoli
-  ───────────────────────────────────────── */
   news: [
     {
-      tag: "Festival · Torino",
-      tagColor: "#5020aa",
-      title: "Kappa FuturFestival XIII: lineup completo — Torino è pronta",
-      sub: "3-5 luglio al Parco Dora con Solomun, Four Tet, Chris Lake e oltre 120 artisti. Sold out.",
-      text: "La tredicesima edizione del Kappa FuturFestival torna al Parco Dora di Torino dal 3 al 5 luglio 2026 con una lineup che non lascia scampo. Oltre 120 artisti internazionali per tre giorni di elettronica pura: tra gli headliner figurano Solomun, Four Tet, Chris Lake, Maceo Plex e Seth Troxler. I set back-to-back sono ormai un marchio di fabbrica del festival: Alignment b2b Fatima Hajji, Jane Fitz b2b Rhadoo, Chloè Caillet b2b Luke Alessi e Max Dean b2b Luke Dean. Presenti anche Sammy Virji, Max Cooper in live AV, Lil Louis, Agoria, Jazzy, John Talabot e Massano. Sesto festival al mondo secondo DJ Mag nel 2025, i biglietti sono esauriti da settimane — lista d'attesa disponibile su kappafuturfestival.it.",
-      photo: "/images/Kappa_Fututre_Festival_2026.png",
-      tint: "rgba(4,0,20,0.6),rgba(20,0,70,0.4)"
+      tag: "Festival · Croazia",
+      tagColor: "#1060cc",
+      title: "Ultra Europe 2026: Calvin Harris, Martin Garrix e Afrojack guidano il cartellone di Spalato",
+      sub: "Dal 10 al 12 luglio quattro palchi al parco Mladeži per uno dei festival più grandi della Croazia",
+      text: "Ultra Europe si conferma uno degli appuntamenti chiave della scena EDM mondiale, con una lineup che porta a Spalato tre dei nomi più influenti della musica elettronica internazionale. Quattro palchi dedicati a house, dance e techno, tra produzioni spettacolari e un pubblico internazionale che ogni anno trasforma la città dalmata nella capitale europea del clubbing per un weekend.",
+      photo: "/image/news-ultra-europe.png",
+      photoSource: "DJPop — locandina lineup Ultra Europe 2026",
+      tint: "rgba(0,8,15,0.6),rgba(0,32,64,0.4)"
     },
     {
-      tag: "Ibiza · Estate 2026",
-      tagColor: "#006688",
-      title: "Ibiza 2026: stagione aperta, i grandi club svelano le lineup",
-      sub: "Ushuaïa, DC-10, Hi Ibiza e Pacha: ecco chi suonerà sull'isola questa estate.",
-      text: "La stagione ibizenca 2026 è ufficialmente aperta e i grandi club dell'isola hanno svelato le loro lineup estive. Ushuaïa punta su Martin Garrix, David Guetta e Amelie Lens per le serate del lunedì e giovedì, mentre DC-10 consolida la sua identità underground con Drumcode, Circoloco e le serate Resistance. Hi Ibiza porta in line-up Armin van Buuren, Charlotte de Witte e il ritorno di Eric Prydz con una residency settimanale. Pacha riconferma la storica collaborazione con Defected per le serate del venerdì, con Nic Fanciulli come resident di punta. La stagione si preannuncia tra le più ricche degli ultimi anni, con un'attenzione crescente per la scena underground e melodic techno accanto ai big del main floor.",
-      photo: "/images/Ushuaia_di_Ibiza_2026.png",
-      tint: "rgba(0,15,25,0.55),rgba(0,50,80,0.35)"
+      tag: "Clubbing · Riccione",
+      tagColor: "#e040fb",
+      title: "Il Cocoricò riapre le porte: Sara Landry il 18 luglio, Ilario Alicante il 21",
+      sub: "Il tempio della techno italiana torna protagonista con due serate esclusive sotto la storica piramide",
+      text: "Aperto nel 1989, il Cocoricò resta il punto di riferimento mondiale della club culture italiana, con una programmazione che negli anni ha portato a Riccione nomi come Carl Cox, Richie Hawtin e Jeff Mills. Il 18 luglio sale in consolle Sara Landry per una notte all'insegna della hard techno, mentre il 21 luglio è la volta di Ilario Alicante per la tappa italiana di Galactica Ibiza, evento che porta l'energia della Riviera romagnola fino all'Eden di Ibiza.",
+      photo: "/image/news-cocorico-riccione.webp",
+      photoSource: "Sito ufficiale / canali social Cocoricò Riccione",
+      tint: "rgba(4,0,26,0.6),rgba(26,0,80,0.4)"
     },
     {
-      tag: "Festival · Genova",
-      tagColor: "#005540",
-      title: "Electropark 2026: Genova diventa capitale europea dell'elettronica diffusa",
-      sub: "Dal 5 giugno al 5 luglio, un mese di musica in luoghi storici della città con 50 artisti da 25 paesi.",
-      text: "La quindicesima edizione di Electropark trasforma Genova in un organismo sonoro per un intero mese: dal 5 giugno al 5 luglio 2026, il festival multidisciplinare abita gli spazi più suggestivi della città — il Chiostro di Sant'Andrea, i Luzzati Lab, il Teatro della Tosse, la Terrazza Mirador del Galata Museo del Mare e il Mercato della Darsena. Il tema 'Outer Space', ispirato al film di Sun Ra, guida una lineup fortemente internazionale e gender balanced: 50 artisti provenienti da 25 paesi, con prime nazionali e dialoghi tra elettronica, danza e arti visive. Tra i nomi di punta Moor Mother, Cherish Menzo e MC Yallah. Un festival che pensa alla musica come spazio urbano e politico.",
-      photo: "/images/Electropark_Festival_Genova_2026.png",
-      tint: "rgba(0,12,8,0.6),rgba(0,45,30,0.4)"
-    },
-    {
-      tag: "Festival · Brescia",
-      tagColor: "#882200",
-      title: "Centrale Elettronica: il nuovo festival che nasce dal cuore industriale di Brescia",
-      sub: "27-28 giugno all'Area Feste di Sant'Eufemia con Goodboys, A-Trak, Ferreck Dawn e Matt Sassari.",
-      text: "Brescia si accende con Centrale Elettronica, il nuovo festival outdoor di musica elettronica che il 27 e 28 giugno trasformerà l'Area Feste di Sant'Eufemia in un grande impianto sonoro a cielo aperto. Tre palchi — Main Stage, Crew & Partner Stage e lo Special Stage di TECHNOBUS — ospiteranno una lineup internazionale costruita da chi la scena bresciana la vive ogni giorno: Goodboys, A-Trak, Ferreck Dawn, Matt Sassari, Tita Lau e Estremo, affiancati da crew cittadine e realtà della scena italiana. Il festival nasce dalla collaborazione tra la produzione e un network di realtà locali con l'obiettivo di diventare punto di riferimento stabile nel panorama europeo. Il RadioCorner by RADIOCARME garantirà live streaming e contenuti radiofonici per tutta la durata dell'evento.",
-      photo: "/images/Centrale_elettronica_Brescia_ok.jpg",
-      tint: "rgba(15,2,0,0.6),rgba(60,10,0,0.4)"
+      tag: "Festival · Croazia",
+      tagColor: "#7c3aed",
+      title: "Hideout Festival: si parte oggi sulla spiaggia di Zrće",
+      sub: "Dal 30 giugno al 3 luglio quattro giorni di musica nei club iconici dell'isola di Pag",
+      text: "Hideout prende il posto di club di fama mondiale come Papaya, Noa e Aquarius, trasformandoli in un unico grande festival per quattro giorni. In lineup nomi di punta della scena UK come Gorgon City, Eliza Rose, Skream e Paul Woolford, tra pool party, boat party e set al tramonto sull'Adriatico.",
+      photo: "/image/news-hideout.jpg",
+      photoSource: "Foto fornita dalla redazione",
+      tint: "rgba(10,0,30,0.6),rgba(40,0,90,0.4)"
     }
   ],
-
-  /* ─────────────────────────────────────────
-     TECH & GEAR — 4 articoli
-  ───────────────────────────────────────── */
   tech: [
     {
-      tag: "Synth · VST",
-      tagColor: "#004488",
-      title: "Serum 2: 11 anni di attesa, aggiornamento gratuito e un motore completamente nuovo",
-      sub: "Granular, multisample, spectral synthesis e sequencer integrato. Il synth dell'era moderna.",
-      text: "Xfer Records ha rilasciato Serum 2, l'aggiornamento più atteso della storia dei plugin musicali dopo 11 anni di attesa. La novità principale è il nuovo Oscillator Section che affianca il motore wavetable originale con sintesi granulare, multisample, spettrale e sample oscillator — cinque sorgenti sonore indipendenti in un unico strumento. Nuovi filtri tra cui il classico MG Ladder e il PZSVF disegnabile, un arpeggiatore con clip sequencer integrato, quattro envelope e sei LFO, supporto MPE e ottimizzazione CPU drasticamente migliorata. L'aggiornamento è gratuito per tutti i possessori della versione originale. Per i nuovi utenti il prezzo di lancio è $189. Disponibile in VST3, AU e AAX per macOS e Windows.",
-      photo: "/images/serum_2.png",
-      tint: "rgba(0,5,18,0.65),rgba(0,20,70,0.4)"
+      tag: "Synth · Wavetable",
+      tagColor: "#1060cc",
+      title: "Vital resta il punto di riferimento gratuito per il sound design 2026",
+      sub: "Tre oscillatori wavetable e modulazione visiva in tempo reale, lo standard per chi inizia",
+      text: "Spesso definito il \"Serum killer\", Vital continua a essere il sintetizzatore gratuito più usato dai producer elettronici grazie a un'interfaccia dove ogni modulazione è visibile mentre si lavora sul suono, ideale per chi vuole capire la sintesi mentre la pratica.",
+      photo: "/image/tech-vital.jpg",
+      photoSource: "Foto fornita dalla redazione",
+      tint: "rgba(0,8,15,0.6),rgba(0,32,64,0.4)"
     },
     {
-      tag: "Plugin · Dynamics",
-      tagColor: "#005530",
-      title: "Sonible smart:comp 2 — la compressione spettrale intelligente si aggiorna",
-      sub: "Analisi spettrale in tempo reale, 8 canali indipendenti e AI che impara dal materiale audio.",
-      text: "Sonible lancia smart:comp 2, evoluzione del compressore AI più apprezzato nel mondo della produzione professionale. La nuova versione introduce la Spectral Compression con analisi in tempo reale che interviene frequenza per frequenza, mantenendo il bilanciamento tonale naturale del mix senza artefatti di pompaggio. Fino a 8 istanze di compressione con channel linking, modalità mid/side, ext.sidechain e delta monitoring per ascoltare solo ciò che viene modificato. Lo Style knob permette di passare da compressione trasparente a carattere vintage in modo intuitivo. Ideale su drum bus, mix bus e tracce vocali. Disponibile su sonible.com.",
-      photo: "/images/sonible_smartcomp2.jpg",
-      tint: "rgba(0,12,6,0.65),rgba(0,48,24,0.4)"
+      tag: "Synth · Producer Choice",
+      tagColor: "#7c3aed",
+      title: "Serum 2 si conferma il synth più usato in studio nel 2026",
+      sub: "Workflow visivo e motore wavetable a tre oscillatori per il sound design moderno",
+      text: "Tra i plugin più diffusi nella produzione elettronica contemporanea, Serum 2 di Xfer continua a guidare le classifiche dei producer per la qualità del motore di sintesi e la curva di apprendimento accessibile anche a chi parte da zero.",
+      photo: "/image/tech-serum2.jpg",
+      photoSource: "Foto fornita dalla redazione",
+      tint: "rgba(10,0,30,0.6),rgba(40,0,90,0.4)"
     },
     {
-      tag: "AI · DAW",
-      tagColor: "#00558a",
-      title: "Yuma: l'assistente AI che produce musica conversando con Ableton",
-      sub: "Crea tracce, accordi, melodie e automazioni parlando. Beta a $39 una tantum per macOS e Windows.",
-      text: "Yuma è il nuovo assistente AI che rivoluziona il workflow in Ableton Live permettendo di controllare la DAW attraverso il linguaggio naturale. Scrivi o parla e Yuma crea progressioni di accordi, melodie, pattern ritmici e tracce complete, gestisce effetti e automazioni direttamente nel progetto. Funziona anche con Logic Pro, FL Studio e qualsiasi DAW grazie alla generazione MIDI e audio da prompt testuale. L'app desktop nativa per macOS e Windows è disponibile in beta a $39 una tantum con 3.900 crediti che non scadono mai. Il sound design AI per Native Instruments e Serum è in arrivo. Per chi produce ogni giorno, è uno strumento che cambia il modo di lavorare.",
-      photo: "/images/Ableton-Live-12.png",
-      tint: "rgba(0,8,16,0.65),rgba(0,30,60,0.4)"
+      tag: "Standard · Plugin",
+      tagColor: "#e040fb",
+      title: "CLAP guadagna terreno: il nuovo standard plugin sfida il VST3",
+      sub: "Sviluppato da Bitwig e u-he, promette prestazioni superiori nella gestione della modulazione",
+      text: "Il formato open-source CLAP (CLever Audio Plugin) si fa largo tra i producer più esigenti, offrendo una gestione della modulazione più avanzata rispetto al VST3 tradizionale, ideale per produzioni elettroniche complesse e dense di automazioni.",
+      photo: "/image/tech-clap.jpg",
+      photoSource: "Foto fornita dalla redazione",
+      tint: "rgba(0,8,15,0.6),rgba(0,32,64,0.4)"
     },
     {
-      tag: "Hardware · Roland",
-      tagColor: "#771100",
-      title: "Roland SP-404 MK3: il sampler portatile si rinnova con un firmware rivoluzionario",
-      sub: "Synth layer integrato, effetti AI e workflow completamente rinnovato per live e studio.",
-      text: "Roland aggiorna il leggendario SP-404 con un firmware che trasforma il sampler portatile più amato dai producer in uno strumento di nuova generazione. Le novità principali includono un synth layer integrato con oscillatori analogici emulati, un set di effetti elaborati con algoritmi AI per granularizzazione e time-stretching avanzato, e un workflow completamente ridisegnato per performance live più fluide e intuitive. Il nuovo SP-404 MK3 mantiene la portabilità e il carattere sonoro caldo che lo hanno reso iconico — lo stesso usato da Flying Lotus, Knxwledge e innumerevoli producer di beat music — arricchendolo con capacità da studio professionale. Compatibile con tutti i bank di campioni dei modelli precedenti.",
-      photo: "https://images.unsplash.com/photo-1619983081563-430f63602796?w=900&q=80",
-      tint: "rgba(15,3,0,0.65),rgba(60,12,0,0.4)"
+      tag: "Gear · Free Tools",
+      tagColor: "#1060cc",
+      title: "TAL-Noisemaker guida la nuova ondata di synth free",
+      sub: "Filtri auto-oscillanti e bassi acidi a costo zero per chi produce techno e synthwave",
+      text: "Tra le novità più apprezzate dalla community spicca TAL-Noisemaker, sintetizzatore analogico virtuale con filtri auto-oscillanti perfetti per bassi plucky e acidi, particolarmente indicato per synthwave, techno e hip-hop elettronico.",
+      photo: "/image/tech-tal-noisemaker.jpg",
+      photoSource: "Foto fornita dalla redazione",
+      tint: "rgba(10,0,30,0.6),rgba(40,0,90,0.4)"
     }
   ],
-
-  /* ─────────────────────────────────────────
-     TOP 10 DANCE / TECH HOUSE — Beatport giugno 2026
-  ───────────────────────────────────────── */
   danceChart: [
-    {pos:1,  title:"Baby",                              artist:"Prospa, Murda Beatz",               q:"Prospa Murda Beatz Baby CircoLoco Extended"},
-    {pos:2,  title:"See-Line Woman",                    artist:"Nina Simone, Mochakk",              q:"Nina Simone Mochakk See Line Woman Mix"},
-    {pos:3,  title:"How Does It Feel",                  artist:"Fezzo, Dubdogz, Zaark",             q:"Fezzo Dubdogz Zaark How Does It Feel Extended"},
-    {pos:4,  title:"Bad Wolf",                          artist:"Michael Bibi",                      q:"Michael Bibi Bad Wolf Extended"},
-    {pos:5,  title:"Freaky !",                          artist:"Ali Love, Vintage Culture, Max Styler", q:"Ali Love Vintage Culture Max Styler Freaky"},
-    {pos:6,  title:"Make You Fight",                    artist:"Chris Lake, ATRIP",                 q:"Chris Lake ATRIP Make You Fight Extended"},
-    {pos:7,  title:"Morning Coffee",                    artist:"Jitwam, GUDFELLA",                  q:"Jitwam GUDFELLA Morning Coffee Extended"},
-    {pos:8,  title:"So Hot!",                           artist:"Jake Bleu, Edris Omar",             q:"Jake Bleu Edris Omar So Hot Extended"},
-    {pos:9,  title:"La La Land",                        artist:"Green Velvet, Meduza, GENESI (ITA)", q:"Green Velvet Meduza La La Land Extended"},
-    {pos:10, title:"Break It",                          artist:"Juntaro, HILLS (US)",               q:"Juntaro HILLS Break It Extended Mainstage"}
+    { pos: 1, title: "Piece of Your Heart", artist: "Goodboys & Meduza", q: "Goodboys Meduza Piece of Your Heart" },
+    { pos: 2, title: "No Broke Boys", artist: "Disco Lines & Tinashe", q: "Disco Lines Tinashe No Broke Boys" },
+    { pos: 3, title: "Blessings", artist: "Calvin Harris & Clementine Douglas", q: "Calvin Harris Clementine Douglas Blessings" },
+    { pos: 4, title: "Be The One", artist: "Adam Port, SG Lewis & Keinemusik", q: "Adam Port SG Lewis Keinemusik Be The One" },
+    { pos: 5, title: "World Is Mine", artist: "Lane 8 & Kasbo feat. BJOERN", q: "Lane 8 Kasbo BJOERN World Is Mine" },
+    { pos: 6, title: "Way I Are (Timbaland Remix)", artist: "Timbaland & Max Dean", q: "Timbaland Max Dean Remix Extended Way I Are" },
+    { pos: 7, title: "Science", artist: "deadmau5 & Stevie Appleton", q: "deadmau5 Stevie Appleton Science" },
+    { pos: 8, title: "Surrender", artist: "Westend", q: "Westend Surrender original mix 2026" },
+    { pos: 9, title: "Like That", artist: "Marco Faraone", q: "Marco Faraone Like That" },
+    { pos: 10, title: "Bigger Than Techno", artist: "Lilly Palmer", q: "Lilly Palmer Bigger Than Techno" }
   ],
-
-  /* ─────────────────────────────────────────
-     TOP 10 MAINSTAGE — Beatport giugno 2026
-  ───────────────────────────────────────── */
   mainChart: [
-    {pos:1,  title:"Sweet Disposition (Remix)",         artist:"Temper Trap, John Summit & Silver Panda", q:"Temper Trap John Summit Silver Panda Sweet Disposition Remix"},
-    {pos:2,  title:"You Gonna Want Me (I Know)",        artist:"Tiga vs Meduza",                    q:"Tiga Meduza You Gonna Want Me Extended"},
-    {pos:3,  title:"Enjoy the Silence",                 artist:"Don Diablo, MONO|CHROME",           q:"Don Diablo Enjoy the Silence Extended Version"},
-    {pos:4,  title:"Vem Comigo",                        artist:"Armin van Buuren",                  q:"Armin van Buuren Vem Comigo Extended"},
-    {pos:5,  title:"Save Me Tonight",                   artist:"Jennifer Lopez, David Guetta",      q:"Jennifer Lopez David Guetta Save Me Tonight"},
-    {pos:6,  title:"Do You Want It Right Now",          artist:"Quintino, Breathe Carolina",        q:"Quintino Breathe Carolina Do You Want It Right Now Extended"},
-    {pos:7,  title:"Bigger Than Techno",                artist:"Lilly Palmer, Armin van Buuren",    q:"Lilly Palmer Armin van Buuren Bigger Than Techno"},
-    {pos:8,  title:"How Does It Feel",                  artist:"Fezzo, Dubdogz, Zaark",             q:"Dubdogz Fezzo Zaark How Does It Feel"},
-    {pos:9,  title:"Makina Time",                       artist:"Dimitri Vegas & Like Mike",         q:"Dimitri Vegas Like Mike Makina Time"},
-    {pos:10, title:"Be The One",                        artist:"Adam Port, SG Lewis",               q:"Adam Port SG Lewis Keinemusik Be The One"}
+    { pos: 1, title: "New Religion", artist: "Faithless & Bebe Rexha", q: "Faithless Bebe Rexha New Religion 2026" },
+    { pos: 2, title: "Vem Comigo", artist: "Armin van Buuren", q: "Armin van Buuren Vem Comigo" },
+    { pos: 3, title: "Caramelle", artist: "Mesto", q: "Mesto Caramelle" },
+    { pos: 4, title: "Makina Time", artist: "Dimitri Vegas & Like Mike", q: "Dimitri Vegas Like Mike Makina Time" },
+    { pos: 5, title: "Desenchantée 3000", artist: "Blasterjaxx & Kate Ryan", q: "Blasterjaxx Kate Ryan Desenchantee 3000" },
+    { pos: 6, title: "How Does It Feel", artist: "Dubdogz & Fezzo & Zaark", q: "Dubdogz Fezzo Zaark How Does It Feel" },
+    { pos: 7, title: "Puff Puff Pass", artist: "Kitty Hall", q: "Kitty Hall Puff Puff Pass" },
+    { pos: 8, title: "RUDEBOY", artist: "SLVL", q: "SLVL RUDEBOY original mix 2026" },
+    { pos: 9, title: "Children", artist: "Robert Miles", q: "Robert Miles Children" },
+    { pos: 10, title: "From Disco to Disco", artist: "Whirlpool Production", q: "Whirlpool Production From Disco To Disco" }
   ]
-
 };
