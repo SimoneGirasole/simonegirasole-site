@@ -4,7 +4,7 @@ const WEEKLY_CONTENT = {
     artist: "Robert Miles",
     year: "1995",
     genre: "Dream House",
-    desc: "Trent'anni fa un producer italiano cambiava per sempre il suono della club culture europea. \"Children\" nasce come reazione ai rave illegali e all'hard techno delle notti riminesi: Robert Miles voleva un brano da ascoltare nel viaggio di ritorno a casa, capace di far scendere l'adrenalina senza spegnere l'emozione. Il risultato è la nascita ufficiale del dream house, un genere che fonde melodia pianistica, atmosfere ambient e cassa dance in un equilibrio mai più eguagliato. Il brano resta tuttora il singolo dance italiano più venduto di sempre, con oltre 5 milioni di copie. La sua eredità si sente ancora oggi in ogni piano break da club, dal melodic techno contemporaneo alla progressive house.",
+    desc: "Trent'anni fa un producer italiano cambiava per sempre il suono della club culture europea. \"Children\" nasce come reazione ai rave illegali e all'eccessi dell' hard techno nelle notti riminesi: Robert Miles voleva un brano da ascoltare nel viaggio di ritorno a casa, capace di far scendere l'adrenalina senza spegnere l'emozione. Il risultato è la nascita ufficiale del dream house, un genere che fonde melodia pianistica, atmosfere ambient e cassa dance in un equilibrio mai più eguagliato. Il brano resta tuttora il singolo dance italiano più venduto di sempre, con oltre 5 milioni di copie. La sua eredità si sente ancora oggi in ogni piano break da club, dal melodic techno contemporaneo alla progressive house.",
     photo: "/images/disco-storico-robert-miles-children.jpg",
     photoSource: "Discogs — Robert Miles, Children (CD Maxi-Single)",
     q: "Robert Miles Children"
